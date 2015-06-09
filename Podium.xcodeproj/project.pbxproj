@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
+		4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F63CA3C1B2761CB0004013B /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3A1B2761CB0004013B /* Friend+CoreDataProperties.swift */; };
 		4F63CA3D1B2761CB0004013B /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3A1B2761CB0004013B /* Friend+CoreDataProperties.swift */; };
 		4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3B1B2761CB0004013B /* Friend.swift */; };
@@ -101,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F2099E51B276AD9008FBF4C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		4F63CA3A1B2761CB0004013B /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4F63CA3B1B2761CB0004013B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		4F63CA401B2761CC0004013B /* Invite+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Invite+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F8E9D621B27362F00446CC3 /* PodiumKit.framework in Frameworks */,
+				4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +208,7 @@
 		4F8E9D4C1B27362F00446CC3 /* PodiumKit */ = {
 			isa = PBXGroup;
 			children = (
+				4F2099E51B276AD9008FBF4C /* CloudKit.framework */,
 				4F63CA531B27647B0004013B /* Notes.swift */,
 				4F8B4B021B274A550029493F /* AuthenticationController.swift */,
 				4F63CA4C1B27642F0004013B /* Model Controllers */,
@@ -424,6 +430,9 @@
 						DevelopmentTeam = PB75K4UH6R;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
