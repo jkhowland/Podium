@@ -9,6 +9,13 @@
 import Foundation
 
 public class AuthenticationController: NSObject {
-    var connected = true
+ 
+    public func signIn() {
+        
+    }
+    
+    public func signUp() {
+    
+    }
     
 }

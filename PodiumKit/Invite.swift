@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Invite.swift
 //  Podium
 //
 //  Created by Joshua Howland on 6/9/15.
@@ -9,8 +9,8 @@
 import Foundation
 import CoreData
 
-@objc(User)
-public class User: NSManagedObject {
+@objc(Invite)
+public class Invite: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

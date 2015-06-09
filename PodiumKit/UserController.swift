@@ -12,7 +12,7 @@ import CoreData
 
 public class UserController: NSObject {
     public static let sharedController = UserController()
- 
+        
     public func addUser(name: String, email: String, identifier: Int64) {
         let user: User = NSEntityDescription.insertNewObjectForEntityForName(UserEntityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! User
         
@@ -24,7 +24,7 @@ public class UserController: NSObject {
         
     }
     
-    public func removeUser(user: User) {
+    public func deleteUser(user: User) {
     
         user.managedObjectContext?.deleteObject(user)
 
