@@ -13,3 +13,15 @@ enum HealthPointType: NSNumber {
     case Calories
     case Water
 }
+
+extension HealthPoint {
+    var pointType: HealthPointType? {
+        get {
+            guard let _type = self.type else { return nil }
+            return HealthPointType(rawValue: _type)
+        }
+        set {
+            self.type = self.pointType?.rawValue
+        }
+    }
+}
