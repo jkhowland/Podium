@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14D136" minimumToolsVersion="Xcode 4.3">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="15A178w" minimumToolsVersion="Xcode 4.3">
     <entity name="Friend" representedClassName=".Friend" syncable="YES">
         <attribute name="accepted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="fromUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="friend" inverseEntity="User" syncable="YES"/>
         <relationship name="toUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="HealthPoint" representedClassName="HealthPoint" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="healthPoints" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Invite" representedClassName=".Invite" syncable="YES">
         <attribute name="fromUserId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -16,10 +22,12 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="friend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="fromUser" inverseEntity="Friend" syncable="YES"/>
+        <relationship name="healthPoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HealthPoint" inverseName="user" inverseEntity="HealthPoint" syncable="YES"/>
     </entity>
     <elements>
         <element name="Friend" positionX="-54" positionY="27" width="128" height="90"/>
         <element name="Invite" positionX="-63" positionY="9" width="128" height="90"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="HealthPoint" positionX="-54" positionY="36" width="128" height="105"/>
     </elements>
 </model>

@@ -48,6 +48,10 @@
 		4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */; };
 		4FEA652C1B26A96700E572FE /* PodiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA652B1B26A96700E572FE /* PodiumTests.swift */; };
 		4FEA65371B26A96700E572FE /* PodiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65361B26A96700E572FE /* PodiumUITests.swift */; };
+		E70A332C1B27836000E8B350 /* HealthPoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A332A1B27836000E8B350 /* HealthPoint+CoreDataProperties.swift */; };
+		E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A332B1B27836000E8B350 /* HealthPoint.swift */; };
+		E70A332F1B27839700E8B350 /* HealthPoint+TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A332E1B27839700E8B350 /* HealthPoint+TypeEnum.swift */; };
+		E70A33311B27840300E8B350 /* HealthPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A33301B27840300E8B350 /* HealthPointController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,10 @@
 		4FEA65321B26A96700E572FE /* PodiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEA65361B26A96700E572FE /* PodiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumUITests.swift; sourceTree = "<group>"; };
 		4FEA65381B26A96700E572FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E70A332A1B27836000E8B350 /* HealthPoint+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HealthPoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E70A332B1B27836000E8B350 /* HealthPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPoint.swift; sourceTree = "<group>"; };
+		E70A332E1B27839700E8B350 /* HealthPoint+TypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HealthPoint+TypeEnum.swift"; sourceTree = "<group>"; };
+		E70A33301B27840300E8B350 /* HealthPointController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPointController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +193,9 @@
 		4F63CA391B27617D0004013B /* Model Objects */ = {
 			isa = PBXGroup;
 			children = (
+				E70A332E1B27839700E8B350 /* HealthPoint+TypeEnum.swift */,
+				E70A332A1B27836000E8B350 /* HealthPoint+CoreDataProperties.swift */,
+				E70A332B1B27836000E8B350 /* HealthPoint.swift */,
 				4F63CA461B2761DF0004013B /* User+CoreDataProperties.swift */,
 				4F63CA471B2761DF0004013B /* User.swift */,
 				4F63CA401B2761CC0004013B /* Invite+CoreDataProperties.swift */,
@@ -201,6 +212,7 @@
 				4F8B4B031B274A550029493F /* UserController.swift */,
 				4F63CA4D1B27644C0004013B /* InviteController.swift */,
 				4F63CA501B27645E0004013B /* FriendController.swift */,
+				E70A33301B27840300E8B350 /* HealthPointController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -518,6 +530,8 @@
 				4F63CA4E1B27644C0004013B /* InviteController.swift in Sources */,
 				4F63CA541B27647B0004013B /* Notes.swift in Sources */,
 				4F8B4B061B274A550029493F /* UserController.swift in Sources */,
+				E70A332C1B27836000E8B350 /* HealthPoint+CoreDataProperties.swift in Sources */,
+				E70A33311B27840300E8B350 /* HealthPointController.swift in Sources */,
 				4F63CA511B27645E0004013B /* FriendController.swift in Sources */,
 				4F8B4B041B274A550029493F /* NetworkController.swift in Sources */,
 				4F63CA421B2761CC0004013B /* Invite+CoreDataProperties.swift in Sources */,
@@ -526,9 +540,11 @@
 				4F8E9D711B27365000446CC3 /* Stack.swift in Sources */,
 				4F63CA3C1B2761CB0004013B /* Friend+CoreDataProperties.swift in Sources */,
 				4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */,
+				E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */,
 				4F63CA481B2761DF0004013B /* User+CoreDataProperties.swift in Sources */,
 				4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */,
 				4F63CA4A1B2761DF0004013B /* User.swift in Sources */,
+				E70A332F1B27839700E8B350 /* HealthPoint+TypeEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
