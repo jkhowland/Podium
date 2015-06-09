@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F63CA1A1B274E250004013B /* somelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F63CA191B274E250004013B /* somelist.plist */; };
+		4F63CA1D1B27554B0004013B /* notherlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F63CA1C1B27554B0004013B /* notherlist.plist */; };
+		4F8B4B041B274A550029493F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B011B274A550029493F /* NetworkController.swift */; };
+		4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B021B274A550029493F /* AuthenticationController.swift */; };
+		4F8B4B061B274A550029493F /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B031B274A550029493F /* UserController.swift */; };
+		4F8B4B071B274C120029493F /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B031B274A550029493F /* UserController.swift */; };
+		4F8B4B081B274C140029493F /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B021B274A550029493F /* AuthenticationController.swift */; };
+		4F8B4B091B274C160029493F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B011B274A550029493F /* NetworkController.swift */; };
+		4F8E9D561B27362F00446CC3 /* PodiumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; };
+		4F8E9D5F1B27362F00446CC3 /* PodiumKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D5E1B27362F00446CC3 /* PodiumKitTests.swift */; };
+		4F8E9D621B27362F00446CC3 /* PodiumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; };
+		4F8E9D631B27362F00446CC3 /* PodiumKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4F8E9D6F1B27365000446CC3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6C1B27365000446CC3 /* User.swift */; };
+		4F8E9D701B27365000446CC3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6C1B27365000446CC3 /* User.swift */; };
+		4F8E9D711B27365000446CC3 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6D1B27365000446CC3 /* Stack.swift */; };
+		4F8E9D721B27365000446CC3 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6D1B27365000446CC3 /* Stack.swift */; };
+		4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */; };
+		4F8E9D741B27365000446CC3 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */; };
 		4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65161B26A96700E572FE /* AppDelegate.swift */; };
 		4FEA65191B26A96700E572FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65181B26A96700E572FE /* ViewController.swift */; };
 		4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651A1B26A96700E572FE /* Main.storyboard */; };
@@ -17,6 +35,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4F8E9D571B27362F00446CC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FEA650B1B26A96700E572FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F8E9D4A1B27362F00446CC3;
+			remoteInfo = PodiumKit;
+		};
+		4F8E9D591B27362F00446CC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FEA650B1B26A96700E572FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FEA65121B26A96700E572FE;
+			remoteInfo = Podium;
+		};
+		4F8E9D601B27362F00446CC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FEA650B1B26A96700E572FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F8E9D4A1B27362F00446CC3;
+			remoteInfo = PodiumKit;
+		};
 		4FEA65281B26A96700E572FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4FEA650B1B26A96700E572FE /* Project object */;
@@ -33,7 +72,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4F8E9D671B27363000446CC3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4F8E9D631B27362F00446CC3 /* PodiumKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4F63CA191B274E250004013B /* somelist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = somelist.plist; sourceTree = "<group>"; };
+		4F63CA1C1B27554B0004013B /* notherlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = notherlist.plist; sourceTree = "<group>"; };
+		4F8B4B011B274A550029493F /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		4F8B4B021B274A550029493F /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		4F8B4B031B274A550029493F /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		4F8E9D451B2735E400446CC3 /* Podium.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Podium.entitlements; sourceTree = "<group>"; };
+		4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PodiumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F8E9D4E1B27362F00446CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F8E9D551B27362F00446CC3 /* PodiumKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodiumKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F8E9D5D1B27362F00446CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F8E9D5E1B27362F00446CC3 /* PodiumKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumKitTests.swift; sourceTree = "<group>"; };
+		4F8E9D6C1B27365000446CC3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4F8E9D6D1B27365000446CC3 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4FEA65131B26A96700E572FE /* Podium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEA65161B26A96700E572FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FEA65181B26A96700E572FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,10 +117,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4F8E9D471B27362F00446CC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F8E9D521B27362F00446CC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8E9D561B27362F00446CC3 /* PodiumKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4FEA65101B26A96700E572FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F8E9D621B27362F00446CC3 /* PodiumKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +157,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F8E9D4C1B27362F00446CC3 /* PodiumKit */ = {
+			isa = PBXGroup;
+			children = (
+				4F63CA1C1B27554B0004013B /* notherlist.plist */,
+				4F8E9D6C1B27365000446CC3 /* User.swift */,
+				4F8E9D6D1B27365000446CC3 /* Stack.swift */,
+				4F8B4B011B274A550029493F /* NetworkController.swift */,
+				4F8B4B021B274A550029493F /* AuthenticationController.swift */,
+				4F8B4B031B274A550029493F /* UserController.swift */,
+				4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */,
+				4F8E9D4D1B27362F00446CC3 /* Supporting Files */,
+			);
+			path = PodiumKit;
+			sourceTree = "<group>";
+		};
+		4F8E9D4D1B27362F00446CC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F8E9D4E1B27362F00446CC3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F8E9D5B1B27362F00446CC3 /* PodiumKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F8E9D5E1B27362F00446CC3 /* PodiumKitTests.swift */,
+				4F8E9D5C1B27362F00446CC3 /* Supporting Files */,
+			);
+			path = PodiumKitTests;
+			sourceTree = "<group>";
+		};
+		4F8E9D5C1B27362F00446CC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F8E9D5D1B27362F00446CC3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4FEA650A1B26A96700E572FE = {
 			isa = PBXGroup;
 			children = (
 				4FEA65151B26A96700E572FE /* Podium */,
 				4FEA652A1B26A96700E572FE /* PodiumTests */,
 				4FEA65351B26A96700E572FE /* PodiumUITests */,
+				4F8E9D4C1B27362F00446CC3 /* PodiumKit */,
+				4F8E9D5B1B27362F00446CC3 /* PodiumKitTests */,
 				4FEA65141B26A96700E572FE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +215,8 @@
 				4FEA65131B26A96700E572FE /* Podium.app */,
 				4FEA65271B26A96700E572FE /* PodiumTests.xctest */,
 				4FEA65321B26A96700E572FE /* PodiumUITests.xctest */,
+				4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */,
+				4F8E9D551B27362F00446CC3 /* PodiumKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,8 +224,10 @@
 		4FEA65151B26A96700E572FE /* Podium */ = {
 			isa = PBXGroup;
 			children = (
+				4F8E9D451B2735E400446CC3 /* Podium.entitlements */,
 				4FEA65161B26A96700E572FE /* AppDelegate.swift */,
 				4FEA65181B26A96700E572FE /* ViewController.swift */,
+				4F63CA191B274E250004013B /* somelist.plist */,
 				4FEA651A1B26A96700E572FE /* Main.storyboard */,
 				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
 				4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */,
@@ -127,7 +256,54 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4F8E9D481B27362F00446CC3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		4F8E9D4A1B27362F00446CC3 /* PodiumKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F8E9D641B27363000446CC3 /* Build configuration list for PBXNativeTarget "PodiumKit" */;
+			buildPhases = (
+				4F8E9D461B27362F00446CC3 /* Sources */,
+				4F8E9D471B27362F00446CC3 /* Frameworks */,
+				4F8E9D481B27362F00446CC3 /* Headers */,
+				4F8E9D491B27362F00446CC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PodiumKit;
+			productName = PodiumKit;
+			productReference = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4F8E9D541B27362F00446CC3 /* PodiumKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F8E9D681B27363000446CC3 /* Build configuration list for PBXNativeTarget "PodiumKitTests" */;
+			buildPhases = (
+				4F8E9D511B27362F00446CC3 /* Sources */,
+				4F8E9D521B27362F00446CC3 /* Frameworks */,
+				4F8E9D531B27362F00446CC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F8E9D581B27362F00446CC3 /* PBXTargetDependency */,
+				4F8E9D5A1B27362F00446CC3 /* PBXTargetDependency */,
+			);
+			name = PodiumKitTests;
+			productName = PodiumKitTests;
+			productReference = 4F8E9D551B27362F00446CC3 /* PodiumKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4FEA65121B26A96700E572FE /* Podium */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FEA653B1B26A96800E572FE /* Build configuration list for PBXNativeTarget "Podium" */;
@@ -135,10 +311,12 @@
 				4FEA650F1B26A96700E572FE /* Sources */,
 				4FEA65101B26A96700E572FE /* Frameworks */,
 				4FEA65111B26A96700E572FE /* Resources */,
+				4F8E9D671B27363000446CC3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4F8E9D611B27362F00446CC3 /* PBXTargetDependency */,
 			);
 			name = Podium;
 			productName = Podium;
@@ -187,11 +365,26 @@
 		4FEA650B1B26A96700E572FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "[insert name here]";
 				TargetAttributes = {
+					4F8E9D4A1B27362F00446CC3 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = PB75K4UH6R;
+					};
+					4F8E9D541B27362F00446CC3 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 4FEA65121B26A96700E572FE;
+					};
 					4FEA65121B26A96700E572FE = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = PB75K4UH6R;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4FEA65261B26A96700E572FE = {
 						CreatedOnToolsVersion = 7.0;
@@ -219,15 +412,33 @@
 				4FEA65121B26A96700E572FE /* Podium */,
 				4FEA65261B26A96700E572FE /* PodiumTests */,
 				4FEA65311B26A96700E572FE /* PodiumUITests */,
+				4F8E9D4A1B27362F00446CC3 /* PodiumKit */,
+				4F8E9D541B27362F00446CC3 /* PodiumKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4F8E9D491B27362F00446CC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F63CA1D1B27554B0004013B /* notherlist.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F8E9D531B27362F00446CC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4FEA65111B26A96700E572FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F63CA1A1B274E250004013B /* somelist.plist in Resources */,
 				4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */,
 				4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */,
 				4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */,
@@ -251,6 +462,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4F8E9D461B27362F00446CC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8B4B061B274A550029493F /* UserController.swift in Sources */,
+				4F8B4B041B274A550029493F /* NetworkController.swift in Sources */,
+				4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */,
+				4F8E9D711B27365000446CC3 /* Stack.swift in Sources */,
+				4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */,
+				4F8E9D6F1B27365000446CC3 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F8E9D511B27362F00446CC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8E9D701B27365000446CC3 /* User.swift in Sources */,
+				4F8E9D721B27365000446CC3 /* Stack.swift in Sources */,
+				4F8B4B071B274C120029493F /* UserController.swift in Sources */,
+				4F8B4B081B274C140029493F /* AuthenticationController.swift in Sources */,
+				4F8E9D741B27365000446CC3 /* Model.xcdatamodel in Sources */,
+				4F8B4B091B274C160029493F /* NetworkController.swift in Sources */,
+				4F8E9D5F1B27362F00446CC3 /* PodiumKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4FEA650F1B26A96700E572FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +517,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4F8E9D581B27362F00446CC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F8E9D4A1B27362F00446CC3 /* PodiumKit */;
+			targetProxy = 4F8E9D571B27362F00446CC3 /* PBXContainerItemProxy */;
+		};
+		4F8E9D5A1B27362F00446CC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FEA65121B26A96700E572FE /* Podium */;
+			targetProxy = 4F8E9D591B27362F00446CC3 /* PBXContainerItemProxy */;
+		};
+		4F8E9D611B27362F00446CC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F8E9D4A1B27362F00446CC3 /* PodiumKit */;
+			targetProxy = 4F8E9D601B27362F00446CC3 /* PBXContainerItemProxy */;
+		};
 		4FEA65291B26A96700E572FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4FEA65121B26A96700E572FE /* Podium */;
@@ -311,6 +564,93 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4F8E9D651B27363000446CC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = PodiumKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4F8E9D661B27363000446CC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PodiumKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4F8E9D691B27363000446CC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = PodiumKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podium.app/Podium";
+			};
+			name = Debug;
+		};
+		4F8E9D6A1B27363000446CC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PodiumKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podium.app/Podium";
+			};
+			name = Release;
+		};
 		4FEA65391B26A96800E572FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -398,10 +738,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Podium/Podium.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Podium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fit.podium.Podium;
+				PRODUCT_BUNDLE_IDENTIFIER = in.wearewired.podium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -409,10 +753,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Podium/Podium.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Podium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fit.podium.Podium;
+				PRODUCT_BUNDLE_IDENTIFIER = in.wearewired.podium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -422,7 +770,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PodiumTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fit.podium.PodiumTests;
+				PRODUCT_BUNDLE_IDENTIFIER = in.wearewired.PodiumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podium.app/Podium";
 			};
@@ -434,7 +782,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PodiumTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fit.podium.PodiumTests;
+				PRODUCT_BUNDLE_IDENTIFIER = in.wearewired.PodiumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podium.app/Podium";
 			};
@@ -445,7 +793,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = PodiumUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fit.podium.PodiumUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = in.wearewired.PodiumUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = Podium;
 				USES_XCTRUNNER = YES;
@@ -457,7 +805,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = PodiumUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fit.podium.PodiumUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = in.wearewired.PodiumUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = Podium;
 				USES_XCTRUNNER = YES;
@@ -467,6 +815,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4F8E9D641B27363000446CC3 /* Build configuration list for PBXNativeTarget "PodiumKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F8E9D651B27363000446CC3 /* Debug */,
+				4F8E9D661B27363000446CC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F8E9D681B27363000446CC3 /* Build configuration list for PBXNativeTarget "PodiumKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F8E9D691B27363000446CC3 /* Debug */,
+				4F8E9D6A1B27363000446CC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4FEA650E1B26A96700E572FE /* Build configuration list for PBXProject "Podium" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -483,6 +849,7 @@
 				4FEA653D1B26A96800E572FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FEA653E1B26A96800E572FE /* Build configuration list for PBXNativeTarget "PodiumTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +858,7 @@
 				4FEA65401B26A96800E572FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FEA65411B26A96800E572FE /* Build configuration list for PBXNativeTarget "PodiumUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +867,7 @@
 				4FEA65431B26A96800E572FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
