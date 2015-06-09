@@ -14,11 +14,12 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="friend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="fromUser" inverseEntity="Friend" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Invite" positionX="-63" positionY="9" width="128" height="90"/>
         <element name="Friend" positionX="-54" positionY="27" width="128" height="90"/>
+        <element name="Invite" positionX="-63" positionY="9" width="128" height="90"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

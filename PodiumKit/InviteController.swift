@@ -14,7 +14,7 @@ public class InviteController: NSObject {
     public func inviteFriend(email: String) {
     
         // Creates invite object
-        // Sends email
+        // Prepares email
         
     }
     

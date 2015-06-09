@@ -14,6 +14,7 @@ import CoreData
 
 extension User {
 
+    @NSManaged var phone: String?
     @NSManaged var email: String?
     @NSManaged var identifier: NSNumber?
     @NSManaged var name: String?
