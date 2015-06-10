@@ -8,7 +8,12 @@
 
 import UIKit
 
+@IBDesignable
+
 class UserStatusTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func prepareForInterfaceBuilder() {
         // Prepare for Interface Builder IBDesignable

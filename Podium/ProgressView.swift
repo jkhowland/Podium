@@ -15,8 +15,29 @@ class ProgressView: UIView {
     @IBInspectable private let progressLayer: CAShapeLayer = CAShapeLayer()
     @IBInspectable private var dashedLayer: CAShapeLayer = CAShapeLayer()
     
-    @IBInspectable var circleColor: UIColor = UIColor.purpleColor()
-    @IBInspectable var dashColor: UIColor = UIColor.grayColor()
+    @IBInspectable var circleColor: UIColor = UIColor.purpleColor() {
+        didSet {
+            progressLayer.strokeColor = circleColor.CGColor
+        }
+    }
+    
+    @IBInspectable var dashColor: UIColor = UIColor.grayColor() {
+        didSet {
+            progressLayer.strokeColor = dashColor.CGColor
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        createProgressLayer()
+        self.animateProgressViewToProgress(0.41)
+    }
     
     override func prepareForInterfaceBuilder() {
         createProgressLayer()
@@ -41,7 +62,7 @@ class ProgressView: UIView {
         let dashedLayer = CAShapeLayer()
         dashedLayer.strokeColor = dashColor.CGColor
         dashedLayer.fillColor = nil
-        dashedLayer.lineDashPattern = [2, 4]
+        dashedLayer.lineDashPattern = [3, 4]
         dashedLayer.lineJoin = "round"
         dashedLayer.lineWidth = 2.0
         dashedLayer.path = progressLayer.path
@@ -52,7 +73,7 @@ class ProgressView: UIView {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = CGFloat(progressLayer.strokeEnd)
         animation.toValue = CGFloat(progress)
-        animation.duration = 0.2
+        animation.duration = 0.3
         animation.fillMode = kCAFillModeForwards
         progressLayer.strokeEnd = CGFloat(progress)
         progressLayer.addAnimation(animation, forKey: "animation")
