@@ -16,8 +16,12 @@ private let phoneKey = "phone"
 extension Stack {
 
     public func clearAllData() {
-        
-        
+        if let profiles = ProfileController.sharedController.allProfiles() {
+            for profile in profiles {
+                Stack.defaultStack.mainContext?.deleteObject(profile)
+            }
+            Stack.defaultStack.save()
+        }
     }
     
     public func loadFakeData() { // For testing

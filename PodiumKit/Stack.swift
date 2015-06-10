@@ -13,7 +13,7 @@ let sharedAppGroupContainer = "group.in.wearewired.podium"
 public class Stack: NSObject {
     public static let defaultStack = Stack()
         
-    lazy var mainContext: NSManagedObjectContext? = {
+    lazy public var mainContext: NSManagedObjectContext? = {
         guard let coordinator = self.persistentStoreCoordinator else { return nil }
 
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
