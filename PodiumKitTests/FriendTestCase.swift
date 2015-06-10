@@ -17,7 +17,7 @@ class FriendTestCase: XCTestCase {
 
         Stack.defaultStack.clearAllData()
         Stack.defaultStack.loadFakeData()
-
+        
     }
     
     override func tearDown() {
@@ -30,19 +30,51 @@ class FriendTestCase: XCTestCase {
         XCTAssert(friendCount!.count == 30)
     }
 
-    func testFriendProfileCount() {
+    func testFriendJoshCount() {
         
-        // Fix test to test for correct profile count
-        
-        let friendCount = FriendController.sharedController.allFriends()
+        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(joshEmail)!
 
         FriendController.sharedController.updateFriendsCompletionHandler { (complete) -> Void in
             let friends = FriendController.sharedController.friends
-            if friends.count > 0 {
-                print(friends[0].email)
-            }
-            
-            XCTAssert(friendCount!.count == 30)
+            print("Josh has \(friends.count) friends")
+            XCTAssert(friends.count == 4)
+        }
+        
+    }
+
+    func testFriendProfileJoshCount() {
+        
+        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(joshEmail)!
+        
+        FriendController.sharedController.updateFriendsCompletionHandler { (complete) -> Void in
+            let friends = FriendController.sharedController.friendProfiles()
+            print("Josh has \(friends.count) friend profiles")
+            XCTAssert(friends.count == 4)
+        }
+        
+    }
+
+    
+    func testFriendBenCount() {
+        
+        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(benEmail)!
+        
+        FriendController.sharedController.updateFriendsCompletionHandler { (complete) -> Void in
+            let friends = FriendController.sharedController.friends
+            print("Ben has \(friends.count) friends")
+            XCTAssert(friends.count == 2)
+        }
+        
+    }
+    
+    func testFriendProfileBenCount() {
+        
+        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(joshEmail)!
+        
+        FriendController.sharedController.updateFriendsCompletionHandler { (complete) -> Void in
+            let friends = FriendController.sharedController.friendProfiles()
+            print("Josh has \(friends.count) friend profiles")
+            XCTAssert(friends.count == 2)
         }
         
     }

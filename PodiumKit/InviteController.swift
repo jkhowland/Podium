@@ -30,7 +30,7 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
     
     public func inviteFriend(email: String) -> Invite {
         
-        let fromEmail = AuthenticationController.sharedController.currentProfile.email
+        let fromEmail = AuthenticationController.sharedController.currentProfile!.email
         return self.inviteFromEmail(fromEmail!, email: email)
         
     }

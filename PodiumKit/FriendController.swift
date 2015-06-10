@@ -21,36 +21,50 @@ public enum SortFriends {
 public class FriendController: NSObject {
     public static let sharedController = FriendController()
 
-    public var friends: [Profile] = []
+    public var friends: [Friend] = []
     
-    public func sortFriends(sort: SortFriends) -> [Profile] {
+    public func sortFriends(sort: SortFriends) -> [Friend] {
         return self.friends
     }
     
     public func updateFriendsCompletionHandler(completionHandler: (complete: Bool) -> Void) {
     
-        let request = NSFetchRequest(entityName: Friend.entityName)
-        
-        var friendObjects: [Friend] = []
-        
-        do {
-            friendObjects = try Stack.defaultStack.mainContext?.executeFetchRequest(request) as! [Friend]
-        } catch let error as NSError {
-            print(error)
+        if AuthenticationController.sharedController.currentProfile != nil {
+            let request = NSFetchRequest(entityName: Friend.entityName)
+            let predicate = NSPredicate(format: "currentProfile.identifier = %@", AuthenticationController.sharedController.currentProfile!.identifier!)
+            request.predicate = predicate
+            
+            var friendObjects: [Friend] = []
+            
+            do {
+                friendObjects = try Stack.defaultStack.mainContext?.executeFetchRequest(request) as! [Friend]
+            } catch let error as NSError {
+                print(error)
+            }
+
+            self.friends = friendObjects
+            
+            completionHandler(complete: true)
+        } else {
+            completionHandler(complete: false)
         }
         
+    }
+    
+    public func friendProfiles() -> [Profile] {
+    
         var friends: [Profile] = []
-        for friendObject in friendObjects {
+        for friendObject in self.friends {
             if let profile = friendObject.profile {
                 friends.append(profile)
             } else {
                 print("Failure to capture friend")
+                print("From " + (friendObject.currentProfile?.email)!)
+                print("Accepted " + (friendObject.accepted?.stringValue)!)
             }
         }
         
-        self.friends = friends
-        completionHandler(complete: true)
-        
+        return friends
     }
     
     // Should probably return array of dictionaries [displayName, email]
@@ -70,27 +84,21 @@ public class FriendController: NSObject {
         let fromProfile = ProfileController.sharedController.findProfileUsingIdentifier(fromProfileIdentifier)
         let toProfile = ProfileController.sharedController.findProfileUsingIdentifier(toProfileIdentifier)
         
-        if fromProfile == nil {
-            print("From profile nil");
-        }
-        
-        if toProfile == nil {
-            print("Profile nil");
-        }
-        
         friend.currentProfile = fromProfile
         friend.profile = toProfile
         friend.accepted = NSNumber(bool: false)
         
         // Send email/request to user
         
+        Stack.defaultStack.save()
+
         return friend
         
     }
     
     public func requestFriend(userID: Int) -> Friend {
 
-        return self.requestFriends((AuthenticationController.sharedController.currentProfile.identifier?.integerValue)!, toProfileIdentifier: userID)
+        return self.requestFriends((AuthenticationController.sharedController.currentProfile!.identifier?.integerValue)!, toProfileIdentifier: userID)
         
     }
     
@@ -108,14 +116,8 @@ public class FriendController: NSObject {
         newFriend.profile = friend.currentProfile
         newFriend.accepted = NSNumber(bool: true)
         
-        if newFriend.currentProfile == nil {
-            print("From profile nil");
-        }
+        Stack.defaultStack.save()
         
-        if newFriend.profile == nil {
-            print("Profile nil");
-        }
-    
     }
 
     public func allFriends() -> [Friend]? {

@@ -13,6 +13,17 @@ private let nameKey = "name"
 private let emailKey = "email"
 private let phoneKey = "phone"
 
+public let joshEmail = "josh@devmtn.com"
+public let calebEmail = "caleb@gmail.com"
+public let benEmail = "ben@yahoo.com"
+public let timEmail = "tim@me.com"
+public let ashleyEmail = "ashley@tannerlabs.com"
+public let emmaEmail = "emma@baymax.com"
+public let elizaEmail = "eliza@princess.com"
+public let beccaEmail = "becca@skirts.com"
+public let timCookEmail = "tim@apple.com"
+public let philEmail = "phil@apple.com"
+
 extension Stack {
 
     public func clearAllData() {
@@ -37,16 +48,16 @@ extension Stack {
         // Should be searchable profiles in find friends
         
         let arrayProfiles = [
-            [nameKey: "Joshua Howland", emailKey:"josh@devmtn.com", phoneKey: "801-450-3213"],
-            [nameKey: "Caleb Hicks", emailKey:"caleb@gmail.com", phoneKey: "801-669-4320"],
-            [nameKey: "Tim Shadel", emailKey:"tim@me.com", phoneKey: "801-349-8586"],
-            [nameKey: "Ben Norris", emailKey:"ben@yahoo.com", phoneKey: "801-8604592"],
-            [nameKey: "Ashley Bentley", emailKey:"ashley@tannerlabs.com", phoneKey: "801-792-2809"],
-            [nameKey: "Emma Jayne", emailKey:"emma@baymax.com", phoneKey: "801-262-3314"],
-            [nameKey: "Eliza Caroline", emailKey:"eliza@princess.com", phoneKey: "801-971-7333"],
-            [nameKey: "Becca Cotton", emailKey:"becca@skirts.com", phoneKey: "801-809-4343"],
-            [nameKey: "Tim Cook", emailKey:"tim@apple.com", phoneKey: "706-555-3422"],
-            [nameKey: "Phil Schiller", emailKey:"phil@apple.com", phoneKey: "702-656-1234"]
+            [nameKey: "Joshua Howland", emailKey:joshEmail, phoneKey: "801-450-3213"],
+            [nameKey: "Caleb Hicks", emailKey:calebEmail, phoneKey: "801-669-4320"],
+            [nameKey: "Tim Shadel", emailKey:timEmail, phoneKey: "801-349-8586"],
+            [nameKey: "Ben Norris", emailKey:benEmail, phoneKey: "801-8604592"],
+            [nameKey: "Ashley Bentley", emailKey:ashleyEmail, phoneKey: "801-792-2809"],
+            [nameKey: "Emma Jayne", emailKey:emmaEmail, phoneKey: "801-262-3314"],
+            [nameKey: "Eliza Caroline", emailKey:elizaEmail, phoneKey: "801-971-7333"],
+            [nameKey: "Becca Cotton", emailKey:beccaEmail, phoneKey: "801-809-4343"],
+            [nameKey: "Tim Cook", emailKey:timCookEmail, phoneKey: "706-555-3422"],
+            [nameKey: "Phil Schiller", emailKey:philEmail, phoneKey: "702-656-1234"]
         ]
         
         for userDictionary in arrayProfiles {
@@ -57,21 +68,21 @@ extension Stack {
         // Should show list of friends in friends table view
         
         let friends = [
-            ["josh@devmtn.com": "caleb@gmail.com"],
-            ["josh@devmtn.com": "ashley@tannerlabs.com"],
-            ["josh@devmtn.com": "emma@baymax.com"],
-            ["josh@devmtn.com": "eliza@princess.com"],
-            ["caleb@gmail.com": "ben@yahoo.com"],
-            ["caleb@gmail.com": "becca@skirts.com"],
-            ["caleb@gmail.com": "phil@apple.com"],
-            ["tim@me.com": "tim@apple.com"],
-            ["tim@me.com": "phil@apple.com"],
-            ["tim@me.com": "emma@baymax.com"],
-            ["ben@yahoo.com": "phil@apple.com"],
-            ["ashley@tannerlabs.com": "emma@baymax.com"],
-            ["ashley@tannerlabs.com": "eliza@princess.com"],
-            ["ashley@tannerlabs.com": "becca@skirts.com"],
-            ["becca@skirts.com": "tim@apple.com"]
+            [calebEmail: joshEmail],
+            [calebEmail: benEmail],
+            [calebEmail: beccaEmail],
+            [calebEmail: philEmail],
+            [joshEmail: ashleyEmail],
+            [joshEmail: emmaEmail],
+            [joshEmail: elizaEmail],
+            [timEmail: timCookEmail],
+            [timEmail: philEmail],
+            [timEmail: emmaEmail],
+            [benEmail: philEmail],
+            [ashleyEmail: emmaEmail],
+            [ashleyEmail: elizaEmail],
+            [ashleyEmail: beccaEmail],
+            [beccaEmail: timCookEmail]
         ]
         
         for friendshipDictionary: Dictionary in friends {
@@ -98,8 +109,8 @@ extension Stack {
         // Siging up with that one invite should auto add them as a friend
         
         let invites = [
-            ["josh@devmtn.com": "eddy@apple.com"],
-            ["josh@devmtn.com": "aidyn@michaelangelo.com"]
+            [joshEmail: "eddy@apple.com"],
+            [joshEmail: "aidyn@michaelangelo.com"]
         ]
         
         for inviteDictionary: Dictionary in invites {
