@@ -16,7 +16,8 @@ enum HealthPointType: NSNumber {
 }
 
 
-@objc public class HealthPoint: NSManagedObject {
+@objc(HealthPoint)
+public class HealthPoint: NSManagedObject {
 
     public static let entityName = "HealthPoint"
 

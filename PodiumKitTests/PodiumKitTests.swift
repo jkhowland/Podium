@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import PodiumKit
 
 class PodiumKitTests: XCTestCase {
     
@@ -26,7 +27,8 @@ class PodiumKitTests: XCTestCase {
     
     func testProfileCount() {
         let profileCount = ProfileController.sharedController.allProfiles()
-        XCTAssert(profileCount.count == 10)
+        print(profileCount?[0].email)
+        XCTAssert(profileCount!.count == 10)
     }
     
     func testExample() {

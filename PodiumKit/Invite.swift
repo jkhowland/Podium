@@ -9,7 +9,8 @@
 import Foundation
 import CoreData
 
-@objc public class Invite: NSManagedObject {
+@objc(Invite)
+public class Invite: NSManagedObject {
 
     public static let entityName = "Invite"
 

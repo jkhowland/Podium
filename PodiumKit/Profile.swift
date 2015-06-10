@@ -9,18 +9,16 @@
 import Foundation
 import CoreData
 
-@objc public class Profile: NSManagedObject {
+@objc(Profile)
+public class Profile: NSManagedObject {
+
     public static let entityName = "Profile"
 
-}
+    @NSManaged public var phone: String?
+    @NSManaged public var email: String?
+    @NSManaged public var identifier: NSNumber?
+    @NSManaged public var name: String?
+    @NSManaged public var friend: NSSet?
+    @NSManaged public var userRecordName: String?
 
-
-extension Profile {
-
-    @NSManaged var phone: String?
-    @NSManaged var email: String?
-    @NSManaged var identifier: NSNumber?
-    @NSManaged var name: String?
-    @NSManaged var friend: NSSet?
-    
 }

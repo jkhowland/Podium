@@ -11,20 +11,20 @@ import CoreData
 public class ProfileController: NSObject {
     public static let sharedController = ProfileController()
         
-    public func addUser(name: String, email: String, phone: String) {
+    public func addUser(name: String, email: String, phone: String) -> Profile {
 
         let context = Stack.defaultStack.mainContext
         
-        let object = NSEntityDescription.insertNewObjectForEntityForName(Profile.entityName, inManagedObjectContext: context!)
-        var profile = object as? Profile
-        
-        profile!.name = name
-        profile!.email = email
-        profile!.phone = phone
-        profile!.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
+        let profile = NSEntityDescription.insertNewObjectForEntityForName(Profile.entityName, inManagedObjectContext: context!) as! Profile
+
+        profile.name = name
+        profile.email = email
+        profile.phone = phone
+        profile.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
         
         Stack.defaultStack.save()
-        
+
+        return profile
     }
 
     public func findProfileUsingIdentifier(identifier: Int) -> Profile? {
@@ -84,21 +84,16 @@ public class ProfileController: NSObject {
         Stack.defaultStack.save()
     }
     
-    public func allProfiles() -> Array<AnyObject> {
+    public func allProfiles() -> [Profile]? {
         
         let request = NSFetchRequest(entityName: Profile.entityName)
         
-        var error: NSError? = nil
-        var users: [AnyObject]?
         do {
-            users = try Stack.defaultStack.mainContext?.executeFetchRequest(request)
-        } catch let error1 as NSError {
-            error = error1
+            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as! [Profile]
+        } catch let error as NSError {
             print(error)
-            users = nil
+            return nil
         }
-        
-        return users!
     }
     
 

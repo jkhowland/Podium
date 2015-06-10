@@ -9,7 +9,8 @@
 import Foundation
 import CoreData
 
-@objc public class Friend: NSManagedObject {
+@objc(Friend)
+public class Friend: NSManagedObject {
     public static let entityName = "Friend"
 
 }

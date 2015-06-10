@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PodiumKit
 
 private let nameKey = "name"
 private let emailKey = "email"
@@ -70,9 +71,9 @@ extension Stack {
             let fromProfile: Profile? = ProfileController.sharedController.findProfileUsingEmail(fromFriend)
             let toProfile: Profile? = ProfileController.sharedController.findProfileUsingEmail(toFriend)
             
-            if fromProfile != nil && toProfile != nil {
+            if let fromProfile = fromProfile, let toProfile = toProfile {
             
-                let friend = FriendController.sharedController.requestFriends((fromProfile!.identifier?.integerValue)!, toProfileIdentifier: (toProfile!.identifier?.integerValue)!)
+                let friend = FriendController.sharedController.requestFriends((fromProfile.identifier?.integerValue)!, toProfileIdentifier: (toProfile.identifier?.integerValue)!)
                 FriendController.sharedController.acceptFriend(friend)
             
             }

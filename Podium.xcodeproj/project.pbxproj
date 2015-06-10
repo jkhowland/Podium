@@ -9,35 +9,22 @@
 /* Begin PBXBuildFile section */
 		4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
-		4F4E70C91B279540009A1A24 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E70C81B279540009A1A24 /* StackFakeData.swift */; };
 		4F4E70CC1B27AD62009A1A24 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */; };
-		4F4E70CE1B27AFE6009A1A24 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E70C81B279540009A1A24 /* StackFakeData.swift */; };
 		4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3B1B2761CB0004013B /* Friend.swift */; };
-		4F63CA3F1B2761CB0004013B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3B1B2761CB0004013B /* Friend.swift */; };
 		4F63CA441B2761CC0004013B /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA411B2761CC0004013B /* Invite.swift */; };
-		4F63CA451B2761CC0004013B /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA411B2761CC0004013B /* Invite.swift */; };
 		4F63CA4A1B2761DF0004013B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA471B2761DF0004013B /* Profile.swift */; };
-		4F63CA4B1B2761DF0004013B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA471B2761DF0004013B /* Profile.swift */; };
 		4F63CA4E1B27644C0004013B /* InviteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA4D1B27644C0004013B /* InviteController.swift */; };
-		4F63CA4F1B27644C0004013B /* InviteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA4D1B27644C0004013B /* InviteController.swift */; };
 		4F63CA511B27645E0004013B /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA501B27645E0004013B /* FriendController.swift */; };
-		4F63CA521B27645E0004013B /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA501B27645E0004013B /* FriendController.swift */; };
 		4F63CA541B27647B0004013B /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA531B27647B0004013B /* Notes.swift */; };
-		4F63CA551B27647B0004013B /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA531B27647B0004013B /* Notes.swift */; };
 		4F8B4B041B274A550029493F /* SyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B011B274A550029493F /* SyncController.swift */; };
 		4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B021B274A550029493F /* AuthenticationController.swift */; };
 		4F8B4B061B274A550029493F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B031B274A550029493F /* ProfileController.swift */; };
-		4F8B4B071B274C120029493F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B031B274A550029493F /* ProfileController.swift */; };
-		4F8B4B081B274C140029493F /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B021B274A550029493F /* AuthenticationController.swift */; };
-		4F8B4B091B274C160029493F /* SyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B011B274A550029493F /* SyncController.swift */; };
 		4F8E9D561B27362F00446CC3 /* PodiumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; };
 		4F8E9D5F1B27362F00446CC3 /* PodiumKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D5E1B27362F00446CC3 /* PodiumKitTests.swift */; };
 		4F8E9D621B27362F00446CC3 /* PodiumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; };
 		4F8E9D631B27362F00446CC3 /* PodiumKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F8E9D711B27365000446CC3 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6D1B27365000446CC3 /* Stack.swift */; };
-		4F8E9D721B27365000446CC3 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6D1B27365000446CC3 /* Stack.swift */; };
 		4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */; };
-		4F8E9D741B27365000446CC3 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */; };
 		4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65161B26A96700E572FE /* AppDelegate.swift */; };
 		4FEA65191B26A96700E572FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65181B26A96700E572FE /* ViewController.swift */; };
 		4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651A1B26A96700E572FE /* Main.storyboard */; };
@@ -45,6 +32,7 @@
 		4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */; };
 		4FEA652C1B26A96700E572FE /* PodiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA652B1B26A96700E572FE /* PodiumTests.swift */; };
 		4FEA65371B26A96700E572FE /* PodiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65361B26A96700E572FE /* PodiumUITests.swift */; };
+		B01932061B28732E0037EA93 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01932051B28732E0037EA93 /* StackFakeData.swift */; };
 		E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A332B1B27836000E8B350 /* HealthPoint.swift */; };
 		E70A33311B27840300E8B350 /* HealthPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A33301B27840300E8B350 /* HealthPointController.swift */; };
 /* End PBXBuildFile section */
@@ -103,7 +91,6 @@
 
 /* Begin PBXFileReference section */
 		4F2099E51B276AD9008FBF4C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		4F4E70C81B279540009A1A24 /* StackFakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackFakeData.swift; path = ../PodiumKit/StackFakeData.swift; sourceTree = "<group>"; };
 		4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4F63CA3B1B2761CB0004013B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		4F63CA411B2761CC0004013B /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
@@ -135,6 +122,7 @@
 		4FEA65321B26A96700E572FE /* PodiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEA65361B26A96700E572FE /* PodiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumUITests.swift; sourceTree = "<group>"; };
 		4FEA65381B26A96700E572FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B01932051B28732E0037EA93 /* StackFakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackFakeData.swift; sourceTree = "<group>"; };
 		E70A332B1B27836000E8B350 /* HealthPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPoint.swift; sourceTree = "<group>"; };
 		E70A33301B27840300E8B350 /* HealthPointController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPointController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,8 +229,8 @@
 		4F8E9D5B1B27362F00446CC3 /* PodiumKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				B01932051B28732E0037EA93 /* StackFakeData.swift */,
 				4F8E9D5E1B27362F00446CC3 /* PodiumKitTests.swift */,
-				4F4E70C81B279540009A1A24 /* StackFakeData.swift */,
 				4F8E9D5C1B27362F00446CC3 /* Supporting Files */,
 			);
 			path = PodiumKitTests;
@@ -532,7 +520,6 @@
 				4F63CA511B27645E0004013B /* FriendController.swift in Sources */,
 				4F8B4B041B274A550029493F /* SyncController.swift in Sources */,
 				4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */,
-				4F4E70C91B279540009A1A24 /* StackFakeData.swift in Sources */,
 				4F63CA441B2761CC0004013B /* Invite.swift in Sources */,
 				4F8E9D711B27365000446CC3 /* Stack.swift in Sources */,
 				4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */,
@@ -546,18 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F8E9D721B27365000446CC3 /* Stack.swift in Sources */,
-				4F4E70CE1B27AFE6009A1A24 /* StackFakeData.swift in Sources */,
-				4F63CA521B27645E0004013B /* FriendController.swift in Sources */,
-				4F8B4B071B274C120029493F /* ProfileController.swift in Sources */,
-				4F63CA451B2761CC0004013B /* Invite.swift in Sources */,
-				4F8B4B081B274C140029493F /* AuthenticationController.swift in Sources */,
-				4F8E9D741B27365000446CC3 /* Model.xcdatamodel in Sources */,
-				4F63CA3F1B2761CB0004013B /* Friend.swift in Sources */,
-				4F63CA4B1B2761DF0004013B /* Profile.swift in Sources */,
-				4F63CA551B27647B0004013B /* Notes.swift in Sources */,
-				4F63CA4F1B27644C0004013B /* InviteController.swift in Sources */,
-				4F8B4B091B274C160029493F /* SyncController.swift in Sources */,
+				B01932061B28732E0037EA93 /* StackFakeData.swift in Sources */,
 				4F8E9D5F1B27362F00446CC3 /* PodiumKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

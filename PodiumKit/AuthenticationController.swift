@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CloudKit
 
 public class AuthenticationController: NSObject {
     public static let sharedController = AuthenticationController()
@@ -20,8 +21,14 @@ public class AuthenticationController: NSObject {
         
     }
     
-    public func signUp() {
-    
+    public func signUp(name: String, email: String, phone: String) {
+        let profile = ProfileController.sharedController.addUser(name, email: email, phone: phone)
+        CKContainer.defaultContainer().fetchUserRecordIDWithCompletionHandler { (recordID, error) -> Void in
+            guard let recordID = recordID else { print("Error \(error)"); return }
+
+            print("Record: \(recordID.recordName)")
+            profile.userRecordName = recordID.recordName
+        }
     }
     
 }
