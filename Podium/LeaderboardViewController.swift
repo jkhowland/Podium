@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import PodiumKit
+
+enum SortOption {
+    case BySteps
+    case ByCalories
+    case ByWater
+}
 
 class LeaderboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -24,12 +31,18 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let friend = FriendController.sharedController.sortFriends(SortFriends.BySteps)
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(UserStatusCellIdentifier)
+        
         return cell!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        return FriendController.sharedController.sortFriends(SortFriends.Alphabetically).count
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

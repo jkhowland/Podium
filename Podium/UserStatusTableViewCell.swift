@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PodiumKit
 
 @IBDesignable
 
@@ -29,6 +30,10 @@ class UserStatusTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateWithFriend(friend: Friend) {
+        self.nameLabel.text = friend.
     }
 
 }
