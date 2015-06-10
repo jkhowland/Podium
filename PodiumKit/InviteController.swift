@@ -10,8 +10,6 @@ import UIKit
 import CoreData
 import MessageUI
 
-let InviteEntityName = "Invite"
-
 public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
     public static let sharedController = InviteController()
     
@@ -41,13 +39,13 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
      
         // Creates invite object
         
-        let invite: Invite = NSEntityDescription.insertNewObjectForEntityForName(InviteEntityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Invite
+        let invite: Invite = NSEntityDescription.insertNewObjectForEntityForName(Invite.entityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Invite
 
         let profile = ProfileController.sharedController.findProfileUsingEmail(fromEmail)
         
         invite.fromUserId = profile?.identifier?.integerValue
         invite.toUserEmail = email
-//        invite.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
+        invite.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
         
         return invite
 
@@ -65,7 +63,7 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
     // Needs to be refactored into a superclass
     lazy var maxIdentifier: NSNumber? = {
         
-        var fetchRequest = NSFetchRequest(entityName: InviteEntityName)
+        var fetchRequest = NSFetchRequest(entityName: Invite.entityName)
         fetchRequest.fetchLimit = 1;
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
         

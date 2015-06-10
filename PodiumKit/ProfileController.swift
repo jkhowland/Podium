@@ -16,13 +16,12 @@ public class ProfileController: NSObject {
         let context = Stack.defaultStack.mainContext
         
         let object = NSEntityDescription.insertNewObjectForEntityForName(Profile.entityName, inManagedObjectContext: context!)
-        
         var profile = object as? Profile
         
-//        profile!.name = name
-//        profile!.email = email
-//        profile!.phone = phone
-//        profile!.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
+        profile!.name = name
+        profile!.email = email
+        profile!.phone = phone
+        profile!.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
         
         Stack.defaultStack.save()
         

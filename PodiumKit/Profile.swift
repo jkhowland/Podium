@@ -11,7 +11,6 @@ import CoreData
 
 @objc(Profile)
 public class Profile: NSManagedObject {
-
     public static let entityName = "Profile"
 
 }

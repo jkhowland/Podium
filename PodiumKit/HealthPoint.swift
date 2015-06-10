@@ -10,7 +10,8 @@ import Foundation
 import CoreData
 
 @objc(HealthPoint)
-class HealthPoint: NSManagedObject {
+public class HealthPoint: NSManagedObject {
+    public static let entityName = "HealthPoint"
 
 // Insert code here to add functionality to your managed object subclass
 

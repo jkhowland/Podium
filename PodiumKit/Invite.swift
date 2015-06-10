@@ -11,7 +11,6 @@ import CoreData
 
 @objc(Invite)
 public class Invite: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
+    public static let entityName = "Invite"
 
 }

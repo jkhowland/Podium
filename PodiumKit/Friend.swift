@@ -11,7 +11,6 @@ import CoreData
 
 @objc(Friend)
 public class Friend: NSManagedObject {
-
-    public static let entityName = "User"
+    public static let entityName = "Friend"
 
 }
