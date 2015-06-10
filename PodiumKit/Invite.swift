@@ -9,8 +9,17 @@
 import Foundation
 import CoreData
 
-@objc(Invite)
-public class Invite: NSManagedObject {
+@objc public class Invite: NSManagedObject {
+
     public static let entityName = "Invite"
 
+}
+
+
+extension Invite {
+
+    @NSManaged var fromUserId: NSNumber?
+    @NSManaged var toUserEmail: String?
+    @NSManaged var identifier: NSNumber?
+    
 }

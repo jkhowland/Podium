@@ -8,9 +8,9 @@
 
 import Foundation
 
-let nameKey = "name"
-let emailKey = "email"
-let phoneKey = "phone"
+private let nameKey = "name"
+private let emailKey = "email"
+private let phoneKey = "phone"
 
 extension Stack {
 

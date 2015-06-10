@@ -9,10 +9,38 @@
 import Foundation
 import CoreData
 
-@objc(HealthPoint)
-public class HealthPoint: NSManagedObject {
+enum HealthPointType: NSNumber {
+    case Steps = 0
+    case Calories
+    case Water
+}
+
+
+@objc public class HealthPoint: NSManagedObject {
+
     public static let entityName = "HealthPoint"
 
-// Insert code here to add functionality to your managed object subclass
+}
 
+
+extension HealthPoint {
+
+    @NSManaged var date: NSDate?
+    @NSManaged var amount: NSNumber?
+    @NSManaged var type: NSNumber?
+    @NSManaged var user: Profile?
+    
+}
+
+
+extension HealthPoint {
+    var pointType: HealthPointType? {
+        get {
+            guard let _type = self.type else { return nil }
+            return HealthPointType(rawValue: _type)
+        }
+        set {
+            self.type = self.pointType?.rawValue
+        }
+    }
 }

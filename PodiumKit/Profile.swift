@@ -9,8 +9,18 @@
 import Foundation
 import CoreData
 
-@objc(Profile)
-public class Profile: NSManagedObject {
+@objc public class Profile: NSManagedObject {
     public static let entityName = "Profile"
 
+}
+
+
+extension Profile {
+
+    @NSManaged var phone: String?
+    @NSManaged var email: String?
+    @NSManaged var identifier: NSNumber?
+    @NSManaged var name: String?
+    @NSManaged var friend: NSSet?
+    
 }
