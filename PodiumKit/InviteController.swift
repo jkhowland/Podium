@@ -39,6 +39,8 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
      
         // Creates invite object
         
+        print("create invite")
+        
         let invite: Invite = NSEntityDescription.insertNewObjectForEntityForName(Invite.entityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Invite
 
         let profile = ProfileController.sharedController.findProfileUsingEmail(fromEmail)
