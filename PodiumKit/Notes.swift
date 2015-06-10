@@ -1,6 +1,6 @@
 /*
 
-App functions on Core Data and Fetched Result Controllers
+Each controller should be able to load the data from Core Data on the fly into memory
 
 Friend list is downloaded and run out of a FriendController
 

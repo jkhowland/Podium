@@ -16,11 +16,11 @@
 		4F63CA4E1B27644C0004013B /* InviteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA4D1B27644C0004013B /* InviteController.swift */; };
 		4F63CA511B27645E0004013B /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA501B27645E0004013B /* FriendController.swift */; };
 		4F63CA541B27647B0004013B /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA531B27647B0004013B /* Notes.swift */; };
+		4F6BE3471B287F6500F5050B /* ProfileTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BE3461B287F6500F5050B /* ProfileTestCase.swift */; };
 		4F8B4B041B274A550029493F /* SyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B011B274A550029493F /* SyncController.swift */; };
 		4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B021B274A550029493F /* AuthenticationController.swift */; };
 		4F8B4B061B274A550029493F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B4B031B274A550029493F /* ProfileController.swift */; };
 		4F8E9D561B27362F00446CC3 /* PodiumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; };
-		4F8E9D5F1B27362F00446CC3 /* PodiumKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D5E1B27362F00446CC3 /* PodiumKitTests.swift */; };
 		4F8E9D621B27362F00446CC3 /* PodiumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; };
 		4F8E9D631B27362F00446CC3 /* PodiumKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F8E9D711B27365000446CC3 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6D1B27365000446CC3 /* Stack.swift */; };
@@ -98,6 +98,7 @@
 		4F63CA4D1B27644C0004013B /* InviteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteController.swift; sourceTree = "<group>"; };
 		4F63CA501B27645E0004013B /* FriendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
 		4F63CA531B27647B0004013B /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		4F6BE3461B287F6500F5050B /* ProfileTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTestCase.swift; sourceTree = "<group>"; };
 		4F8B4B011B274A550029493F /* SyncController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncController.swift; sourceTree = "<group>"; };
 		4F8B4B021B274A550029493F /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		4F8B4B031B274A550029493F /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		4F8E9D4E1B27362F00446CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F8E9D551B27362F00446CC3 /* PodiumKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodiumKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F8E9D5D1B27362F00446CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F8E9D5E1B27362F00446CC3 /* PodiumKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumKitTests.swift; sourceTree = "<group>"; };
 		4F8E9D6D1B27365000446CC3 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4FEA65131B26A96700E572FE /* Podium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podium.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				B01932051B28732E0037EA93 /* StackFakeData.swift */,
-				4F8E9D5E1B27362F00446CC3 /* PodiumKitTests.swift */,
+				4F6BE3461B287F6500F5050B /* ProfileTestCase.swift */,
 				4F8E9D5C1B27362F00446CC3 /* Supporting Files */,
 			);
 			path = PodiumKitTests;
@@ -534,7 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B01932061B28732E0037EA93 /* StackFakeData.swift in Sources */,
-				4F8E9D5F1B27362F00446CC3 /* PodiumKitTests.swift in Sources */,
+				4F6BE3471B287F6500F5050B /* ProfileTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

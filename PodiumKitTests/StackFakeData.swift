@@ -93,6 +93,14 @@ extension Stack {
             ["josh@devmtn.com": "aidyn@michaelangelo.com"]
         ]
         
+        for inviteDictionary: Dictionary in invites {
+        
+            let fromFriend: String = inviteDictionary.keys.array[0]
+            let toFriend: String = inviteDictionary[fromFriend]!
+
+            InviteController.sharedController.inviteFromEmail(fromFriend, email: toFriend)
+            
+        }
         
     }
     
