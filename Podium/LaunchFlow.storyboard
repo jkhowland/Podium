@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tcC-N3-goG">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="kLI-E7-cTw">
+            <objects>
+                <viewController id="tcC-N3-goG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M13-EX-fuz"/>
+                        <viewControllerLayoutGuide type="bottom" id="caB-2N-7zW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N14-Dr-zQZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j94-ZI-uAE">
+                                <rect key="frame" x="200" y="40" width="200" height="200"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="j94-ZI-uAE" secondAttribute="height" multiplier="1:1" id="5Ac-d0-QJu"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="wWe-Ne-IQ2"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Profile Image"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ew-pD-PZ4">
+                                <rect key="frame" x="100" y="260" width="400" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2BU-r4-1Qw">
+                                <rect key="frame" x="100" y="310" width="400" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-2a-uFE">
+                                <rect key="frame" x="468" y="370" width="32" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Next"/>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2BU-r4-1Qw" firstAttribute="top" secondItem="2Ew-pD-PZ4" secondAttribute="bottom" constant="20" id="2Vk-Cz-Cej"/>
+                            <constraint firstItem="2Ew-pD-PZ4" firstAttribute="top" secondItem="j94-ZI-uAE" secondAttribute="bottom" constant="20" id="3W6-c5-GnP"/>
+                            <constraint firstItem="j94-ZI-uAE" firstAttribute="top" secondItem="M13-EX-fuz" secondAttribute="bottom" constant="20" id="5Jq-iA-euX"/>
+                            <constraint firstItem="2Ew-pD-PZ4" firstAttribute="centerX" secondItem="j94-ZI-uAE" secondAttribute="centerX" id="A9f-XP-7gT"/>
+                            <constraint firstItem="Aug-2a-uFE" firstAttribute="top" secondItem="2BU-r4-1Qw" secondAttribute="bottom" constant="30" id="Ebp-Qo-78K"/>
+                            <constraint firstItem="2Ew-pD-PZ4" firstAttribute="width" secondItem="j94-ZI-uAE" secondAttribute="width" multiplier="2" id="HmY-Ol-LPV"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="2Ew-pD-PZ4" secondAttribute="trailing" id="RYi-XS-bh5"/>
+                            <constraint firstItem="2Ew-pD-PZ4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N14-Dr-zQZ" secondAttribute="leadingMargin" id="Td7-FR-8l4"/>
+                            <constraint firstItem="Aug-2a-uFE" firstAttribute="trailing" secondItem="2BU-r4-1Qw" secondAttribute="trailing" id="URF-IE-9If"/>
+                            <constraint firstItem="2BU-r4-1Qw" firstAttribute="trailing" secondItem="2Ew-pD-PZ4" secondAttribute="trailing" id="XrF-AB-asI"/>
+                            <constraint firstItem="2BU-r4-1Qw" firstAttribute="leading" secondItem="2Ew-pD-PZ4" secondAttribute="leading" id="Z0K-EF-Xge"/>
+                            <constraint firstItem="j94-ZI-uAE" firstAttribute="width" secondItem="N14-Dr-zQZ" secondAttribute="width" multiplier="0.5" priority="750" id="bVM-DP-k2l"/>
+                            <constraint firstItem="j94-ZI-uAE" firstAttribute="centerX" secondItem="N14-Dr-zQZ" secondAttribute="centerX" id="kED-fZ-krT"/>
+                            <constraint firstItem="caB-2N-7zW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Aug-2a-uFE" secondAttribute="bottom" constant="20" id="skI-Cx-rey"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0FT-bm-ApS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="323" y="413"/>
+        </scene>
+    </scenes>
+</document>
