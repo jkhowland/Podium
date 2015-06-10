@@ -28,5 +28,25 @@ class InviteTestCase: XCTestCase {
         let receivedInvites = InviteController.sharedController.receivedInvites(eddyEmail)
         XCTAssert(receivedInvites.count == 1)
     }
+    
+    func testInviteAccept() {
+        
+        AuthenticationController.sharedController.signUp("Eddy Cue", email: eddyEmail, phone: "801-450-3213")
+
+        let receivedInvites = InviteController.sharedController.receivedInvites(eddyEmail)
+
+        XCTAssert(receivedInvites.count == 0)
+        XCTAssert(self.testFriendCount(eddyEmail, count: 1))
+    
+    }
+    
+    func testFriendCount(email: String, count: Int) -> Bool {
+        
+        FriendController.sharedController.updateFriends()
+        let friends = FriendController.sharedController.friends
+        return(friends.count == count)
+        
+    }
+
 
 }

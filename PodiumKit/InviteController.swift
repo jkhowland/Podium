@@ -38,7 +38,7 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
     public func inviteFromEmail(fromEmail: String, email: String) -> Invite {
      
         // Creates invite object
-                
+        
         let invite: Invite = NSEntityDescription.insertNewObjectForEntityForName(Invite.entityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Invite
 
         let profile = ProfileController.sharedController.findProfileUsingEmail(fromEmail)
@@ -74,11 +74,16 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
     
         let invites = self.receivedInvites(email)
         
-        for invite: Invite in invites {
+        for index in 0 ..< invites.count {
+            let invite = invites[index]
             let friend = FriendController.sharedController.requestFriend((invite.fromUserId?.integerValue)!)
             FriendController.sharedController.acceptFriend(friend)
+            
+            Stack.defaultStack.mainContext?.deleteObject(invite)
         }
         
+        Stack.defaultStack.save()
+
     }
     
     public func allInvites() -> [Invite]? {

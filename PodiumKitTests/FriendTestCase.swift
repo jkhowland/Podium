@@ -53,7 +53,6 @@ class FriendTestCase: XCTestCase {
         
         FriendController.sharedController.updateFriends()
         let friends = FriendController.sharedController.friends
-        print("\(email) has \(friends.count) friends")
         return(friends.count == count)
 
     }
@@ -64,7 +63,6 @@ class FriendTestCase: XCTestCase {
         
         FriendController.sharedController.updateFriends()
         let friends = FriendController.sharedController.friendProfiles()
-        print("\(email) has \(friends.count) friend profiles")
         return(friends.count == count)
     }
     
