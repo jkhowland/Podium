@@ -21,14 +21,40 @@ public enum SortFriends {
 public class FriendController: NSObject {
     public static let sharedController = FriendController()
 
-    var friends: Array<Profile> = []
+    public var friends: [Profile] = []
     
-    public func sortFriends(sort: SortFriends) -> Array<Profile> {
+    public func sortFriends(sort: SortFriends) -> [Profile] {
         return self.friends
     }
     
+    public func updateFriendsCompletionHandler(completionHandler: (complete: Bool) -> Void) {
+    
+        let request = NSFetchRequest(entityName: Friend.entityName)
+        
+        var friendObjects: [Friend] = []
+        
+        do {
+            friendObjects = try Stack.defaultStack.mainContext?.executeFetchRequest(request) as! [Friend]
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        var friends: [Profile] = []
+        for friendObject in friendObjects {
+            if let profile = friendObject.profile {
+                friends.append(profile)
+            } else {
+                print("Failure to capture friend")
+            }
+        }
+        
+        self.friends = friends
+        completionHandler(complete: true)
+        
+    }
+    
     // Should probably return array of dictionaries [displayName, email]
-    public func findPotentialFriends() -> Array<AnyObject> {
+    public func findPotentialFriends() -> [AnyObject] {
 
         // Potentially add source as parameter
         // Returns list of users with valid email addresses to invite
@@ -43,6 +69,14 @@ public class FriendController: NSObject {
         
         let fromProfile = ProfileController.sharedController.findProfileUsingIdentifier(fromProfileIdentifier)
         let toProfile = ProfileController.sharedController.findProfileUsingIdentifier(toProfileIdentifier)
+        
+        if fromProfile == nil {
+            print("From profile nil");
+        }
+        
+        if toProfile == nil {
+            print("Profile nil");
+        }
         
         friend.currentProfile = fromProfile
         friend.profile = toProfile
@@ -74,6 +108,27 @@ public class FriendController: NSObject {
         newFriend.profile = friend.currentProfile
         newFriend.accepted = NSNumber(bool: true)
         
+        if newFriend.currentProfile == nil {
+            print("From profile nil");
+        }
+        
+        if newFriend.profile == nil {
+            print("Profile nil");
+        }
+    
     }
+
+    public func allFriends() -> [Friend]? {
+        
+        let request = NSFetchRequest(entityName: Friend.entityName)
+        
+        do {
+            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as? [Friend]
+        } catch let error as NSError {
+            print(error)
+            return nil
+        }
+    }
+
     
 }

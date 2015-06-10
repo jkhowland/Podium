@@ -22,6 +22,13 @@ extension Stack {
             }
             Stack.defaultStack.save()
         }
+        if let friends = FriendController.sharedController.allFriends() {
+            for friend in friends {
+                Stack.defaultStack.mainContext?.deleteObject(friend)
+            }
+            Stack.defaultStack.save()
+        }
+
     }
     
     public func loadFakeData() { // For testing
@@ -50,10 +57,10 @@ extension Stack {
         // Should show list of friends in friends table view
         
         let friends = [
-            ["josh@devmtn": "caleb@gmail.com"],
-            ["josh@devmtn": "ashley@tannerlabs.com"],
-            ["josh@devmtn": "emma@baymax.com"],
-            ["josh@devmtn": "eliza@princess.com"],
+            ["josh@devmtn.com": "caleb@gmail.com"],
+            ["josh@devmtn.com": "ashley@tannerlabs.com"],
+            ["josh@devmtn.com": "emma@baymax.com"],
+            ["josh@devmtn.com": "eliza@princess.com"],
             ["caleb@gmail.com": "ben@yahoo.com"],
             ["caleb@gmail.com": "becca@skirts.com"],
             ["caleb@gmail.com": "phil@apple.com"],
@@ -80,6 +87,8 @@ extension Stack {
                 let friend = FriendController.sharedController.requestFriends((fromProfile.identifier?.integerValue)!, toProfileIdentifier: (toProfile.identifier?.integerValue)!)
                 FriendController.sharedController.acceptFriend(friend)
             
+            } else {
+                print("Didn't create friend")
             }
             
             

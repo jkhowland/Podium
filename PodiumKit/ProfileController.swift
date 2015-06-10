@@ -20,7 +20,7 @@ public class ProfileController: NSObject {
         profile.name = name
         profile.email = email
         profile.phone = phone
-        profile.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
+        profile.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
         
         Stack.defaultStack.save()
 
@@ -98,18 +98,18 @@ public class ProfileController: NSObject {
     
 
     // Needs to be refactored into a superclass
-    lazy var maxIdentifier: NSNumber? = {
+    func maxIdentifier() -> NSNumber {
         
-        var fetchRequest = NSFetchRequest(entityName: Profile.entityName)
+        let fetchRequest = NSFetchRequest(entityName: Profile.entityName)
         fetchRequest.fetchLimit = 1;
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
         
         do {
             
             let array = try Stack.defaultStack.mainContext?.executeFetchRequest(fetchRequest)
-            if array?.count == 0 {
-                var profile: Profile = array?.first as! Profile
-                return profile.identifier
+            if array?.count > 0 {
+                let profile: Profile = array?.first as! Profile
+                return profile.identifier!
             } else {
                 return NSNumber(integer: 0)
             }
@@ -118,7 +118,7 @@ public class ProfileController: NSObject {
             return NSNumber(integer: 0)
         }
         
-        }()
+    }
 
 }
 

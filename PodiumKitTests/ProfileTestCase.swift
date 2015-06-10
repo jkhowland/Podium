@@ -27,7 +27,6 @@ class ProfileTestCase: XCTestCase {
 
     func testProfileCount() {
         let profileCount = ProfileController.sharedController.allProfiles()
-        print(profileCount?[0].email)
         XCTAssert(profileCount!.count == 10)
     }
 

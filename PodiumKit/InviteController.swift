@@ -45,7 +45,7 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
         
         invite.fromUserId = profile?.identifier?.integerValue
         invite.toUserEmail = email
-        invite.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
+        invite.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
         
         return invite
 
@@ -61,18 +61,18 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
     }
 
     // Needs to be refactored into a superclass
-    lazy var maxIdentifier: NSNumber? = {
+    func maxIdentifier() -> NSNumber {
         
-        var fetchRequest = NSFetchRequest(entityName: Invite.entityName)
+        let fetchRequest = NSFetchRequest(entityName: Profile.entityName)
         fetchRequest.fetchLimit = 1;
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
         
         do {
             
             let array = try Stack.defaultStack.mainContext?.executeFetchRequest(fetchRequest)
-            if array?.count == 0 {
-                var profile: Profile = array?.first as! Profile
-                return profile.identifier
+            if array?.count > 0 {
+                let profile: Profile = array?.first as! Profile
+                return profile.identifier!
             } else {
                 return NSNumber(integer: 0)
             }
@@ -81,6 +81,6 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
             return NSNumber(integer: 0)
         }
         
-        }()
+    }
 
 }
