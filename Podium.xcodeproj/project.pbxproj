@@ -33,6 +33,7 @@
 		4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */; };
 		4FEA652C1B26A96700E572FE /* PodiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA652B1B26A96700E572FE /* PodiumTests.swift */; };
 		4FEA65371B26A96700E572FE /* PodiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65361B26A96700E572FE /* PodiumUITests.swift */; };
+		4FFA81E71B28AF9A00E4CFBE /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01932051B28732E0037EA93 /* StackFakeData.swift */; };
 		B01932061B28732E0037EA93 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01932051B28732E0037EA93 /* StackFakeData.swift */; };
 		E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A332B1B27836000E8B350 /* HealthPoint.swift */; };
 		E70A33311B27840300E8B350 /* HealthPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A33301B27840300E8B350 /* HealthPointController.swift */; };
@@ -529,6 +530,7 @@
 				4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */,
 				4F63CA441B2761CC0004013B /* Invite.swift in Sources */,
 				4F8E9D711B27365000446CC3 /* Stack.swift in Sources */,
+				4FFA81E71B28AF9A00E4CFBE /* StackFakeData.swift in Sources */,
 				4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */,
 				E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */,
 				4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */,
