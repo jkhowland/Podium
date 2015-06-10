@@ -27,7 +27,7 @@ public class FriendController: NSObject {
         return self.friends
     }
     
-    public func updateFriendsCompletionHandler(completionHandler: (complete: Bool) -> Void) {
+    public func updateFriends() {
     
         if AuthenticationController.sharedController.currentProfile != nil {
             let request = NSFetchRequest(entityName: Friend.entityName)
@@ -43,10 +43,6 @@ public class FriendController: NSObject {
             }
 
             self.friends = friendObjects
-            
-            completionHandler(complete: true)
-        } else {
-            completionHandler(complete: false)
         }
         
     }
@@ -57,10 +53,6 @@ public class FriendController: NSObject {
         for friendObject in self.friends {
             if let profile = friendObject.profile {
                 friends.append(profile)
-            } else {
-                print("Failure to capture friend")
-                print("From " + (friendObject.currentProfile?.email)!)
-                print("Accepted " + (friendObject.accepted?.stringValue)!)
             }
         }
         
@@ -87,9 +79,14 @@ public class FriendController: NSObject {
         friend.currentProfile = fromProfile
         friend.profile = toProfile
         friend.accepted = NSNumber(bool: false)
+        friend.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
         
         // Send email/request to user
         
+        if (friend.currentProfile?.email == "ashley@tannerlabs.com") {
+            print("Ashley with \(friend.profile?.email) id \(friend.identifier)")
+        }
+
         Stack.defaultStack.save()
 
         return friend
@@ -115,6 +112,11 @@ public class FriendController: NSObject {
         newFriend.currentProfile = friend.profile
         newFriend.profile = friend.currentProfile
         newFriend.accepted = NSNumber(bool: true)
+        newFriend.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
+
+        if (newFriend.currentProfile?.email == "ashley@tannerlabs.com") {
+            print("Ashley with \(newFriend.profile?.email) id \(newFriend.identifier)")
+        }
         
         Stack.defaultStack.save()
         
@@ -132,5 +134,27 @@ public class FriendController: NSObject {
         }
     }
 
+    // Needs to be refactored into a superclass
+    func maxIdentifier() -> NSNumber {
+        
+        let fetchRequest = NSFetchRequest(entityName: Profile.entityName)
+        fetchRequest.fetchLimit = 1;
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
+        
+        do {
+            
+            let array = try Stack.defaultStack.mainContext?.executeFetchRequest(fetchRequest)
+            if array?.count > 0 {
+                let profile: Profile = array?.first as! Profile
+                return profile.identifier!
+            } else {
+                return NSNumber(integer: 0)
+            }
+            
+        } catch {
+            return NSNumber(integer: 0)
+        }
+        
+    }
     
 }

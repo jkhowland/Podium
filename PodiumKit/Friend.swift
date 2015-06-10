@@ -21,5 +21,6 @@ extension Friend {
     @NSManaged var currentProfile: Profile?
     @NSManaged var profile: Profile? // Friend to which current user requested
     @NSManaged var accepted: NSNumber? // Contains a boolean
+    @NSManaged var identifier: NSNumber?
     
 }

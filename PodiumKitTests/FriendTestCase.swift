@@ -30,56 +30,44 @@ class FriendTestCase: XCTestCase {
         XCTAssert(friendCount!.count == 30)
     }
 
-    func testFriendJoshCount() {
-        
-        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(joshEmail)!
-
-        FriendController.sharedController.updateFriendsCompletionHandler { (complete) -> Void in
-            let friends = FriendController.sharedController.friends
-            print("Josh has \(friends.count) friends")
-            XCTAssert(friends.count == 4)
-        }
-        
-    }
-
-    func testFriendProfileJoshCount() {
-        
-        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(joshEmail)!
-        
-        FriendController.sharedController.updateFriendsCompletionHandler { (complete) -> Void in
-            let friends = FriendController.sharedController.friendProfiles()
-            print("Josh has \(friends.count) friend profiles")
-            XCTAssert(friends.count == 4)
-        }
-        
-    }
-
-    
-    func testFriendBenCount() {
-        
-        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(benEmail)!
-        
-        FriendController.sharedController.updateFriendsCompletionHandler { (complete) -> Void in
-            let friends = FriendController.sharedController.friends
-            print("Ben has \(friends.count) friends")
-            XCTAssert(friends.count == 2)
-        }
-        
+    func testJoshFriends() {
+        XCTAssert(self.testFriendCount(joshEmail, count: 4))
     }
     
-    func testFriendProfileBenCount() {
-        
-        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(joshEmail)!
-        
-        FriendController.sharedController.updateFriendsCompletionHandler { (complete) -> Void in
-            let friends = FriendController.sharedController.friendProfiles()
-            print("Josh has \(friends.count) friend profiles")
-            XCTAssert(friends.count == 2)
-        }
-        
+    func testAshleyFriends() {
+        XCTAssert(self.testFriendCount(ashleyEmail, count: 4))
     }
 
+    func testBenFriendProfiles() {
+        XCTAssert(self.testFriendProfileCount(benEmail, count: 2))
+    }
+    
+    func testAshleyFriendProfiles() {
+        XCTAssert(self.testFriendProfileCount(ashleyEmail, count: 4))
+    }
+    
+    
+    func testFriendCount(email: String, count: Int) -> Bool {
+    
+        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(email)!
+        
+        FriendController.sharedController.updateFriends()
+        let friends = FriendController.sharedController.friends
+        print("\(email) has \(friends.count) friends")
+        return(friends.count == count)
 
+    }
+    
+    func testFriendProfileCount(email: String, count: Int) -> Bool {
+     
+        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(email)!
+        
+        FriendController.sharedController.updateFriends()
+        let friends = FriendController.sharedController.friendProfiles()
+        print("\(email) has \(friends.count) friend profiles")
+        return(friends.count == count)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {
