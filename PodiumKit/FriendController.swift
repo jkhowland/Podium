@@ -83,10 +83,6 @@ public class FriendController: NSObject {
         
         // Send email/request to user
         
-        if (friend.currentProfile?.email == "ashley@tannerlabs.com") {
-            print("Ashley with \(friend.profile?.email) id \(friend.identifier)")
-        }
-
         Stack.defaultStack.save()
 
         return friend
@@ -113,10 +109,6 @@ public class FriendController: NSObject {
         newFriend.profile = friend.currentProfile
         newFriend.accepted = NSNumber(bool: true)
         newFriend.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
-
-        if (newFriend.currentProfile?.email == "ashley@tannerlabs.com") {
-            print("Ashley with \(newFriend.profile?.email) id \(newFriend.identifier)")
-        }
         
         Stack.defaultStack.save()
         

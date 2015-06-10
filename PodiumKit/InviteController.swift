@@ -38,9 +38,7 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
     public func inviteFromEmail(fromEmail: String, email: String) -> Invite {
      
         // Creates invite object
-        
-        print("create invite")
-        
+                
         let invite: Invite = NSEntityDescription.insertNewObjectForEntityForName(Invite.entityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Invite
 
         let profile = ProfileController.sharedController.findProfileUsingEmail(fromEmail)
@@ -82,6 +80,19 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
         }
         
     }
+    
+    public func allInvites() -> [Invite]? {
+        
+        let request = NSFetchRequest(entityName: Invite.entityName)
+        
+        do {
+            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as? [Invite]
+        } catch let error as NSError {
+            print(error)
+            return nil
+        }
+    }
+
     
     // Needs to be refactored into a superclass
     // Needs to make unsynced identifiers negative

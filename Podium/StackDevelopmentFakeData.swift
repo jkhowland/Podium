@@ -29,12 +29,13 @@ public let eddyEmail = "eddy@apple.com"
 extension Stack {
     
     public func clearDevelopmentData() {
-        if let profiles = ProfileController.sharedController.allProfiles() {
-            for profile in profiles {
-                Stack.defaultStack.mainContext?.deleteObject(profile)
+        if let invites = InviteController.sharedController.allInvites() {
+            for invite in invites {
+                Stack.defaultStack.mainContext?.deleteObject(invite)
             }
             Stack.defaultStack.save()
         }
+        
         if let friends = FriendController.sharedController.allFriends() {
             for friend in friends {
                 Stack.defaultStack.mainContext?.deleteObject(friend)
@@ -42,6 +43,12 @@ extension Stack {
             Stack.defaultStack.save()
         }
         
+        if let profiles = ProfileController.sharedController.allProfiles() {
+            for profile in profiles {
+                Stack.defaultStack.mainContext?.deleteObject(profile)
+            }
+            Stack.defaultStack.save()
+        }
     }
     
     public func loadDevelopmentData() { // For testing
