@@ -25,6 +25,8 @@
 		4F8E9D631B27362F00446CC3 /* PodiumKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8E9D4B1B27362F00446CC3 /* PodiumKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F8E9D711B27365000446CC3 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6D1B27365000446CC3 /* Stack.swift */; };
 		4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */; };
+		4F96AE3E1B28D174002DEA71 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE3D1B28D174002DEA71 /* StackFakeData.swift */; };
+		4F96AE3F1B28D174002DEA71 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE3D1B28D174002DEA71 /* StackFakeData.swift */; };
 		4F9AF5801B289B6600635770 /* FriendTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9AF57F1B289B6600635770 /* FriendTestCase.swift */; };
 		4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65161B26A96700E572FE /* AppDelegate.swift */; };
 		4FEA65191B26A96700E572FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65181B26A96700E572FE /* ViewController.swift */; };
@@ -33,9 +35,7 @@
 		4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */; };
 		4FEA652C1B26A96700E572FE /* PodiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA652B1B26A96700E572FE /* PodiumTests.swift */; };
 		4FEA65371B26A96700E572FE /* PodiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65361B26A96700E572FE /* PodiumUITests.swift */; };
-		4FFA81E71B28AF9A00E4CFBE /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01932051B28732E0037EA93 /* StackFakeData.swift */; };
 		4FFA81E91B28BE8700E4CFBE /* InviteTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA81E81B28BE8700E4CFBE /* InviteTestCase.swift */; };
-		B01932061B28732E0037EA93 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01932051B28732E0037EA93 /* StackFakeData.swift */; };
 		E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A332B1B27836000E8B350 /* HealthPoint.swift */; };
 		E70A33311B27840300E8B350 /* HealthPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A33301B27840300E8B350 /* HealthPointController.swift */; };
 		E777A65D1B289812008BBF44 /* LaunchFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E777A65C1B289812008BBF44 /* LaunchFlow.storyboard */; };
@@ -113,6 +113,7 @@
 		4F8E9D5D1B27362F00446CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F8E9D6D1B27365000446CC3 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		4F96AE3D1B28D174002DEA71 /* StackFakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackFakeData.swift; sourceTree = "<group>"; };
 		4F9AF57F1B289B6600635770 /* FriendTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTestCase.swift; sourceTree = "<group>"; };
 		4FEA65131B26A96700E572FE /* Podium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEA65161B26A96700E572FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +129,6 @@
 		4FEA65361B26A96700E572FE /* PodiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumUITests.swift; sourceTree = "<group>"; };
 		4FEA65381B26A96700E572FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FFA81E81B28BE8700E4CFBE /* InviteTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTestCase.swift; sourceTree = "<group>"; };
-		B01932051B28732E0037EA93 /* StackFakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackFakeData.swift; sourceTree = "<group>"; };
 		E70A332B1B27836000E8B350 /* HealthPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPoint.swift; sourceTree = "<group>"; };
 		E70A33301B27840300E8B350 /* HealthPointController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPointController.swift; sourceTree = "<group>"; };
 		E777A65C1B289812008BBF44 /* LaunchFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchFlow.storyboard; sourceTree = "<group>"; };
@@ -228,6 +228,7 @@
 		4F8E9D4D1B27362F00446CC3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F96AE3D1B28D174002DEA71 /* StackFakeData.swift */,
 				4F8E9D4E1B27362F00446CC3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -236,7 +237,6 @@
 		4F8E9D5B1B27362F00446CC3 /* PodiumKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				B01932051B28732E0037EA93 /* StackFakeData.swift */,
 				4F6BE3461B287F6500F5050B /* ProfileTestCase.swift */,
 				4F9AF57F1B289B6600635770 /* FriendTestCase.swift */,
 				4FFA81E81B28BE8700E4CFBE /* InviteTestCase.swift */,
@@ -533,7 +533,7 @@
 				4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */,
 				4F63CA441B2761CC0004013B /* Invite.swift in Sources */,
 				4F8E9D711B27365000446CC3 /* Stack.swift in Sources */,
-				4FFA81E71B28AF9A00E4CFBE /* StackFakeData.swift in Sources */,
+				4F96AE3E1B28D174002DEA71 /* StackFakeData.swift in Sources */,
 				4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */,
 				E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */,
 				4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */,
@@ -546,7 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9AF5801B289B6600635770 /* FriendTestCase.swift in Sources */,
-				B01932061B28732E0037EA93 /* StackFakeData.swift in Sources */,
+				4F96AE3F1B28D174002DEA71 /* StackFakeData.swift in Sources */,
 				4FFA81E91B28BE8700E4CFBE /* InviteTestCase.swift in Sources */,
 				4F6BE3471B287F6500F5050B /* ProfileTestCase.swift in Sources */,
 			);
@@ -650,6 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -673,6 +674,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
