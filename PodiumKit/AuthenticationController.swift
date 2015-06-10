@@ -20,6 +20,9 @@ public class AuthenticationController: NSObject {
     
     public func signUp(name: String, email: String, phone: String) {
         let profile = ProfileController.sharedController.addUser(name, email: email, phone: phone)
+        
+        InviteController.sharedController.acceptReceivedInvites(email)
+        
         CKContainer.defaultContainer().fetchUserRecordIDWithCompletionHandler { (recordID, error) -> Void in
             guard let recordID = recordID else { print("Error \(error)"); return }
 

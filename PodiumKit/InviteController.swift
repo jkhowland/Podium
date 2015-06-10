@@ -51,19 +51,41 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
 
     }
     
-    public func checkReceivedInvites(email: String) {
+    public func receivedInvites(email: String) -> [Invite] {
     
-        // Only occurs when first joining
-        
         // Checks for invites to my email
-        // Creates and Accepts friends with all invites
+        let request = NSFetchRequest(entityName: Invite.entityName)
+        let predicate = NSPredicate(format: "toUserEmail = %@", email)
+        
+        request.predicate = predicate
+        
+        var error: NSError? = nil
+        do {
+            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as! [Invite]
+        } catch let error1 as NSError {
+            error = error1
+            print(error)
+            return []
+        }
+
+    }
+    
+    public func acceptReceivedInvites(email: String) {
+    
+        let invites = self.receivedInvites(email)
+        
+        for invite: Invite in invites {
+            let friend = FriendController.sharedController.requestFriend((invite.fromUserId?.integerValue)!)
+            FriendController.sharedController.acceptFriend(friend)
+        }
         
     }
-
+    
     // Needs to be refactored into a superclass
+    // Needs to make unsynced identifiers negative
     func maxIdentifier() -> NSNumber {
         
-        let fetchRequest = NSFetchRequest(entityName: Profile.entityName)
+        let fetchRequest = NSFetchRequest(entityName: Invite.entityName)
         fetchRequest.fetchLimit = 1;
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
         
@@ -71,8 +93,8 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
             
             let array = try Stack.defaultStack.mainContext?.executeFetchRequest(fetchRequest)
             if array?.count > 0 {
-                let profile: Profile = array?.first as! Profile
-                return profile.identifier!
+                let invite: Invite = array?.first as! Invite
+                return invite.identifier!
             } else {
                 return NSNumber(integer: 0)
             }

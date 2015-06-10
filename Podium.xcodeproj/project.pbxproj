@@ -34,6 +34,7 @@
 		4FEA652C1B26A96700E572FE /* PodiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA652B1B26A96700E572FE /* PodiumTests.swift */; };
 		4FEA65371B26A96700E572FE /* PodiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65361B26A96700E572FE /* PodiumUITests.swift */; };
 		4FFA81E71B28AF9A00E4CFBE /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01932051B28732E0037EA93 /* StackFakeData.swift */; };
+		4FFA81E91B28BE8700E4CFBE /* InviteTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA81E81B28BE8700E4CFBE /* InviteTestCase.swift */; };
 		B01932061B28732E0037EA93 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01932051B28732E0037EA93 /* StackFakeData.swift */; };
 		E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A332B1B27836000E8B350 /* HealthPoint.swift */; };
 		E70A33311B27840300E8B350 /* HealthPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A33301B27840300E8B350 /* HealthPointController.swift */; };
@@ -126,6 +127,7 @@
 		4FEA65321B26A96700E572FE /* PodiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEA65361B26A96700E572FE /* PodiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumUITests.swift; sourceTree = "<group>"; };
 		4FEA65381B26A96700E572FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FFA81E81B28BE8700E4CFBE /* InviteTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTestCase.swift; sourceTree = "<group>"; };
 		B01932051B28732E0037EA93 /* StackFakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackFakeData.swift; sourceTree = "<group>"; };
 		E70A332B1B27836000E8B350 /* HealthPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPoint.swift; sourceTree = "<group>"; };
 		E70A33301B27840300E8B350 /* HealthPointController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPointController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				B01932051B28732E0037EA93 /* StackFakeData.swift */,
 				4F6BE3461B287F6500F5050B /* ProfileTestCase.swift */,
 				4F9AF57F1B289B6600635770 /* FriendTestCase.swift */,
+				4FFA81E81B28BE8700E4CFBE /* InviteTestCase.swift */,
 				4F8E9D5C1B27362F00446CC3 /* Supporting Files */,
 			);
 			path = PodiumKitTests;
@@ -544,6 +547,7 @@
 			files = (
 				4F9AF5801B289B6600635770 /* FriendTestCase.swift in Sources */,
 				B01932061B28732E0037EA93 /* StackFakeData.swift in Sources */,
+				4FFA81E91B28BE8700E4CFBE /* InviteTestCase.swift in Sources */,
 				4F6BE3471B287F6500F5050B /* ProfileTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

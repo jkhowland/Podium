@@ -23,6 +23,7 @@ public let elizaEmail = "eliza@princess.com"
 public let beccaEmail = "becca@skirts.com"
 public let timCookEmail = "tim@apple.com"
 public let philEmail = "phil@apple.com"
+public let eddyEmail = "eddy@apple.com"
 
 extension Stack {
 
@@ -109,7 +110,7 @@ extension Stack {
         // Siging up with that one invite should auto add them as a friend
         
         let invites = [
-            [joshEmail: "eddy@apple.com"],
+            [joshEmail: eddyEmail],
             [joshEmail: "aidyn@michaelangelo.com"]
         ]
         

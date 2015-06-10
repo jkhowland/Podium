@@ -96,7 +96,6 @@ public class ProfileController: NSObject {
         }
     }
     
-
     // Needs to be refactored into a superclass
     func maxIdentifier() -> NSNumber {
         
