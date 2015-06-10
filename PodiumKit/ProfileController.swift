@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Team Status. All rights reserved.
 //
 
-let ProfileEntityName = "Profile"
-
 import CoreData
 
 public class ProfileController: NSObject {
@@ -17,7 +15,7 @@ public class ProfileController: NSObject {
 
         let context = Stack.defaultStack.mainContext
         
-        let object = NSEntityDescription.insertNewObjectForEntityForName(ProfileEntityName, inManagedObjectContext: context!)
+        let object = NSEntityDescription.insertNewObjectForEntityForName(Profile.entityName, inManagedObjectContext: context!)
         
         var profile = object as? Profile
         
@@ -89,7 +87,7 @@ public class ProfileController: NSObject {
     
     public func allProfiles() -> Array<AnyObject> {
         
-        let request = NSFetchRequest(entityName: ProfileEntityName)
+        let request = NSFetchRequest(entityName: Profile.entityName)
         
         var error: NSError? = nil
         var users: [AnyObject]?
@@ -108,7 +106,7 @@ public class ProfileController: NSObject {
     // Needs to be refactored into a superclass
     lazy var maxIdentifier: NSNumber? = {
         
-        var fetchRequest = NSFetchRequest(entityName: ProfileEntityName)
+        var fetchRequest = NSFetchRequest(entityName: Profile.entityName)
         fetchRequest.fetchLimit = 1;
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
         

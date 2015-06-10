@@ -12,6 +12,6 @@ import CoreData
 @objc(Friend)
 public class Friend: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    public static let entityName = "User"
 
 }

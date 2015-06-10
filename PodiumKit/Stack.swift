@@ -14,15 +14,13 @@ public class Stack: NSObject {
     public static let defaultStack = Stack()
         
     lazy var mainContext: NSManagedObjectContext? = {
-        let coordinator = self.persistentStoreCoordinator
-        if coordinator == nil {
-            return nil
-        }
+        guard let coordinator = self.persistentStoreCoordinator else { return nil }
+
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
         }()
-    
+
     lazy var storeURL: NSURL = {
         
         var sharedContainerPath = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(sharedAppGroupContainer)
@@ -53,53 +51,27 @@ public class Stack: NSObject {
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
 
         let fileManager = NSFileManager.defaultManager()
-        var shouldFail = false
-        var error: NSError? = nil
-        var failureReason = "There was an error creating or loading the application's saved data."
-        
-        
+
         // Create the coordinator and store
-        var coordinator: NSPersistentStoreCoordinator?
-        if !shouldFail && (error == nil) {
-            coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-            
-            var storeType = NSSQLiteStoreType
-            
-            do {
-                try coordinator!.addPersistentStoreWithType(storeType, configuration: nil, URL: self.storeURL, options: nil)
-            } catch var error1 as NSError {
-                error = error1
-                coordinator = nil
-            } catch {
-                fatalError()
-            }
-        }
+        var coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        let storeType = NSSQLiteStoreType
         
-        if shouldFail || (error != nil) {
-            // Report any error we got.
-            var dict = [String: AnyObject]()
-            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason
-            if error != nil {
-                dict[NSUnderlyingErrorKey] = error
-            }
-            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            
+        do {
+            try coordinator.addPersistentStoreWithType(storeType, configuration: nil, URL: self.storeURL, options: nil)
+        } catch let error as NSError {
             return nil
-        } else {
-            return coordinator
+        } catch {
+            fatalError()
         }
-        
-        }()
-    
-    
+
+        return coordinator
+    }()
+
+
     public func save() {
-        
-        var error: NSError? = nil
         do {
             try Stack.defaultStack.mainContext?.save()
-        } catch let error1 as NSError {
-            error = error1
+        } catch let error as NSError {
             print(error)
         }
     }

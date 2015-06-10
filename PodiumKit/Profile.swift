@@ -12,6 +12,6 @@ import CoreData
 @objc(Profile)
 public class Profile: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    public static let entityName = "Profile"
 
 }
