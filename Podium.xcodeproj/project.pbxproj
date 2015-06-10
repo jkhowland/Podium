@@ -178,13 +178,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F4E70CD1B27AF57009A1A24 /* Frameworkds */ = {
+		4F4E70CD1B27AF57009A1A24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */,
 				4F2099E51B276AD9008FBF4C /* CloudKit.framework */,
 			);
-			name = Frameworkds;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4F63CA391B27617D0004013B /* Model Objects */ = {
@@ -220,7 +220,7 @@
 				4F8E9D6D1B27365000446CC3 /* Stack.swift */,
 				4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */,
 				4F8E9D4D1B27362F00446CC3 /* Supporting Files */,
-				4F4E70CD1B27AF57009A1A24 /* Frameworkds */,
+				4F4E70CD1B27AF57009A1A24 /* Frameworks */,
 			);
 			path = PodiumKit;
 			sourceTree = "<group>";
