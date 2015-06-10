@@ -13,9 +13,11 @@ import UIKit
 class ProgressView: UIView {
     
     @IBInspectable private let progressLayer: CAShapeLayer = CAShapeLayer()
-    
     @IBInspectable private var dashedLayer: CAShapeLayer = CAShapeLayer()
-
+    
+    @IBInspectable var circleColor: UIColor = UIColor.purpleColor()
+    @IBInspectable var dashColor: UIColor = UIColor.grayColor()
+    
     override func prepareForInterfaceBuilder() {
         createProgressLayer()
         
@@ -27,17 +29,17 @@ class ProgressView: UIView {
         let endAngle = CGFloat(M_PI * 2 + M_PI_2)
         let centerPoint = CGPointMake(CGRectGetWidth(frame)/2 , CGRectGetHeight(frame)/2)
         
-        progressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: CGRectGetWidth(frame)/2 - 10.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).CGPath
+        progressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: CGRectGetWidth(frame)/2 - 4.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).CGPath
         progressLayer.backgroundColor = UIColor.clearColor().CGColor
         progressLayer.fillColor = nil
-        progressLayer.strokeColor = UIColor.whiteColor().CGColor
+        progressLayer.strokeColor = circleColor.CGColor
         progressLayer.lineWidth = 4.0
         progressLayer.strokeStart = 0.0
         progressLayer.strokeEnd = 0.0
         layer.addSublayer(progressLayer)
         
         let dashedLayer = CAShapeLayer()
-        dashedLayer.strokeColor = UIColor(white: 1.0, alpha: 0.5).CGColor
+        dashedLayer.strokeColor = dashColor.CGColor
         dashedLayer.fillColor = nil
         dashedLayer.lineDashPattern = [2, 4]
         dashedLayer.lineJoin = "round"

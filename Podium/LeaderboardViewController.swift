@@ -25,7 +25,6 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(UserStatusCellIdentifier)
-        cell?.textLabel?.text = "Testing the cell textlabel"
         return cell!
     }
     

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserStatusCell" rowHeight="70" id="4qA-lG-xEh">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserStatusCell" rowHeight="70" id="4qA-lG-xEh" customClass="UserStatusTableViewCell" customModule="Podium" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4qA-lG-xEh" id="qHN-Bs-UHQ">
@@ -31,7 +31,6 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dim-Zn-3wc" userLabel="status1" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
                                                     <rect key="frame" x="527" y="2" width="65" height="65"/>
-                                                    <color key="backgroundColor" red="0.10588236149999999" green="0.3803921938" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="9tA-bw-eM0">
                                                             <variation key="widthClass=compact" constant="45"/>
@@ -40,10 +39,17 @@
                                                             <variation key="widthClass=compact" constant="45"/>
                                                         </constraint>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                            <color key="value" red="0.10588236149999999" green="0.3803921938" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
+                                                            <color key="value" red="0.10588236149999999" green="0.3803921938" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suk-rw-xge" userLabel="status2" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
                                                     <rect key="frame" x="454" y="2" width="65" height="65"/>
-                                                    <color key="backgroundColor" red="1" green="0.4502602973" blue="0.40385310670000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="65" id="TFP-Fj-OPe">
                                                             <variation key="widthClass=compact" constant="45"/>
@@ -52,10 +58,17 @@
                                                             <variation key="widthClass=compact" constant="45"/>
                                                         </constraint>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                            <color key="value" red="1" green="0.4502602973" blue="0.40385310670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
+                                                            <color key="value" red="1" green="0.4502602973" blue="0.40385310670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8U5-8C-YED" userLabel="status3" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
                                                     <rect key="frame" x="381" y="2" width="65" height="65"/>
-                                                    <color key="backgroundColor" red="0.44974581889999998" green="0.61969864649999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="65" id="Ob9-hx-Kzf">
                                                             <variation key="widthClass=compact" constant="45"/>
@@ -64,6 +77,14 @@
                                                             <variation key="widthClass=compact" constant="45"/>
                                                         </constraint>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                            <color key="value" red="0.44974581889999998" green="0.61969864649999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
+                                                            <color key="value" red="0.44974581889999998" green="0.61969864649999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Q0-tN-tC8">
                                                     <rect key="frame" x="8" y="2" width="65" height="65"/>
@@ -102,6 +123,13 @@
                                                 <constraint firstItem="1Q0-tN-tC8" firstAttribute="centerY" secondItem="qHN-Bs-UHQ" secondAttribute="centerY" id="zob-DF-7tj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="name" value="Benjamin Norris"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="EDS-9p-DIN" id="XSn-TZ-ORH"/>
+                                            <outlet property="profileImage" destination="1Q0-tN-tC8" id="2Ih-rb-JtU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
