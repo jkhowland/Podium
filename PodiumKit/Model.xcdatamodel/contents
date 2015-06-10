@@ -4,7 +4,7 @@
         <attribute name="accepted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="currentProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="friends" inverseEntity="Profile" syncable="YES"/>
-        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" syncable="YES"/>
+        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="relationship" inverseEntity="Profile" syncable="YES"/>
     </entity>
     <entity name="HealthPoint" representedClassName="HealthPoint" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -25,11 +25,12 @@
         <attribute name="userRecordName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="currentProfile" inverseEntity="Friend" syncable="YES"/>
         <relationship name="healthPoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HealthPoint" inverseName="user" inverseEntity="HealthPoint" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="profile" inverseEntity="Friend" syncable="YES"/>
     </entity>
     <elements>
         <element name="Friend" positionX="-54" positionY="27" width="128" height="105"/>
         <element name="HealthPoint" positionX="-54" positionY="36" width="128" height="105"/>
         <element name="Invite" positionX="-63" positionY="9" width="128" height="90"/>
-        <element name="Profile" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Profile" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
