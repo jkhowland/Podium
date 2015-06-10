@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+
+let FriendEntityName = "Friend"
 
 public enum SortFriends {
     case Alphabetically
@@ -16,11 +19,11 @@ public enum SortFriends {
 }
 
 public class FriendController: NSObject {
-    public static let sharedController = NetworkController()
+    public static let sharedController = FriendController()
 
-    var friends: Array<User> = []
+    var friends: Array<Profile> = []
     
-    public func sortFriends(sort: SortFriends) -> Array<User> {
+    public func sortFriends(sort: SortFriends) -> Array<Profile> {
         return self.friends
     }
     
@@ -32,19 +35,45 @@ public class FriendController: NSObject {
         return []
     }
     
-    public func requestFriend(userID: Int64) {
+    public func requestFriends(fromProfileIdentifier: Int, toProfileIdentifier: Int) -> Friend {
     
         // Creates Friend object
-        // Sends email/request to user
+
+        let friend: Friend = NSEntityDescription.insertNewObjectForEntityForName(FriendEntityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Friend
+        
+        let fromProfile = ProfileController.sharedController.findProfileUsingIdentifier(fromProfileIdentifier)
+        let toProfile = ProfileController.sharedController.findProfileUsingIdentifier(toProfileIdentifier)
+        
+        friend.currentProfile = fromProfile
+        friend.profile = toProfile
+        friend.accepted = NSNumber(bool: false)
+        
+        // Send email/request to user
+        
+        return friend
+        
+    }
+    
+    public func requestFriend(userID: Int) -> Friend {
+
+        return self.requestFriends((AuthenticationController.sharedController.currentProfile.identifier?.integerValue)!, toProfileIdentifier: userID)
         
     }
     
     public func acceptFriend(friend: Friend) {
     
         // Marks friend as accepted
+        
+        friend.accepted = NSNumber(bool: true)
+        
         // Creates new reverse Friend object and marks as accepted
         
+        let newFriend: Friend = NSEntityDescription.insertNewObjectForEntityForName(FriendEntityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Friend
+
+        newFriend.currentProfile = friend.profile
+        newFriend.profile = friend.currentProfile
+        newFriend.accepted = NSNumber(bool: true)
+        
     }
-    
     
 }

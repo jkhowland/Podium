@@ -1,5 +1,5 @@
 //
-//  User+CoreDataProperties.swift
+//  Profile+CoreDataProperties.swift
 //  Podium
 //
 //  Created by Joshua Howland on 6/9/15.
@@ -12,7 +12,7 @@
 import Foundation
 import CoreData
 
-extension User {
+extension Profile {
 
     @NSManaged var phone: String?
     @NSManaged var email: String?

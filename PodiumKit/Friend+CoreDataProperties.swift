@@ -14,8 +14,8 @@ import CoreData
 
 extension Friend {
 
-    @NSManaged var fromUser: User?
-    @NSManaged var toUser: User?
-    @NSManaged var accepted: NSNumber?
+    @NSManaged var currentProfile: Profile?
+    @NSManaged var profile: Profile? // Friend to which current user requested
+    @NSManaged var accepted: NSNumber? // Contains a boolean
 
 }

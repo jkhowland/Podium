@@ -1,5 +1,5 @@
 //
-//  NetworkController.swift
+//  SyncController.swift
 //  TeamStatusCore
 //
 //  Created by Joshua Howland on 6/5/15.
@@ -9,8 +9,8 @@
 import Foundation
 import CloudKit
 
-public class NetworkController: NSObject {
-    public static let sharedController = NetworkController()
+public class SyncController: NSObject {
+    public static let sharedController = SyncController()
     
     lazy var privateDatabase: CKDatabase = {
         

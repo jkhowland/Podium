@@ -7,15 +7,50 @@
 //
 
 import UIKit
+import CoreData
+import MessageUI
 
-public class InviteController: NSObject {
-    public static let sharedController = NetworkController()
+let InviteEntityName = "Invite"
 
-    public func inviteFriend(email: String) {
+public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
+    public static let sharedController = InviteController()
     
-        // Creates invite object
+    public func invitationEmail() -> UIViewController {
+    
         // Prepares email
         
+        let mailViewController = MFMailComposeViewController.new()
+        mailViewController.mailComposeDelegate = self
+        mailViewController.setSubject("You're invited to Podium")
+        
+        let emailBody = "This is the body of the invite. Click the link to join"
+        mailViewController.setMessageBody(emailBody, isHTML: false)
+        
+        return mailViewController
+
+    }
+    
+    public func inviteFriend(email: String) -> Invite {
+        
+        let fromEmail = AuthenticationController.sharedController.currentProfile.email
+        return self.inviteFromEmail(fromEmail!, email: email)
+        
+    }
+    
+    public func inviteFromEmail(fromEmail: String, email: String) -> Invite {
+     
+        // Creates invite object
+        
+        let invite: Invite = NSEntityDescription.insertNewObjectForEntityForName(InviteEntityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Invite
+
+        let profile = ProfileController.sharedController.findProfileUsingEmail(fromEmail)
+        
+        invite.fromUserId = profile?.identifier?.integerValue
+        invite.toUserEmail = email
+//        invite.identifier = NSNumber(integer: (self.maxIdentifier?.integerValue)! + 1);
+        
+        return invite
+
     }
     
     public func checkReceivedInvites(email: String) {
@@ -26,5 +61,28 @@ public class InviteController: NSObject {
         // Creates and Accepts friends with all invites
         
     }
-    
+
+    // Needs to be refactored into a superclass
+    lazy var maxIdentifier: NSNumber? = {
+        
+        var fetchRequest = NSFetchRequest(entityName: InviteEntityName)
+        fetchRequest.fetchLimit = 1;
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
+        
+        do {
+            
+            let array = try Stack.defaultStack.mainContext?.executeFetchRequest(fetchRequest)
+            if array?.count == 0 {
+                var profile: Profile = array?.first as! Profile
+                return profile.identifier
+            } else {
+                return NSNumber(integer: 0)
+            }
+            
+        } catch {
+            return NSNumber(integer: 0)
+        }
+        
+        }()
+
 }

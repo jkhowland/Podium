@@ -17,6 +17,6 @@ extension HealthPoint {
     @NSManaged var date: NSDate?
     @NSManaged var amount: NSNumber?
     @NSManaged var type: NSNumber?
-    @NSManaged var user: User?
+    @NSManaged var user: Profile?
 
 }

@@ -9,7 +9,13 @@
 import Foundation
 
 public class AuthenticationController: NSObject {
- 
+    public static let sharedController = AuthenticationController()
+
+    public lazy var currentProfile: Profile = {
+        // returns current profile
+        return ProfileController.sharedController.findProfileUsingEmail("josh@devmtn.com")
+    }()!
+    
     public func signIn() {
         
     }
