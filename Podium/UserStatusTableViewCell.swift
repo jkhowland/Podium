@@ -33,7 +33,7 @@ class UserStatusTableViewCell: UITableViewCell {
     }
     
     func updateWithFriend(friend: Friend) {
-        self.nameLabel.text = friend.
+        self.nameLabel.text = "Found a friend"
     }
 
 }

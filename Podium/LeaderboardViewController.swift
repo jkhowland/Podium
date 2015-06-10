@@ -24,6 +24,10 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,16 +36,21 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let friend = FriendController.sharedController.sortFriends(SortFriends.BySteps)
+        let cell = tableView.dequeueReusableCellWithIdentifier(UserStatusCellIdentifier) as! UserStatusTableViewCell
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(UserStatusCellIdentifier)
+        guard let friendProfile = FriendController.sharedController.sortFriends(SortFriends.BySteps)[indexPath.row] as? Friend else {
+            
+            cell.nameLabel.text = "No user found"
+        }
         
-        return cell!
+        cell.updateWithFriend(friendProfile)
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return FriendController.sharedController.sortFriends(SortFriends.Alphabetically).count
+        return 1 //FriendController.sharedController.sortFriends(SortFriends.Alphabetically).count
         
     }
     
