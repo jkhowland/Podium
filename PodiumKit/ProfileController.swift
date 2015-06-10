@@ -89,7 +89,7 @@ public class ProfileController: NSObject {
         let request = NSFetchRequest(entityName: Profile.entityName)
         
         do {
-            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as! [Profile]
+            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as? [Profile]
         } catch let error as NSError {
             print(error)
             return nil
