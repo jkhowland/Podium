@@ -53,8 +53,9 @@ public class NetworkController: NSObject {
     public func userRecord(completionHandler:(record: String?) -> Void) {
         CKContainer.defaultContainer().fetchUserRecordIDWithCompletionHandler { (recordID, error) -> Void in
             if let recordID = recordID {
-                print("Record: \(recordID.recordName)")
-                completionHandler(record: recordID.recordName)
+                let record = recordID.recordName
+                print("Record: \(record)")
+                completionHandler(record: record)
             } else {
                 completionHandler(record: nil)
             }
