@@ -35,16 +35,16 @@
 		4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */; };
 		4FEA652C1B26A96700E572FE /* PodiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA652B1B26A96700E572FE /* PodiumTests.swift */; };
 		4FEA65371B26A96700E572FE /* PodiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65361B26A96700E572FE /* PodiumUITests.swift */; };
-		4FFA81E91B28BE8700E4CFBE /* InviteTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA81E81B28BE8700E4CFBE /* InviteTestCase.swift */; };
-		E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A332B1B27836000E8B350 /* HealthPoint.swift */; };
-		E70A33311B27840300E8B350 /* HealthPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A33301B27840300E8B350 /* HealthPointController.swift */; };
-		E75C03C11B28FECC006ED2A6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75C03C01B28FECC006ED2A6 /* OnboardingViewController.swift */; };
-		E75C03C31B28FF1A006ED2A6 /* OnboardingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75C03C21B28FF1A006ED2A6 /* OnboardingDataSource.swift */; };
-		E777A65D1B289812008BBF44 /* LaunchFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E777A65C1B289812008BBF44 /* LaunchFlow.storyboard */; };
-		E7A6AB811B290F7400676280 /* BaseApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A6AB801B290F7400676280 /* BaseApp.storyboard */; };
 		6851835D1B277EA00014E216 /* UserStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */; };
 		6851835F1B277ED40014E216 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851835E1B277ED40014E216 /* LeaderboardViewController.swift */; };
 		68F9A8C71B2788AB00F8C007 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F9A8C61B2788AB00F8C007 /* ProgressView.swift */; };
+		E75C03C11B28FECC006ED2A6 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E75C03C31B28FF1A006ED2A6 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E7A6AB811B290F7400676280 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E7A6AB861B2913C400676280 /* BaseApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A6AB821B2913C400676280 /* BaseApp.storyboard */; };
+		E7A6AB871B2913C400676280 /* LaunchFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A6AB831B2913C400676280 /* LaunchFlow.storyboard */; };
+		E7A6AB881B2913C400676280 /* OnboardingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */; };
+		E7A6AB891B2913C400676280 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6AB851B2913C400676280 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +138,10 @@
 		6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatusTableViewCell.swift; sourceTree = "<group>"; };
 		6851835E1B277ED40014E216 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		68F9A8C61B2788AB00F8C007 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		E7A6AB821B2913C400676280 /* BaseApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BaseApp.storyboard; sourceTree = "<group>"; };
+		E7A6AB831B2913C400676280 /* LaunchFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchFlow.storyboard; sourceTree = "<group>"; };
+		E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingDataSource.swift; sourceTree = "<group>"; };
+		E7A6AB851B2913C400676280 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,10 @@
 				6851835E1B277ED40014E216 /* LeaderboardViewController.swift */,
 				6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */,
 				68F9A8C61B2788AB00F8C007 /* ProgressView.swift */,
+				E7A6AB821B2913C400676280 /* BaseApp.storyboard */,
+				E7A6AB831B2913C400676280 /* LaunchFlow.storyboard */,
+				E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */,
+				E7A6AB851B2913C400676280 /* OnboardingViewController.swift */,
 				4FEA651A1B26A96700E572FE /* Main.storyboard */,
 				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
 				4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */,
@@ -503,9 +511,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */,
-				E7A6AB811B290F7400676280 /* BaseApp.storyboard in Resources */,
+				E7A6AB861B2913C400676280 /* BaseApp.storyboard in Resources */,
+				E7A6AB811B290F7400676280 /* (null) in Resources */,
 				4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */,
 				4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */,
+				E7A6AB871B2913C400676280 /* LaunchFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,8 +574,10 @@
 				6851835F1B277ED40014E216 /* LeaderboardViewController.swift in Sources */,
 				68F9A8C71B2788AB00F8C007 /* ProgressView.swift in Sources */,
 				4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */,
-				E75C03C11B28FECC006ED2A6 /* OnboardingViewController.swift in Sources */,
-				E75C03C31B28FF1A006ED2A6 /* OnboardingDataSource.swift in Sources */,
+				E7A6AB881B2913C400676280 /* OnboardingDataSource.swift in Sources */,
+				E7A6AB891B2913C400676280 /* OnboardingViewController.swift in Sources */,
+				E75C03C11B28FECC006ED2A6 /* (null) in Sources */,
+				E75C03C31B28FF1A006ED2A6 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
