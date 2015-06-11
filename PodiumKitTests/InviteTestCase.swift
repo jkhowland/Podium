@@ -31,7 +31,7 @@ class InviteTestCase: XCTestCase {
     
     func testInviteAccept() {
         
-        AuthenticationController.sharedController.signUp("Eddy Cue", email: eddyEmail, phone: "801-450-3213")
+        AuthenticationController.sharedController.signUp("Eddy Cue", email: eddyEmail, phone: "801-450-3213", userRecordName: "123")
 
         let receivedInvites = InviteController.sharedController.receivedInvites(eddyEmail)
 

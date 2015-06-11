@@ -10,6 +10,7 @@
 		4F0A6FF61B29DC9C005882DB /* InviteTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A6FF51B29DC9C005882DB /* InviteTestCase.swift */; };
 		4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
+		4F255F2E1B2A357400707562 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F255F2D1B2A357400707562 /* NetworkController.swift */; };
 		4F3AA1FD1B2A0770004E28D4 /* OverlayBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA1FC1B2A0770004E28D4 /* OverlayBlurView.swift */; };
 		4F3AA1FF1B2A0A38004E28D4 /* OverlayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA1FE1B2A0A38004E28D4 /* OverlayMessage.swift */; };
 		4F3AA2011B2A0AA1004E28D4 /* OverlayMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA2001B2A0AA1004E28D4 /* OverlayMessageView.swift */; };
@@ -110,6 +111,7 @@
 /* Begin PBXFileReference section */
 		4F0A6FF51B29DC9C005882DB /* InviteTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTestCase.swift; sourceTree = "<group>"; };
 		4F2099E51B276AD9008FBF4C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		4F255F2D1B2A357400707562 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		4F3AA1FC1B2A0770004E28D4 /* OverlayBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayBlurView.swift; sourceTree = "<group>"; };
 		4F3AA1FE1B2A0A38004E28D4 /* OverlayMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayMessage.swift; sourceTree = "<group>"; };
 		4F3AA2001B2A0AA1004E28D4 /* OverlayMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayMessageView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				4F63CA531B27647B0004013B /* Notes.swift */,
 				4F8B4B021B274A550029493F /* AuthenticationController.swift */,
 				4F8B4B011B274A550029493F /* SyncController.swift */,
+				4F255F2D1B2A357400707562 /* NetworkController.swift */,
 				4F63CA4C1B27642F0004013B /* Model Controllers */,
 				4F63CA391B27617D0004013B /* Model Objects */,
 				4F8E9D6D1B27365000446CC3 /* Stack.swift */,
@@ -586,6 +589,7 @@
 				4F8E9D711B27365000446CC3 /* Stack.swift in Sources */,
 				4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */,
 				4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */,
+				4F255F2E1B2A357400707562 /* NetworkController.swift in Sources */,
 				4F63CA4A1B2761DF0004013B /* Profile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
