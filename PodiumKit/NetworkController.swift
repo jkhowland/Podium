@@ -47,7 +47,7 @@ public class NetworkController: NSObject {
             completionHandler(results: resultObjects)
         }
         
-        NetworkController.sharedController.publicDatabase.addOperation(queryOperation)
+        self.publicDatabase.addOperation(queryOperation)
     }
     
     public func userRecord(completionHandler:(record: String?) -> Void) {
