@@ -9,10 +9,28 @@
 import Foundation
 import CloudKit
 
+let storyboardSignInFlow = "Welcome"
+
+let storyboardBaseApp = "BaseApp"
+let storyboardSignUpFlow = "SignUpFlow"
+
 public class AuthenticationController: NSObject {
     public static let sharedController = AuthenticationController()
 
     public var currentProfile: Profile?
+    
+    public func welcomeStoryboardIdentifier() -> String {
+
+        if self.currentProfile == nil {
+            return storyboardSignInFlow
+        } else {
+            return storyboardBaseApp
+        }
+    }
+    
+    public func getStartedStoryboard(completionHandler: (storyboardID: String) -> Void) {
+        completionHandler(storyboardID: storyboardBaseApp)
+    }
     
     public func signIn() {
         

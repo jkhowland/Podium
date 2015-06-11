@@ -15,15 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
+
         // For development only
+        
         Stack.defaultStack.clearDevelopmentData()
         Stack.defaultStack.loadDevelopmentData()
+//        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail("calebhicks@gmail.com")
+
+        let storyboard = UIStoryboard(name: AuthenticationController.sharedController.welcomeStoryboardIdentifier(), bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
         
-        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail("calebhicks@gmail.com")
-                                
-        return true
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window!.rootViewController = viewController;
+        self.window?.makeKeyAndVisible()
+        
+        return true;
+
     }
 
     func applicationWillResignActive(application: UIApplication) {
