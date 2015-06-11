@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Stack.defaultStack.clearDevelopmentData()
         Stack.defaultStack.loadDevelopmentData()
         
+        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail("calebhicks@gmail.com")
+                                
         return true
     }
 

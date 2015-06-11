@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TJK-Ne-dL9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Friends-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Podium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LeaderboardViewController" customModule="Podium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,171 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0P3-5I-aL3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserStatusCell" rowHeight="70" id="4qA-lG-xEh" customClass="UserStatusTableViewCell" customModule="Podium" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="86" width="600" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4qA-lG-xEh" id="qHN-Bs-UHQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lh9-Kc-I4d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Q0-tN-tC8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="1Q0-tN-tC8" secondAttribute="height" multiplier="1:1" id="qpR-Us-XSl"/>
+                                                            </constraints>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
+                                                            </variation>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDS-9p-DIN">
+                                                            <rect key="frame" x="84.5" y="0.0" width="282" height="69.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="84.5" y="0.0" width="82" height="69.5"/>
+                                                            </variation>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OE4-M5-DOx">
+                                                            <rect key="frame" x="381.5" y="0.0" width="218.5" height="69.5"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dim-Zn-3wc" userLabel="status1" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="dim-Zn-3wc" secondAttribute="height" multiplier="1:1" id="K6q-1c-E1e"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                                            <color key="value" red="0.44974581889999998" green="0.61969864649999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
+                                                                            <color key="value" red="0.44974581889999998" green="0.61969864649999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
+                                                                    </variation>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suk-rw-xge" userLabel="status2" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
+                                                                    <rect key="frame" x="74.5" y="0.0" width="69.5" height="69.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="suk-rw-xge" secondAttribute="height" multiplier="1:1" id="30b-eA-GFP"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                                            <color key="value" red="0.10588236149999999" green="0.3803921938" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
+                                                                            <color key="value" red="0.10588236149999999" green="0.3803921938" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                                        <rect key="frame" x="74.5" y="0.0" width="69.5" height="69.5"/>
+                                                                    </variation>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8U5-8C-YED" userLabel="status3" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
+                                                                    <rect key="frame" x="149" y="0.0" width="69.5" height="69.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="8U5-8C-YED" secondAttribute="height" multiplier="1:1" id="wLE-Xo-Fcn"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                                            <color key="value" red="1" green="0.4502602973" blue="0.40385310670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
+                                                                            <color key="value" red="1" green="0.4502602973" blue="0.40385310670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                                        <rect key="frame" x="149" y="0.0" width="69.5" height="69.5"/>
+                                                                        <mask key="constraints">
+                                                                            <include reference="wLE-Xo-Fcn"/>
+                                                                        </mask>
+                                                                    </variation>
+                                                                </view>
+                                                            </subviews>
+                                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="181.5" y="0.0" width="218.5" height="69.5"/>
+                                                            </variation>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Lh9-Kc-I4d" secondAttribute="bottom" id="DuI-5n-Pkd">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
+                                                <constraint firstAttribute="trailing" secondItem="Lh9-Kc-I4d" secondAttribute="trailing" id="VTU-Xl-pmH">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
+                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="leading" secondItem="qHN-Bs-UHQ" secondAttribute="leading" id="j3Z-2w-gQS"/>
+                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="top" secondItem="qHN-Bs-UHQ" secondAttribute="top" id="mcN-XX-VeE">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
+                                            </constraints>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <exclude reference="DuI-5n-Pkd"/>
+                                                    <exclude reference="VTU-Xl-pmH"/>
+                                                    <exclude reference="j3Z-2w-gQS"/>
+                                                    <exclude reference="mcN-XX-VeE"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="EDS-9p-DIN" id="XSn-TZ-ORH"/>
+                                            <outlet property="profileImage" destination="1Q0-tN-tC8" id="2Ih-rb-JtU"/>
+                                            <outlet property="statusView1" destination="dim-Zn-3wc" id="U9g-ne-yjD"/>
+                                            <outlet property="statusView2" destination="suk-rw-xge" id="Dwe-rk-f8e"/>
+                                            <outlet property="statusView3" destination="8U5-8C-YED" id="IbW-mk-aqg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZSA-tv-ZNs"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="f3c-Ee-slI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0P3-5I-aL3" secondAttribute="trailing" id="0Fx-BN-FM6"/>
+                            <constraint firstItem="0P3-5I-aL3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BeS-Kr-tco"/>
+                            <constraint firstItem="0P3-5I-aL3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tfj-wT-Bcr"/>
+                            <constraint firstItem="0P3-5I-aL3" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="fCB-tf-TdJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Friends" id="xeA-KV-P0W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1339.5" y="-230"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HVY-mN-OaY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TJK-Ne-dL9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ot-cz-OFY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="54n-Ye-KOI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GV9-xC-raD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="-230"/>
         </scene>
     </scenes>
 </document>
