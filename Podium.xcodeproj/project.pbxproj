@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0A6FF61B29DC9C005882DB /* InviteTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A6FF51B29DC9C005882DB /* InviteTestCase.swift */; };
 		4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F4E70CC1B27AD62009A1A24 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */; };
@@ -100,6 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F0A6FF51B29DC9C005882DB /* InviteTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTestCase.swift; sourceTree = "<group>"; };
 		4F2099E51B276AD9008FBF4C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4F63CA3B1B2761CB0004013B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				4F96AE401B28D622002DEA71 /* StackFakeData.swift */,
 				4F6BE3461B287F6500F5050B /* ProfileTestCase.swift */,
 				4F9AF57F1B289B6600635770 /* FriendTestCase.swift */,
+				4F0A6FF51B29DC9C005882DB /* InviteTestCase.swift */,
 				4F8E9D5C1B27362F00446CC3 /* Supporting Files */,
 			);
 			path = PodiumKitTests;
@@ -560,6 +563,7 @@
 			files = (
 				4F9AF5801B289B6600635770 /* FriendTestCase.swift in Sources */,
 				4F96AE411B28D622002DEA71 /* StackFakeData.swift in Sources */,
+				4F0A6FF61B29DC9C005882DB /* InviteTestCase.swift in Sources */,
 				4F6BE3471B287F6500F5050B /* ProfileTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
