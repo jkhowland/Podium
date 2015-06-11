@@ -18,7 +18,7 @@ public class AuthenticationController: NSObject {
         
     }
     
-    public func signUp(name: String, email: String, phone: String) {
+    public func signUp(name: String, email: String, phone: String, done: (profile: Profile) -> ()) {
         let profile = ProfileController.sharedController.addUser(name, email: email, phone: phone)
         self.currentProfile = profile
         
@@ -29,6 +29,7 @@ public class AuthenticationController: NSObject {
 
             print("Record: \(recordID.recordName)")
             profile.userRecordName = recordID.recordName
+            done(profile: profile)
         }
     }
     
