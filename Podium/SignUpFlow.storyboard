@@ -7,10 +7,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="kLI-E7-cTw">
             <objects>
-                <viewController id="tcC-N3-goG" sceneMemberID="viewController">
+                <viewController id="tcC-N3-goG" customClass="SignUpViewController" customModule="Podium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M13-EX-fuz"/>
                         <viewControllerLayoutGuide type="bottom" id="caB-2N-7zW"/>
@@ -42,12 +42,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RyQ-zB-q00">
+                                <rect key="frame" x="100" y="405" width="400" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-2a-uFE">
-                                <rect key="frame" x="468" y="414" width="32" height="30"/>
+                                <rect key="frame" x="468" y="449" width="32" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="NhJ-2l-iqh" kind="show" id="0bj-BA-dny"/>
+                                    <action selector="next:" destination="tcC-N3-goG" eventType="touchUpInside" id="SwN-3h-dCV"/>
+                                    <segue destination="NhJ-2l-iqh" kind="show" identifier="next" id="0bj-BA-dny"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,6 +66,8 @@
                             <constraint firstItem="2Ew-pD-PZ4" firstAttribute="centerX" secondItem="j94-ZI-uAE" secondAttribute="centerX" id="A9f-XP-7gT"/>
                             <constraint firstItem="Aug-2a-uFE" firstAttribute="top" secondItem="2BU-r4-1Qw" secondAttribute="bottom" constant="30" id="Ebp-Qo-78K"/>
                             <constraint firstItem="2Ew-pD-PZ4" firstAttribute="width" secondItem="j94-ZI-uAE" secondAttribute="width" multiplier="2" id="HmY-Ol-LPV"/>
+                            <constraint firstItem="RyQ-zB-q00" firstAttribute="trailing" secondItem="2BU-r4-1Qw" secondAttribute="trailing" id="OZo-ZA-Wqg"/>
+                            <constraint firstItem="RyQ-zB-q00" firstAttribute="leading" secondItem="2BU-r4-1Qw" secondAttribute="leading" id="QoV-4h-IWv"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="2Ew-pD-PZ4" secondAttribute="trailing" id="RYi-XS-bh5"/>
                             <constraint firstItem="2Ew-pD-PZ4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N14-Dr-zQZ" secondAttribute="leadingMargin" id="Td7-FR-8l4"/>
                             <constraint firstItem="Aug-2a-uFE" firstAttribute="trailing" secondItem="2BU-r4-1Qw" secondAttribute="trailing" id="URF-IE-9If"/>
@@ -67,11 +75,24 @@
                             <constraint firstItem="2BU-r4-1Qw" firstAttribute="leading" secondItem="2Ew-pD-PZ4" secondAttribute="leading" id="Z0K-EF-Xge"/>
                             <constraint firstItem="j94-ZI-uAE" firstAttribute="width" secondItem="N14-Dr-zQZ" secondAttribute="width" multiplier="0.5" priority="750" id="bVM-DP-k2l"/>
                             <constraint firstItem="j94-ZI-uAE" firstAttribute="centerX" secondItem="N14-Dr-zQZ" secondAttribute="centerX" id="kED-fZ-krT"/>
+                            <constraint firstItem="Aug-2a-uFE" firstAttribute="top" secondItem="RyQ-zB-q00" secondAttribute="bottom" constant="14" id="pgI-Pu-ivO"/>
                             <constraint firstItem="caB-2N-7zW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Aug-2a-uFE" secondAttribute="bottom" constant="20" id="skI-Cx-rey"/>
+                            <constraint firstItem="RyQ-zB-q00" firstAttribute="top" secondItem="2BU-r4-1Qw" secondAttribute="bottom" constant="21" id="utZ-bl-DDg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ebp-Qo-78K"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="oXI-2h-i3Z"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="emailField" destination="2BU-r4-1Qw" id="biH-fM-HIX"/>
+                        <outlet property="nameField" destination="2Ew-pD-PZ4" id="LNg-DF-rQT"/>
+                        <outlet property="nextButton" destination="Aug-2a-uFE" id="duf-xq-60F"/>
+                        <outlet property="phoneField" destination="RyQ-zB-q00" id="EeX-AY-eaY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FT-bm-ApS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,12 +13,22 @@ import CoreData
 public class Profile: NSManagedObject {
 
     public static let entityName = "Profile"
-
+    
     @NSManaged public var phone: String?
+    public static let phoneKey = "phone"
+
     @NSManaged public var email: String?
+    public static let emailKey = "email"
+
     @NSManaged public var identifier: NSNumber?
+    public static let identifierKey = "identifier"
+
     @NSManaged public var name: String?
-    @NSManaged public var friends: NSSet?
+    public static let nameKey = "name"
+
     @NSManaged public var userRecordName: String?
+    public static let userRecordKey = "userRecordName"
+    
+    @NSManaged public var friends: NSSet?
 
 }

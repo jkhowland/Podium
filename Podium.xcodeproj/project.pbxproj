@@ -11,6 +11,7 @@
 		4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F255F2E1B2A357400707562 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F255F2D1B2A357400707562 /* NetworkController.swift */; };
+		4F255F301B2A4D3A00707562 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */; };
 		4F3AA1FD1B2A0770004E28D4 /* OverlayBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA1FC1B2A0770004E28D4 /* OverlayBlurView.swift */; };
 		4F3AA1FF1B2A0A38004E28D4 /* OverlayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA1FE1B2A0A38004E28D4 /* OverlayMessage.swift */; };
 		4F3AA2011B2A0AA1004E28D4 /* OverlayMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA2001B2A0AA1004E28D4 /* OverlayMessageView.swift */; };
@@ -112,6 +113,7 @@
 		4F0A6FF51B29DC9C005882DB /* InviteTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTestCase.swift; sourceTree = "<group>"; };
 		4F2099E51B276AD9008FBF4C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		4F255F2D1B2A357400707562 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4F3AA1FC1B2A0770004E28D4 /* OverlayBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayBlurView.swift; sourceTree = "<group>"; };
 		4F3AA1FE1B2A0A38004E28D4 /* OverlayMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayMessage.swift; sourceTree = "<group>"; };
 		4F3AA2001B2A0AA1004E28D4 /* OverlayMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayMessageView.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				4F3AA2061B2A1A8A004E28D4 /* Loading.storyboard */,
 				E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */,
 				E7A6AB851B2913C400676280 /* OnboardingViewController.swift */,
+				4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */,
 				4FEA651A1B26A96700E572FE /* Main.storyboard */,
 				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
 				4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */,
@@ -617,6 +620,7 @@
 				68F9A8C71B2788AB00F8C007 /* ProgressView.swift in Sources */,
 				4F3AA1FD1B2A0770004E28D4 /* OverlayBlurView.swift in Sources */,
 				4F3AA1FF1B2A0A38004E28D4 /* OverlayMessage.swift in Sources */,
+				4F255F301B2A4D3A00707562 /* SignUpViewController.swift in Sources */,
 				4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */,
 				E7A6AB881B2913C400676280 /* OnboardingDataSource.swift in Sources */,
 				E7A6AB891B2913C400676280 /* OnboardingViewController.swift in Sources */,

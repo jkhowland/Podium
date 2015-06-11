@@ -16,6 +16,7 @@ let storyboardSignUpFlow = "SignUpFlow"
 public class AuthenticationController: NSObject {
     public static let sharedController = AuthenticationController()
 
+    public var currentUserID: String?
     public var currentProfile: Profile?
     
     public func welcomeStoryboardIdentifier() -> String {
@@ -31,8 +32,9 @@ public class AuthenticationController: NSObject {
         
         NetworkController.sharedController.userRecord { (record) -> Void in
             if let record = record {
+                self.currentUserID = record
                 let predicate = NSPredicate(format: "\(userIdentifierKey) = %@", record)
-                NetworkController.sharedController.fetchRecordsWIthType(Profile.entityName, predicate: predicate, completionHandler: { (results) -> Void in
+                NetworkController.sharedController.fetchRecordsWithType(Profile.entityName, predicate: predicate, completionHandler: { (results) -> Void in
                     
                     if results.count > 0 {
                         completionHandler(storyboardID: storyboardBaseApp)
@@ -50,12 +52,27 @@ public class AuthenticationController: NSObject {
         self.currentProfile = profile
     }
     
-    public func signUp(name: String, email: String, phone: String, userIdentifier: String) {
-        let profile = ProfileController.sharedController.addUser(name, email: email, phone: phone, userIdentifier: userIdentifier)
-        self.currentProfile = profile
+    public func signUp(name: String, email: String, phone: String, completionHandler:(success: Bool, error: NSError?) -> Void) {
         
-        InviteController.sharedController.acceptReceivedInvites(email)
-        
+        if self.currentUserID != nil {
+            
+            let recordDictionary: [String: AnyObject?] = [
+                Profile.nameKey: name,
+                Profile.emailKey: email,
+                Profile.phoneKey: phone,
+                Profile.userRecordKey: self.currentUserID
+            ]
+            
+            NetworkController.sharedController.postRecord(Profile.entityName, recordDictionary: recordDictionary) { (success, identifier) -> Void in
+                
+                let profile = ProfileController.sharedController.addUser(name, email: email, phone: phone, userIdentifier: self.currentUserID!)
+                self.currentProfile = profile
+                
+                InviteController.sharedController.acceptReceivedInvites(email)
+                
+            }
+            
+        }
     }
     
 }

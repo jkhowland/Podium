@@ -31,13 +31,14 @@ class InviteTestCase: XCTestCase {
     
     func testInviteAccept() {
         
-        AuthenticationController.sharedController.signUp("Eddy Cue", email: eddyEmail, phone: "801-450-3213", userIdentifier: "123")
+        AuthenticationController.sharedController.signUp("Eddy Cue", email: eddyEmail, phone: "801-450-3213") { (success, error) -> Void in
 
-        let receivedInvites = InviteController.sharedController.receivedInvites(eddyEmail)
+            let receivedInvites = InviteController.sharedController.receivedInvites(eddyEmail)
+            
+            XCTAssert(receivedInvites.count == 0)
+            XCTAssert(self.testFriendCount(eddyEmail, count: 1))
 
-        XCTAssert(receivedInvites.count == 0)
-        XCTAssert(self.testFriendCount(eddyEmail, count: 1))
-    
+        }
     }
     
     func testFriendCount(email: String, count: Int) -> Bool {

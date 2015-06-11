@@ -32,10 +32,27 @@ public class NetworkController: NSObject {
         
         }()
     
-    public func fetchRecordsWIthType(recordType: String, predicate: NSPredicate, completionHandler:(results: [AnyObject]) -> Void) {
+    public func postRecord(recordType: String, recordDictionary: [String: AnyObject?], completionHandler: (success: Bool, identifier: String?) -> Void) {
+    
+        let record: CKRecord = CKRecord(recordType: recordType)
         
-        let query = CKQuery(recordType: recordType, predicate: predicate)
-        let queryOperation = CKQueryOperation(query: query)
+        for key in recordDictionary.keys.array {
+            record[key] = recordDictionary[key] as? CKRecordValue
+        }
+        
+        self.publicDatabase.saveRecord(record) { (record, error) -> Void in
+            if error != nil {
+                completionHandler(success: false, identifier: nil)
+            } else {
+                completionHandler(success: true, identifier: record?.recordID.recordName)
+            }
+        }
+    }
+    
+    
+    public func fetchRecordsWithType(recordType: String, predicate: NSPredicate, completionHandler:(results: [AnyObject]) -> Void) {
+        
+        let queryOperation = CKQueryOperation(query: CKQuery(recordType: recordType, predicate: NSPredicate(value: true)))
         
         var resultObjects: [AnyObject] = []
         
@@ -47,6 +64,10 @@ public class NetworkController: NSObject {
             completionHandler(results: resultObjects)
         }
         
+        queryOperation.completionBlock = {
+            completionHandler(results: resultObjects)
+        }
+                
         self.publicDatabase.addOperation(queryOperation)
     }
     
