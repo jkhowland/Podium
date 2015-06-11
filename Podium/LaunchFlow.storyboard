@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="1203" y="-3"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="2Pc-CO-fFF">
             <objects>
-                <viewController id="NhJ-2l-iqh" sceneMemberID="viewController">
+                <viewController id="NhJ-2l-iqh" customClass="OnboardingViewController" customModule="Podium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NJ8-NE-Hlf"/>
                         <viewControllerLayoutGuide type="bottom" id="J9C-Tb-Uua"/>
@@ -145,7 +145,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CUB-fC-CCm">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CUB-fC-CCm">
                                     <size key="itemSize" width="249" height="337"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -159,70 +159,64 @@
                                             <rect key="frame" x="0.0" y="0.0" width="249" height="337"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-ay-hTe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="337"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r8f-K6-RN1">
+                                                    <rect key="frame" x="0.0" y="0.5" width="249" height="336.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r8f-K6-RN1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="337"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-eI-9yM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="19.5"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="85p-j0-SLI">
+                                                            <rect key="frame" x="0.0" y="19.5" width="249" height="317"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-eI-9yM">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="19.5"/>
-                                                                    <animations/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="85p-j0-SLI">
-                                                                    <rect key="frame" x="0.0" y="19.5" width="249" height="317.5"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Ia-Yw-gTr">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="105.5"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Ia-Yw-gTr">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="106"/>
-                                                                            <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OnX-Be-Hqa">
-                                                                                    <rect key="frame" x="0.0" y="13" width="80" height="80"/>
-                                                                                    <animations/>
-                                                                                </imageView>
-                                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDV-QM-kqk">
-                                                                                    <rect key="frame" x="80" y="38" width="169" height="30"/>
-                                                                                    <animations/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                            </subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OnX-Be-Hqa">
+                                                                            <rect key="frame" x="0.0" y="13" width="80" height="80"/>
                                                                             <animations/>
-                                                                        </stackView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2JC-GC-4WT">
-                                                                            <rect key="frame" x="0.0" y="106" width="249" height="105.5"/>
-                                                                            <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VBT-Zn-khT">
-                                                                                    <rect key="frame" x="0.0" y="13" width="80" height="80"/>
-                                                                                    <animations/>
-                                                                                </imageView>
-                                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ag-SD-PSe">
-                                                                                    <rect key="frame" x="80" y="38" width="169" height="30"/>
-                                                                                    <animations/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                            </subviews>
+                                                                        </imageView>
+                                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDV-QM-kqk">
+                                                                            <rect key="frame" x="80" y="38" width="169" height="30"/>
                                                                             <animations/>
-                                                                        </stackView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IXQ-L6-79i">
-                                                                            <rect key="frame" x="0.0" y="211.5" width="249" height="106"/>
-                                                                            <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VwC-AR-QZK">
-                                                                                    <rect key="frame" x="0.0" y="13" width="80" height="80"/>
-                                                                                    <animations/>
-                                                                                </imageView>
-                                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVS-ye-iy7">
-                                                                                    <rect key="frame" x="80" y="38" width="169" height="30"/>
-                                                                                    <animations/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                            </subviews>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                    <animations/>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2JC-GC-4WT">
+                                                                    <rect key="frame" x="0.0" y="105.5" width="249" height="106"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VBT-Zn-khT">
+                                                                            <rect key="frame" x="0.0" y="13" width="80" height="80"/>
                                                                             <animations/>
-                                                                        </stackView>
+                                                                        </imageView>
+                                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ag-SD-PSe">
+                                                                            <rect key="frame" x="80" y="38" width="169" height="30"/>
+                                                                            <animations/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                    <animations/>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IXQ-L6-79i">
+                                                                    <rect key="frame" x="0.0" y="211.5" width="249" height="105.5"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VwC-AR-QZK">
+                                                                            <rect key="frame" x="0.0" y="12.5" width="80" height="80"/>
+                                                                            <animations/>
+                                                                        </imageView>
+                                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVS-ye-iy7">
+                                                                            <rect key="frame" x="80" y="37.5" width="169" height="30"/>
+                                                                            <animations/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
                                                                     </subviews>
                                                                     <animations/>
                                                                 </stackView>
@@ -238,14 +232,14 @@
                                         </view>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="DFI-ay-hTe" secondAttribute="bottom" id="0jW-y1-Ip5"/>
-                                            <constraint firstItem="DFI-ay-hTe" firstAttribute="top" secondItem="kc8-iz-EDE" secondAttribute="top" id="auE-bE-BOZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="DFI-ay-hTe" secondAttribute="trailing" id="mDc-79-sla"/>
-                                            <constraint firstItem="DFI-ay-hTe" firstAttribute="leading" secondItem="kc8-iz-EDE" secondAttribute="leading" id="vVE-1a-Pvi"/>
+                                            <constraint firstItem="r8f-K6-RN1" firstAttribute="top" secondItem="kc8-iz-EDE" secondAttribute="top" id="8X9-Vj-jwG"/>
+                                            <constraint firstItem="r8f-K6-RN1" firstAttribute="leading" secondItem="kc8-iz-EDE" secondAttribute="leading" id="Ayk-Ck-kzW"/>
+                                            <constraint firstAttribute="bottom" secondItem="r8f-K6-RN1" secondAttribute="bottom" id="C3D-Xh-ZCQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="r8f-K6-RN1" secondAttribute="trailing" id="vhT-Dg-tZJ"/>
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="invites" id="TWr-ho-d5b">
-                                        <rect key="frame" x="259" y="99.5" width="249" height="337"/>
+                                        <rect key="frame" x="249" y="99.5" width="249" height="337"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="249" height="337"/>
@@ -281,7 +275,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="competition" id="ISv-54-WXl">
-                                        <rect key="frame" x="518" y="99.5" width="249" height="337"/>
+                                        <rect key="frame" x="498" y="99.5" width="249" height="337"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="249" height="337"/>
@@ -323,6 +317,10 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="AY0-u4-CPd" id="zHK-6B-k5c"/>
+                                    <outlet property="delegate" destination="NhJ-2l-iqh" id="rUj-Qb-Zmq"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <animations/>
@@ -336,6 +334,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93j-ru-lld" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="AY0-u4-CPd" customClass="OnboardingDataSource" customModule="Podium" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1879" y="-3"/>
         </scene>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController, UICollectionViewDelegate {
+class OnboardingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,11 @@ class OnboardingViewController: UIViewController, UICollectionViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Collection View Layout Delegate
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return self.view.frame.size
+    }
 
     /*
     // MARK: - Navigation
