@@ -29,8 +29,28 @@ public class AuthenticationController: NSObject {
         }
     }
     
-    public func getStartedStoryboard(completionHandler: (storyboardID: String) -> Void) {
-        completionHandler(storyboardID: storyboardBaseApp)
+    public func getStartedStoryboard(completionHandler: (storyboardID: String?) -> Void) {
+        
+        CKContainer.defaultContainer().fetchUserRecordIDWithCompletionHandler { (recordID, error) -> Void in
+            if let recordID = recordID {
+                print("Record: \(recordID.recordName)")
+                
+                let predicate = NSPredicate(format: "userRecordName = %@", recordID.recordName)
+                SyncController.sharedController.fetchRecordsWIthType(Profile.entityName, predicate: predicate, completionHandler: { (results) -> Void in
+                    
+                    if results.count > 0 {
+                        completionHandler(storyboardID: storyboardBaseApp)
+                    } else {
+                        completionHandler(storyboardID: storyboardSignUpFlow)
+
+                    }
+                    
+                })
+                
+            } else {
+                completionHandler(storyboardID: nil)
+            }
+        }
     }
     
     public func signIn() {
@@ -43,12 +63,6 @@ public class AuthenticationController: NSObject {
         
         InviteController.sharedController.acceptReceivedInvites(email)
         
-        CKContainer.defaultContainer().fetchUserRecordIDWithCompletionHandler { (recordID, error) -> Void in
-            guard let recordID = recordID else { print("Error \(error)"); return }
-
-            print("Record: \(recordID.recordName)")
-            profile.userRecordName = recordID.recordName
-        }
     }
     
 }

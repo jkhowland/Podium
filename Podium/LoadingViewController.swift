@@ -12,13 +12,17 @@ import PodiumKit
 class LoadingViewController: UIViewController {
 
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var loginLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.activityIndicator.hidden = false
         self.activityIndicator.startAnimating()
         
-        // Do any additional setup after loading the view.
+        self.loginLabel.hidden = true
+        self.getStarted(nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,11 +33,14 @@ class LoadingViewController: UIViewController {
     @IBAction func getStarted(sender: AnyObject?) {
         
         AuthenticationController.sharedController.getStartedStoryboard { (storyboardID) -> Void in
-            let storyboard = UIStoryboard(name: storyboardID, bundle: nil)
-            let viewController = storyboard.instantiateInitialViewController()
-            
-            self.navigationController?.pushViewController(viewController!, animated: true)
+            if let storyboardID = storyboardID {
+                dispatch_after(0, dispatch_get_main_queue(), { () -> Void in
+                    self.performSegueWithIdentifier(storyboardID, sender: self)
+                })
+            } else {
+                self.activityIndicator.hidden = true
+                self.loginLabel.hidden = false
+            }
         }
     }
-    
 }

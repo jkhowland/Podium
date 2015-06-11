@@ -14,7 +14,7 @@ private let nameKey = "name"
 private let emailKey = "email"
 private let phoneKey = "phone"
 
-public let joshEmail = "josh@devmtn.com"
+public let joshEmail = "me@jkhowland.com"
 public let calebEmail = "calebhicks@gmail.com"
 public let benEmail = "ben@yahoo.com"
 public let timEmail = "tim@me.com"

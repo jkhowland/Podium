@@ -25,12 +25,20 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please log in to iCloud to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-BY-NtZ">
+                                <rect key="frame" x="170.5" y="515.5" width="260.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.064788510101010055" green="0.064788510101010055" blue="0.064788510101010055" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hpm-xV-z4M" firstAttribute="centerX" secondItem="KxH-BI-eiZ" secondAttribute="centerX" id="090-e3-Sxb"/>
                             <constraint firstItem="5TO-h4-945" firstAttribute="top" secondItem="RZO-qP-z70" secondAttribute="bottom" constant="20" id="28s-WR-n2u"/>
                             <constraint firstItem="hpm-xV-z4M" firstAttribute="centerY" secondItem="KxH-BI-eiZ" secondAttribute="centerY" id="GB0-Pi-i1e"/>
+                            <constraint firstItem="6J7-BY-NtZ" firstAttribute="centerX" secondItem="KxH-BI-eiZ" secondAttribute="centerX" id="UdZ-SD-fIL"/>
+                            <constraint firstItem="FGq-e9-0ek" firstAttribute="top" secondItem="6J7-BY-NtZ" secondAttribute="bottom" constant="64" id="h40-Nl-peA"/>
                             <constraint firstItem="5TO-h4-945" firstAttribute="centerX" secondItem="KxH-BI-eiZ" secondAttribute="centerX" id="m9a-ke-QGp"/>
                         </constraints>
                     </view>
@@ -38,11 +46,39 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="activityIndicator" destination="hpm-xV-z4M" id="BuH-yD-CD3"/>
+                        <outlet property="loginLabel" destination="6J7-BY-NtZ" id="RUu-Nw-lCm"/>
+                        <segue destination="1Uj-3g-lEi" kind="show" identifier="SignInFlow" id="BSE-Ii-rLQ"/>
+                        <segue destination="3c6-gR-kmN" kind="show" identifier="SignUpFlow" id="Jwl-1T-pu1"/>
+                        <segue destination="D1U-H4-kwY" kind="show" identifier="BaseApp" id="4UW-FA-by8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QT4-CY-Xrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2935" y="765"/>
+            <point key="canvasLocation" x="2955" y="765"/>
+        </scene>
+        <!--BaseApp-->
+        <scene sceneID="ZKy-4o-6Tn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BaseApp" id="D1U-H4-kwY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OkC-7r-s28" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3436.5" y="577"/>
+        </scene>
+        <!--SignInFlow-->
+        <scene sceneID="iwd-gD-Dwl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignInFlow" id="1Uj-3g-lEi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsX-tK-RfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3442.5" y="765"/>
+        </scene>
+        <!--SignUpFlow-->
+        <scene sceneID="sIR-XP-VxC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUpFlow" id="3c6-gR-kmN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ijA-TB-Rit" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3445" y="953"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ftl-V0-dfd">
