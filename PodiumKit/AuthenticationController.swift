@@ -47,11 +47,11 @@ public class AuthenticationController: NSObject {
     }
     
     public func signIn(profile: Profile) {
-        
+        self.currentProfile = profile
     }
     
-    public func signUp(name: String, email: String, phone: String, userRecordName: String) {
-        let profile = ProfileController.sharedController.addUser(name, email: email, phone: phone)
+    public func signUp(name: String, email: String, phone: String, userIdentifier: String) {
+        let profile = ProfileController.sharedController.addUser(name, email: email, phone: phone, userIdentifier: userIdentifier)
         self.currentProfile = profile
         
         InviteController.sharedController.acceptReceivedInvites(email)

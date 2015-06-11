@@ -11,7 +11,7 @@ import CoreData
 public class ProfileController: NSObject {
     public static let sharedController = ProfileController()
         
-    public func addUser(name: String, email: String, phone: String) -> Profile {
+    public func addUser(name: String, email: String, phone: String, userIdentifier: String) -> Profile {
 
         let context = Stack.defaultStack.mainContext
         
