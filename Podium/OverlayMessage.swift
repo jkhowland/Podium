@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum OverlayMessageType: NSNumber {
+    case Error = 0
+    case Success
+    case Neutral
+}
+
 class OverlayMessage: NSObject {
 
 }

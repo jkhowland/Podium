@@ -10,7 +10,7 @@ import UIKit
 
 class OverlayMessageView: UIView {
 
-    init(title: String, subtitle: String) {
+    init(title: String, subtitle: String, type: OverlayMessageType) {
         super.init(frame: CGRectZero)
 
     }

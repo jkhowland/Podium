@@ -15,8 +15,9 @@
 		4F3AA2011B2A0AA1004E28D4 /* OverlayMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA2001B2A0AA1004E28D4 /* OverlayMessageView.swift */; };
 		4F3AA2031B2A0B53004E28D4 /* HealthPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA2021B2A0B53004E28D4 /* HealthPoint.swift */; };
 		4F3AA2051B2A0B5A004E28D4 /* HealthPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA2041B2A0B5A004E28D4 /* HealthPointController.swift */; };
-		4F4BBF0E1B29F6C20090842D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F4BBF0D1B29F6C20090842D /* Welcome.storyboard */; };
-		4F4BBF101B29FE100090842D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4BBF0F1B29FE100090842D /* WelcomeViewController.swift */; };
+		4F3AA2071B2A1A8A004E28D4 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3AA2061B2A1A8A004E28D4 /* Loading.storyboard */; };
+		4F4BBF0E1B29F6C20090842D /* SignInFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */; };
+		4F4BBF101B29FE100090842D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */; };
 		4F4E70CC1B27AD62009A1A24 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */; };
 		4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3B1B2761CB0004013B /* Friend.swift */; };
 		4F63CA441B2761CC0004013B /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA411B2761CC0004013B /* Invite.swift */; };
@@ -114,8 +115,9 @@
 		4F3AA2001B2A0AA1004E28D4 /* OverlayMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayMessageView.swift; sourceTree = "<group>"; };
 		4F3AA2021B2A0B53004E28D4 /* HealthPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPoint.swift; sourceTree = "<group>"; };
 		4F3AA2041B2A0B5A004E28D4 /* HealthPointController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPointController.swift; sourceTree = "<group>"; };
-		4F4BBF0D1B29F6C20090842D /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
-		4F4BBF0F1B29FE100090842D /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4F3AA2061B2A1A8A004E28D4 /* Loading.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
+		4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignInFlow.storyboard; sourceTree = "<group>"; };
+		4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4F63CA3B1B2761CB0004013B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		4F63CA411B2761CC0004013B /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
@@ -317,13 +319,14 @@
 				4F3AA1FB1B2A0734004E28D4 /* OverlayHUD */,
 				4F8E9D451B2735E400446CC3 /* Podium.entitlements */,
 				4FEA65161B26A96700E572FE /* AppDelegate.swift */,
-				4F4BBF0F1B29FE100090842D /* WelcomeViewController.swift */,
+				4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */,
 				6851835E1B277ED40014E216 /* LeaderboardViewController.swift */,
 				6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */,
 				68F9A8C61B2788AB00F8C007 /* ProgressView.swift */,
 				E7A6AB821B2913C400676280 /* BaseApp.storyboard */,
 				E7A6AB831B2913C400676280 /* SignUpFlow.storyboard */,
-				4F4BBF0D1B29F6C20090842D /* Welcome.storyboard */,
+				4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */,
+				4F3AA2061B2A1A8A004E28D4 /* Loading.storyboard */,
 				E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */,
 				E7A6AB851B2913C400676280 /* OnboardingViewController.swift */,
 				4FEA651A1B26A96700E572FE /* Main.storyboard */,
@@ -541,11 +544,12 @@
 			files = (
 				4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */,
 				E7A6AB861B2913C400676280 /* BaseApp.storyboard in Resources */,
-				4F4BBF0E1B29F6C20090842D /* Welcome.storyboard in Resources */,
+				4F4BBF0E1B29F6C20090842D /* SignInFlow.storyboard in Resources */,
 				E7A6AB811B290F7400676280 /* (null) in Resources */,
 				4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */,
 				4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */,
 				E7A6AB871B2913C400676280 /* SignUpFlow.storyboard in Resources */,
+				4F3AA2071B2A1A8A004E28D4 /* Loading.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +607,7 @@
 			files = (
 				4F82A68A1B28D723008FB424 /* StackDevelopmentFakeData.swift in Sources */,
 				4F3AA2011B2A0AA1004E28D4 /* OverlayMessageView.swift in Sources */,
-				4F4BBF101B29FE100090842D /* WelcomeViewController.swift in Sources */,
+				4F4BBF101B29FE100090842D /* LoadingViewController.swift in Sources */,
 				6851835D1B277EA00014E216 /* UserStatusTableViewCell.swift in Sources */,
 				6851835F1B277ED40014E216 /* LeaderboardViewController.swift in Sources */,
 				68F9A8C71B2788AB00F8C007 /* ProgressView.swift in Sources */,

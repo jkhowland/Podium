@@ -9,9 +9,10 @@
 import Foundation
 import CloudKit
 
-let storyboardSignInFlow = "Welcome"
+let storyboardLoading = "Loading"
 
 let storyboardBaseApp = "BaseApp"
+let storyboardSignInFlow = "SignInFlow"
 let storyboardSignUpFlow = "SignUpFlow"
 
 public class AuthenticationController: NSObject {
@@ -22,7 +23,7 @@ public class AuthenticationController: NSObject {
     public func welcomeStoryboardIdentifier() -> String {
 
         if self.currentProfile == nil {
-            return storyboardSignInFlow
+            return storyboardLoading
         } else {
             return storyboardBaseApp
         }

@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  LoadingViewController.swift
 //  Podium
 //
 //  Created by Joshua Howland on 6/11/15.
@@ -9,11 +9,15 @@
 import UIKit
 import PodiumKit
 
-class WelcomeViewController: UIViewController {
+class LoadingViewController: UIViewController {
 
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.activityIndicator.startAnimating()
+        
         // Do any additional setup after loading the view.
     }
 
