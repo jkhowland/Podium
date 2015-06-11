@@ -18,9 +18,9 @@ public class Friend: NSManagedObject {
 
 extension Friend {
 
-    @NSManaged var currentProfile: Profile?
-    @NSManaged var profile: Profile? // Friend to which current user requested
-    @NSManaged var accepted: NSNumber? // Contains a boolean
-    @NSManaged var identifier: NSNumber?
+    @NSManaged public var currentProfile: Profile?
+    @NSManaged public var profile: Profile? // Friend to which current user requested
+    @NSManaged public var accepted: NSNumber? // Contains a boolean
+    @NSManaged public var identifier: NSNumber?
     
 }

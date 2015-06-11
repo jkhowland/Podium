@@ -10,8 +10,6 @@
 		4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F4E70CC1B27AD62009A1A24 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */; };
-		4F63CA3C1B2761CB0004013B /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3A1B2761CB0004013B /* Friend+CoreDataProperties.swift */; };
-		4F63CA3D1B2761CB0004013B /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3A1B2761CB0004013B /* Friend+CoreDataProperties.swift */; };
 		4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3B1B2761CB0004013B /* Friend.swift */; };
 		4F63CA441B2761CC0004013B /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA411B2761CC0004013B /* Invite.swift */; };
 		4F63CA4A1B2761DF0004013B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA471B2761DF0004013B /* Profile.swift */; };
@@ -191,7 +189,6 @@
 		4F63CA391B27617D0004013B /* Model Objects */ = {
 			isa = PBXGroup;
 			children = (
-				E70A332B1B27836000E8B350 /* HealthPoint.swift */,
 				4F63CA471B2761DF0004013B /* Profile.swift */,
 				4F63CA411B2761CC0004013B /* Invite.swift */,
 				4F63CA3B1B2761CB0004013B /* Friend.swift */,
@@ -205,7 +202,6 @@
 				4F8B4B031B274A550029493F /* ProfileController.swift */,
 				4F63CA4D1B27644C0004013B /* InviteController.swift */,
 				4F63CA501B27645E0004013B /* FriendController.swift */,
-				E70A33301B27840300E8B350 /* HealthPointController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -240,7 +236,6 @@
 				4F96AE401B28D622002DEA71 /* StackFakeData.swift */,
 				4F6BE3461B287F6500F5050B /* ProfileTestCase.swift */,
 				4F9AF57F1B289B6600635770 /* FriendTestCase.swift */,
-				4FFA81E81B28BE8700E4CFBE /* InviteTestCase.swift */,
 				4F8E9D5C1B27362F00446CC3 /* Supporting Files */,
 			);
 			path = PodiumKitTests;
@@ -288,7 +283,6 @@
 				6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */,
 				68F9A8C61B2788AB00F8C007 /* ProgressView.swift */,
 				4FEA651A1B26A96700E572FE /* Main.storyboard */,
-				E777A65C1B289812008BBF44 /* LaunchFlow.storyboard */,
 				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
 				4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */,
 				4FEA65221B26A96700E572FE /* Info.plist */,
@@ -504,7 +498,6 @@
 				4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */,
 				4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */,
 				4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */,
-				E777A65D1B289812008BBF44 /* LaunchFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,14 +525,12 @@
 				4F63CA4E1B27644C0004013B /* InviteController.swift in Sources */,
 				4F63CA541B27647B0004013B /* Notes.swift in Sources */,
 				4F8B4B061B274A550029493F /* ProfileController.swift in Sources */,
-				E70A33311B27840300E8B350 /* HealthPointController.swift in Sources */,
 				4F63CA511B27645E0004013B /* FriendController.swift in Sources */,
 				4F8B4B041B274A550029493F /* SyncController.swift in Sources */,
 				4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */,
 				4F63CA441B2761CC0004013B /* Invite.swift in Sources */,
 				4F8E9D711B27365000446CC3 /* Stack.swift in Sources */,
 				4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */,
-				E70A332D1B27836000E8B350 /* HealthPoint.swift in Sources */,
 				4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */,
 				4F63CA4A1B2761DF0004013B /* Profile.swift in Sources */,
 			);
@@ -551,7 +542,6 @@
 			files = (
 				4F9AF5801B289B6600635770 /* FriendTestCase.swift in Sources */,
 				4F96AE411B28D622002DEA71 /* StackFakeData.swift in Sources */,
-				4FFA81E91B28BE8700E4CFBE /* InviteTestCase.swift in Sources */,
 				4F6BE3471B287F6500F5050B /* ProfileTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

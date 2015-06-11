@@ -36,13 +36,11 @@ class ProgressView: UIView {
         super.init(coder: aDecoder)
         
         createProgressLayer()
-        self.animateProgressViewToProgress(0.41)
     }
     
     override func prepareForInterfaceBuilder() {
         createProgressLayer()
         
-        self.animateProgressViewToProgress(0.4)
     }
     
     private func createProgressLayer() {

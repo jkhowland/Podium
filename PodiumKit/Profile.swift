@@ -18,7 +18,7 @@ public class Profile: NSManagedObject {
     @NSManaged public var email: String?
     @NSManaged public var identifier: NSNumber?
     @NSManaged public var name: String?
-    @NSManaged public var friend: NSSet?
+    @NSManaged public var friends: NSSet?
     @NSManaged public var userRecordName: String?
 
 }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TJK-Ne-dL9">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Leaderboard View Controller-->
+        <!--Friends-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LeaderboardViewController" customModule="Podium" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,31 +29,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lh9-Kc-I4d">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Q0-tN-tC8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="1Q0-tN-tC8" secondAttribute="height" multiplier="1:1" id="qpR-Us-XSl"/>
                                                             </constraints>
                                                             <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
                                                             </variation>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDS-9p-DIN">
-                                                            <rect key="frame" x="85" y="0.0" width="280" height="70"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDS-9p-DIN">
+                                                            <rect key="frame" x="84.5" y="0.0" width="282" height="69.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="84" y="0.0" width="81" height="69"/>
+                                                                <rect key="frame" x="84.5" y="0.0" width="82" height="69.5"/>
                                                             </variation>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OE4-M5-DOx">
-                                                            <rect key="frame" x="380" y="0.0" width="220" height="70"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OE4-M5-DOx">
+                                                            <rect key="frame" x="381.5" y="0.0" width="218.5" height="69.5"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dim-Zn-3wc" userLabel="status1" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="dim-Zn-3wc" secondAttribute="height" multiplier="1:1" id="K6q-1c-E1e"/>
                                                                     </constraints>
@@ -67,11 +66,11 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
                                                                     </variation>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suk-rw-xge" userLabel="status2" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
-                                                                    <rect key="frame" x="75" y="0.0" width="70" height="70"/>
+                                                                    <rect key="frame" x="74.5" y="0.0" width="69.5" height="69.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="suk-rw-xge" secondAttribute="height" multiplier="1:1" id="30b-eA-GFP"/>
                                                                     </constraints>
@@ -84,11 +83,11 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="74" y="0.0" width="69" height="69"/>
+                                                                        <rect key="frame" x="74.5" y="0.0" width="69.5" height="69.5"/>
                                                                     </variation>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8U5-8C-YED" userLabel="status3" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
-                                                                    <rect key="frame" x="150" y="0.0" width="70" height="70"/>
+                                                                    <rect key="frame" x="149" y="0.0" width="69.5" height="69.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="8U5-8C-YED" secondAttribute="height" multiplier="1:1" id="wLE-Xo-Fcn"/>
                                                                     </constraints>
@@ -101,33 +100,47 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="148" y="0.0" width="72" height="69"/>
+                                                                        <rect key="frame" x="149" y="0.0" width="69.5" height="69.5"/>
                                                                         <mask key="constraints">
                                                                             <include reference="wLE-Xo-Fcn"/>
                                                                         </mask>
                                                                     </variation>
                                                                 </view>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="220" id="q1d-SZ-iL2"/>
-                                                            </constraints>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="180" y="0.0" width="220" height="69"/>
+                                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="181.5" y="0.0" width="218.5" height="69.5"/>
                                                             </variation>
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="height" secondItem="qHN-Bs-UHQ" secondAttribute="height" id="Edt-1h-JqR"/>
-                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="centerX" secondItem="qHN-Bs-UHQ" secondAttribute="centerX" id="eNp-lt-JNS"/>
-                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="width" secondItem="qHN-Bs-UHQ" secondAttribute="width" id="hcF-w2-yLn"/>
-                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="centerY" secondItem="qHN-Bs-UHQ" secondAttribute="centerY" id="phF-Ni-Tj9"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lh9-Kc-I4d" secondAttribute="bottom" id="DuI-5n-Pkd">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
+                                                <constraint firstAttribute="trailing" secondItem="Lh9-Kc-I4d" secondAttribute="trailing" id="VTU-Xl-pmH">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
+                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="leading" secondItem="qHN-Bs-UHQ" secondAttribute="leading" id="j3Z-2w-gQS"/>
+                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="top" secondItem="qHN-Bs-UHQ" secondAttribute="top" id="mcN-XX-VeE">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
                                             </constraints>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <exclude reference="DuI-5n-Pkd"/>
+                                                    <exclude reference="VTU-Xl-pmH"/>
+                                                    <exclude reference="j3Z-2w-gQS"/>
+                                                    <exclude reference="mcN-XX-VeE"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="EDS-9p-DIN" id="XSn-TZ-ORH"/>
                                             <outlet property="profileImage" destination="1Q0-tN-tC8" id="2Ih-rb-JtU"/>
+                                            <outlet property="statusView1" destination="dim-Zn-3wc" id="U9g-ne-yjD"/>
+                                            <outlet property="statusView2" destination="suk-rw-xge" id="Dwe-rk-f8e"/>
+                                            <outlet property="statusView3" destination="8U5-8C-YED" id="IbW-mk-aqg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -145,11 +158,11 @@
                             <constraint firstItem="0P3-5I-aL3" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="fCB-tf-TdJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xeA-KV-P0W"/>
+                    <navigationItem key="navigationItem" title="Friends" id="xeA-KV-P0W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279" y="-230"/>
+            <point key="canvasLocation" x="1339.5" y="-230"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HVY-mN-OaY">
