@@ -41,6 +41,7 @@
 		E75C03C11B28FECC006ED2A6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75C03C01B28FECC006ED2A6 /* OnboardingViewController.swift */; };
 		E75C03C31B28FF1A006ED2A6 /* OnboardingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75C03C21B28FF1A006ED2A6 /* OnboardingDataSource.swift */; };
 		E777A65D1B289812008BBF44 /* LaunchFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E777A65C1B289812008BBF44 /* LaunchFlow.storyboard */; };
+		E7A6AB811B290F7400676280 /* BaseApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A6AB801B290F7400676280 /* BaseApp.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		E75C03C01B28FECC006ED2A6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E75C03C21B28FF1A006ED2A6 /* OnboardingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingDataSource.swift; sourceTree = "<group>"; };
 		E777A65C1B289812008BBF44 /* LaunchFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchFlow.storyboard; sourceTree = "<group>"; };
+		E7A6AB801B290F7400676280 /* BaseApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BaseApp.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 				4FEA65181B26A96700E572FE /* ViewController.swift */,
 				4FEA651A1B26A96700E572FE /* Main.storyboard */,
 				E777A65C1B289812008BBF44 /* LaunchFlow.storyboard */,
+				E7A6AB801B290F7400676280 /* BaseApp.storyboard */,
 				E75C03C01B28FECC006ED2A6 /* OnboardingViewController.swift */,
 				E75C03C21B28FF1A006ED2A6 /* OnboardingDataSource.swift */,
 				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
@@ -505,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */,
+				E7A6AB811B290F7400676280 /* BaseApp.storyboard in Resources */,
 				4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */,
 				4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */,
 				E777A65D1B289812008BBF44 /* LaunchFlow.storyboard in Resources */,
