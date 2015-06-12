@@ -64,7 +64,7 @@ public class ProfileController: NSObject {
     public func findProfileUsingKey(key: String, stringValue: String) -> Profile? {
         
         let request = NSFetchRequest(entityName: Profile.entityName)
-        let predicate = NSPredicate(format: "\(key) = \(stringValue)")
+        let predicate = NSPredicate(format: "\(key) = %@", stringValue)
         
         request.predicate = predicate
         
@@ -98,7 +98,7 @@ public class ProfileController: NSObject {
     
     public func findProfileUsingEmail(email: String) -> Profile? {
         
-        return self.findProfileUsingKey("email", stringValue: "\(email)")
+        return self.findProfileUsingKey("email", stringValue: email)
     }
     
     public func deleteUser(user: Profile) {
