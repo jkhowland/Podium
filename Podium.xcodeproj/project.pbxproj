@@ -292,6 +292,46 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4FA414921B2B88C500D0F1C6 /* Authentication View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F3AA2061B2A1A8A004E28D4 /* Loading.storyboard */,
+				4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */,
+				4FF8C7821B2B481F002AC475 /* SignUpFlow.storyboard */,
+				4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */,
+				4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */,
+			);
+			name = "Authentication View Controllers";
+			sourceTree = "<group>";
+		};
+		4FA414931B2B88EF00D0F1C6 /* Friend View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FA414941B2B892000D0F1C6 /* Views */,
+				4FEA651A1B26A96700E572FE /* Leaderboard.storyboard */,
+				6851835E1B277ED40014E216 /* LeaderboardViewController.swift */,
+			);
+			name = "Friend View Controllers";
+			sourceTree = "<group>";
+		};
+		4FA414941B2B892000D0F1C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				68F9A8C61B2788AB00F8C007 /* ProgressView.swift */,
+				6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4FA414951B2B893000D0F1C6 /* Onboarding View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */,
+				E7A6AB851B2913C400676280 /* OnboardingViewController.swift */,
+			);
+			name = "Onboarding View Controllers";
+			sourceTree = "<group>";
+		};
 		4FEA650A1B26A96700E572FE = {
 			isa = PBXGroup;
 			children = (
@@ -322,20 +362,12 @@
 				4F3AA1FB1B2A0734004E28D4 /* OverlayHUD */,
 				4F8E9D451B2735E400446CC3 /* Podium.entitlements */,
 				4FEA65161B26A96700E572FE /* AppDelegate.swift */,
-				4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */,
-				6851835E1B277ED40014E216 /* LeaderboardViewController.swift */,
-				6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */,
-				68F9A8C61B2788AB00F8C007 /* ProgressView.swift */,
-				683931C01B2B56C500A4C6E2 /* BaseApp.storyboard */,
-				4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */,
-				4FF8C7821B2B481F002AC475 /* SignUpFlow.storyboard */,
-				4F3AA2061B2A1A8A004E28D4 /* Loading.storyboard */,
-				E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */,
-				E7A6AB851B2913C400676280 /* OnboardingViewController.swift */,
-				4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */,
-				4FEA651A1B26A96700E572FE /* Leaderboard.storyboard */,
-				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
 				4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */,
+				683931C01B2B56C500A4C6E2 /* BaseApp.storyboard */,
+				4FA414951B2B893000D0F1C6 /* Onboarding View Controllers */,
+				4FA414921B2B88C500D0F1C6 /* Authentication View Controllers */,
+				4FA414931B2B88EF00D0F1C6 /* Friend View Controllers */,
+				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
 				4FEA65221B26A96700E572FE /* Info.plist */,
 			);
 			path = Podium;
