@@ -61,54 +61,44 @@ public class ProfileController: NSObject {
         return profile
     }
 
-    public func findProfileUsingIdentifier(identifier: Int) -> Profile? {
+    public func findProfileUsingKey(key: String, stringValue: String) -> Profile? {
         
-        let request = NSFetchRequest(entityName: "Profile")
-        let predicate = NSPredicate(format: "identifier = %@", NSNumber(integer: identifier))
+        let request = NSFetchRequest(entityName: Profile.entityName)
+        let predicate = NSPredicate(format: "\(key) = \(stringValue)")
         
         request.predicate = predicate
         
         var error: NSError? = nil
-        var users: [AnyObject]?
+        var profiles: [AnyObject]?
         do {
-            users = try Stack.defaultStack.mainContext?.executeFetchRequest(request)
+            profiles = try Stack.defaultStack.mainContext?.executeFetchRequest(request)
         } catch let error1 as NSError {
             error = error1
             print(error)
-            users = nil
+            profiles = nil
         }
         
-        if users?.count > 0 {
-            return users?.first as? Profile
+        if profiles?.count > 0 {
+            return profiles?.first as? Profile
         } else {
             return nil
         }
         
     }
+
+    public func findProfileUsingUserIdentifier(userIdentifier: String) -> Profile? {
+    
+        return self.findProfileUsingKey(Profile.userRecordKey, stringValue: "\(userIdentifier)")
+    }
+    
+    public func findProfileUsingIdentifier(identifier: Int) -> Profile? {
+        
+        return self.findProfileUsingKey("identifier", stringValue: "\(identifier)")
+    }
     
     public func findProfileUsingEmail(email: String) -> Profile? {
         
-        let request = NSFetchRequest(entityName: "Profile")
-        let emailPredicate = NSPredicate(format: "email = %@", email)
-        
-        request.predicate = emailPredicate
-
-        var error: NSError? = nil
-        var users: [AnyObject]?
-        do {
-            users = try Stack.defaultStack.mainContext?.executeFetchRequest(request)
-        } catch let error1 as NSError {
-            error = error1
-            print(error)
-            users = nil
-        }
-        
-        if users?.count > 0 {
-            return users?.first as? Profile
-        } else {
-            return nil
-        }
-        
+        return self.findProfileUsingKey("email", stringValue: "\(email)")
     }
     
     public func deleteUser(user: Profile) {

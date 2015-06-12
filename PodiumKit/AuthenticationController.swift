@@ -16,29 +16,65 @@ let storyboardSignUpFlow = "SignUpFlow"
 public class AuthenticationController: NSObject {
     public static let sharedController = AuthenticationController()
 
-    public var currentUserID: String?
-    public var currentProfile: Profile?
+    var _currentProfile: Profile?
+
+    public var currentUserID: String? {
+        set {
+            NSUserDefaults.standardUserDefaults().setValue(currentUserID, forKey: Profile.userRecordKey)
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+        } get {
+            if let record = NSUserDefaults.standardUserDefaults().valueForKey(Profile.userRecordKey) as! String? {
+                return record
+            } else {
+                return nil
+            }
+        }
+    }
+
+    public var currentProfile: Profile? {
+        set {
+            _currentProfile = currentProfile
+        } get {
+            if _currentProfile == nil {
+                if let currentUserID = self.currentUserID {
+                    
+                    _currentProfile = ProfileController.sharedController.findProfileUsingUserIdentifier(currentUserID)
+                    
+                    return _currentProfile
+                } else {
+                    return nil
+                }
+            } else {
+                return nil
+            }
+        }
+    }
     
     public func welcomeStoryboardIdentifier() -> String {
-
-        if self.currentProfile == nil {
-            return storyboardLoading
-        } else {
-            return storyboardBaseApp
-        }
+        return storyboardLoading
     }
     
     public func getStartedStoryboard(completionHandler: (storyboardID: String?) -> Void) {
         
         NetworkController.sharedController.userRecord { (record) -> Void in
             if let record = record {
+                
+                if let profile = self.currentProfile {
+                    if profile.userRecordName == record {
+                        completionHandler(storyboardID: storyboardBaseApp)
+                        return
+                    }
+                }
+
                 self.currentUserID = record
+                
                 let predicate = NSPredicate(format: "\(userIdentifierKey) = %@", record)
                 NetworkController.sharedController.fetchRecordsWithType(Profile.entityName, predicate: predicate, completionHandler: { (results) -> Void in
                     
                     if results.count > 0 {
                         if self.signIn(results[0]) {
-                            completionHandler(storyboardID: storyboardBaseApp)
+                            completionHandler(storyboardID: storyboardSignInFlow)
                         } else {
                             // Could not sign in with profile from CloudKit
                             completionHandler(storyboardID: storyboardSignUpFlow)
@@ -48,6 +84,7 @@ public class AuthenticationController: NSObject {
                     }
                 })
             } else {
+                // User is not logged in to iCloud
                 completionHandler(storyboardID: nil)
             }
         }

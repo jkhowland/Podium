@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Stack.defaultStack.clearDevelopmentData()
         Stack.defaultStack.loadDevelopmentData()
-//        AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail("calebhicks@gmail.com")
 
         let storyboard = UIStoryboard(name: AuthenticationController.sharedController.welcomeStoryboardIdentifier(), bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
