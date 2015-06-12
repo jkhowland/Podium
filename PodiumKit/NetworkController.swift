@@ -32,6 +32,40 @@ public class NetworkController: NSObject {
         
         }()
     
+    public func deleteRecord(recordType: String, recordDictionary: [String: AnyObject?], completionHandler: (success: Bool) -> Void) {
+        
+        var predicateKey = Profile.userRecordKey
+        var predicateIdentifier = ""
+        if let identifier = recordDictionary[Profile.userRecordKey] as! String? {
+            predicateKey = Profile.userRecordKey
+            predicateIdentifier = identifier
+        } else {
+            predicateKey = Profile.identifierKey
+            predicateIdentifier = recordDictionary[predicateKey] as! String
+        }
+        
+        let queryOperation = CKQueryOperation(query: CKQuery(recordType: recordType, predicate: NSPredicate(format: "\(predicateKey) = %@", predicateIdentifier)))
+        queryOperation.resultsLimit = 1
+        
+        var resultObjects: [CKRecord] = []
+        
+        queryOperation.recordFetchedBlock = { record in
+            resultObjects.append(record)
+        }
+        
+        queryOperation.queryCompletionBlock = { cursor, error in
+
+            if let record = resultObjects.first as CKRecord? {
+                self.publicDatabase.deleteRecordWithID(record.recordID, completionHandler: { (recordID, error) -> Void in
+                    completionHandler(success: true)
+                })
+            }
+        }
+        
+        self.publicDatabase.addOperation(queryOperation)
+        
+    }
+    
     public func postRecord(recordType: String, recordDictionary: [String: AnyObject?], completionHandler: (success: Bool, networkIdentifier: String?) -> Void) {
     
         let record: CKRecord = CKRecord(recordType: recordType)

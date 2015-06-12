@@ -44,6 +44,34 @@ public class ProfileController: NSObject {
 
     }
     
+    public func profileDictionary(profile: Profile) -> [String: AnyObject?] {
+    
+        var dictionary: [String: AnyObject?] = Dictionary<String, AnyObject?>()
+        
+        if let name = profile.name as String? {
+            dictionary[Profile.nameKey] = name
+        }
+
+        if let email = profile.email as String? {
+            dictionary[Profile.emailKey] = email
+        }
+        
+        if let phone = profile.phone as String? {
+            dictionary[Profile.phoneKey] = phone
+        }
+
+        if let identifier = profile.identifier as NSNumber? {
+            dictionary[Profile.identifierKey] = identifier
+        }
+
+        if let userRecord = profile.userRecordName as String? {
+            dictionary[Profile.userRecordKey] = userRecord
+        }
+    
+        return dictionary
+        
+    }
+    
     public func addProfileName(name: String, email: String, phone: String, identifier: Int, userIdentifier: String) -> Profile {
 
         let context = Stack.defaultStack.mainContext

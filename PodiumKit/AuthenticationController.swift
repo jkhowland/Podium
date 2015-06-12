@@ -90,6 +90,15 @@ public class AuthenticationController: NSObject {
         }
     }
     
+    public func deleteAccount(completionHandler:(success: Bool, error: NSError?) -> Void) {
+    
+        if let profile = AuthenticationController.sharedController.currentProfile  {
+            NetworkController.sharedController.deleteRecord(Profile.entityName, recordDictionary: ProfileController.sharedController.profileDictionary(profile), completionHandler: { (success) -> Void in
+                completionHandler(success: success, error: nil)
+            })
+        }
+    }
+    
     public func signIn(profileDictionary: [String: AnyObject?]) -> Bool {
         if let profile = ProfileController.sharedController.findOrAddProfile(profileDictionary) {
             self.currentProfile = profile
