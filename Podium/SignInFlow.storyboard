@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
     <scenes>
-        <!--Welcome View Controller-->
+        <!--Welcome Back!-->
         <scene sceneID="fmb-vg-Pc8">
             <objects>
                 <viewController id="BLw-rT-FOb" customClass="WelcomeViewController" customModule="Podium" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,12 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome Back!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TO-h4-945">
-                                <rect key="frame" x="240" y="84" width="118" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyA-f2-qUQ">
                                 <rect key="frame" x="243" y="285" width="114" height="30"/>
                                 <state key="normal" title="Review my goals"/>
@@ -32,13 +26,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5TO-h4-945" firstAttribute="top" secondItem="RZO-qP-z70" secondAttribute="bottom" constant="20" id="28s-WR-n2u"/>
                             <constraint firstItem="JyA-f2-qUQ" firstAttribute="centerY" secondItem="KxH-BI-eiZ" secondAttribute="centerY" id="A7F-sU-bo2"/>
                             <constraint firstItem="JyA-f2-qUQ" firstAttribute="centerX" secondItem="KxH-BI-eiZ" secondAttribute="centerX" id="e2m-tK-tur"/>
-                            <constraint firstItem="5TO-h4-945" firstAttribute="centerX" secondItem="KxH-BI-eiZ" secondAttribute="centerX" id="m9a-ke-QGp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zs7-xC-LNJ"/>
+                    <navigationItem key="navigationItem" title="Welcome Back!" id="zs7-xC-LNJ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QT4-CY-Xrf" userLabel="First Responder" sceneMemberID="firstResponder"/>

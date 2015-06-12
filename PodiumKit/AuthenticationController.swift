@@ -36,7 +36,9 @@ public class AuthenticationController: NSObject {
         set {
             _currentProfile = newValue
         } get {
-            if _currentProfile == nil {
+            if let currentProfile = _currentProfile {
+                return currentProfile
+            } else  {
                 if let currentUserID = self.currentUserID {
                     
                     _currentProfile = ProfileController.sharedController.findProfileUsingUserIdentifier(currentUserID)
@@ -45,8 +47,6 @@ public class AuthenticationController: NSObject {
                 } else {
                     return nil
                 }
-            } else {
-                return nil
             }
         }
     }

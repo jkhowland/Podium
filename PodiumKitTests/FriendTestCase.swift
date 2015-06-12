@@ -54,7 +54,6 @@ class FriendTestCase: XCTestCase {
         FriendController.sharedController.updateFriends()
         let friends = FriendController.sharedController.friends
         return(friends.count == count)
-
     }
     
     func testFriendProfileCount(email: String, count: Int) -> Bool {
