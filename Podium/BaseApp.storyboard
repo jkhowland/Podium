@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ff0-Pf-fdF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ff0-Pf-fdF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Progress-->
         <scene sceneID="eah-6Q-U7k">
             <objects>
                 <viewController id="qCY-Ei-5Lm" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="My7-wO-fOd">
+                    <navigationItem key="navigationItem" title="My Progress" id="My7-wO-fOd">
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="Uh0-wo-EeE">
                             <connections>
                                 <segue destination="4pa-1g-lyC" kind="show" id="zxY-Ri-Etc"/>
@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="4285" y="-364"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="rZW-mf-0OO">
             <objects>
                 <viewController id="4pa-1g-lyC" sceneMemberID="viewController">
@@ -44,6 +44,7 @@
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile" id="Ply-YT-22D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5T-w6-Rop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
