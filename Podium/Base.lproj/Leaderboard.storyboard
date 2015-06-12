@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0P3-5I-aL3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0P3-5I-aL3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -41,77 +41,58 @@
                                                             </variation>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDS-9p-DIN">
-                                                            <rect key="frame" x="84.5" y="0.0" width="282" height="69.5"/>
+                                                            <rect key="frame" x="84.5" y="0.0" width="300.5" height="69.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="84.5" y="0.0" width="82" height="69.5"/>
+                                                                <rect key="frame" x="84.5" y="0.0" width="100.5" height="69.5"/>
                                                             </variation>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OE4-M5-DOx">
-                                                            <rect key="frame" x="381.5" y="0.0" width="218.5" height="69.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OE4-M5-DOx">
+                                                            <rect key="frame" x="400" y="0.0" width="200" height="69.5"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dim-Zn-3wc" userLabel="status1" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="dim-Zn-3wc" secondAttribute="height" multiplier="1:1" id="K6q-1c-E1e"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                                                            <color key="value" red="0.44974581889999998" green="0.61969864649999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
-                                                                            <color key="value" red="0.44974581889999998" green="0.61969864649999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="69.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7Y-7e-ypE">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="63.5" height="69.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="63.5" height="69.5"/>
                                                                     </variation>
-                                                                </view>
-                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suk-rw-xge" userLabel="status2" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
-                                                                    <rect key="frame" x="74.5" y="0.0" width="69.5" height="69.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="suk-rw-xge" secondAttribute="height" multiplier="1:1" id="30b-eA-GFP"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                                                            <color key="value" red="0.10588236149999999" green="0.3803921938" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
-                                                                            <color key="value" red="0.10588236149999999" green="0.3803921938" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="74.5" y="0.0" width="69.5" height="69.5"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCt-5C-0pO">
+                                                                    <rect key="frame" x="68.5" y="0.0" width="63" height="69.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                                        <rect key="frame" x="68.5" y="0.0" width="63" height="69.5"/>
                                                                     </variation>
-                                                                </view>
-                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8U5-8C-YED" userLabel="status3" customClass="ProgressView" customModule="Podium" customModuleProvider="target">
-                                                                    <rect key="frame" x="149" y="0.0" width="69.5" height="69.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="8U5-8C-YED" secondAttribute="height" multiplier="1:1" id="wLE-Xo-Fcn"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                                                            <color key="value" red="1" green="0.4502602973" blue="0.40385310670000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
-                                                                            <color key="value" red="1" green="0.4502602973" blue="0.40385310670000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="149" y="0.0" width="69.5" height="69.5"/>
-                                                                        <mask key="constraints">
-                                                                            <include reference="wLE-Xo-Fcn"/>
-                                                                        </mask>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-oV-nJL">
+                                                                    <rect key="frame" x="136.5" y="0.0" width="63.5" height="69.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                                        <rect key="frame" x="136.5" y="0.0" width="63.5" height="69.5"/>
                                                                     </variation>
-                                                                </view>
+                                                                </label>
                                                             </subviews>
-                                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="181.5" y="0.0" width="218.5" height="69.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="200" id="PZW-1c-k2f"/>
+                                                            </constraints>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="200" y="0.0" width="200" height="69.5"/>
                                                             </variation>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="OE4-M5-DOx" secondAttribute="bottom" id="Nqb-kG-8mX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="OE4-M5-DOx" secondAttribute="trailing" id="fCV-Tq-Vcs"/>
+                                                        <constraint firstItem="OE4-M5-DOx" firstAttribute="top" secondItem="Lh9-Kc-I4d" secondAttribute="top" id="yos-u4-T3G"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -121,6 +102,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="Lh9-Kc-I4d" secondAttribute="trailing" id="VTU-Xl-pmH">
                                                     <variation key="widthClass=compact" constant="0.0"/>
                                                 </constraint>
+                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="centerX" secondItem="qHN-Bs-UHQ" secondAttribute="centerX" id="g2S-Vd-tEk"/>
+                                                <constraint firstItem="Lh9-Kc-I4d" firstAttribute="centerY" secondItem="qHN-Bs-UHQ" secondAttribute="centerY" id="gnQ-tY-vsZ"/>
                                                 <constraint firstItem="Lh9-Kc-I4d" firstAttribute="leading" secondItem="qHN-Bs-UHQ" secondAttribute="leading" id="j3Z-2w-gQS"/>
                                                 <constraint firstItem="Lh9-Kc-I4d" firstAttribute="top" secondItem="qHN-Bs-UHQ" secondAttribute="top" id="mcN-XX-VeE">
                                                     <variation key="widthClass=compact" constant="0.0"/>
@@ -128,19 +111,21 @@
                                             </constraints>
                                             <variation key="widthClass=compact">
                                                 <mask key="constraints">
-                                                    <exclude reference="DuI-5n-Pkd"/>
-                                                    <exclude reference="VTU-Xl-pmH"/>
-                                                    <exclude reference="j3Z-2w-gQS"/>
-                                                    <exclude reference="mcN-XX-VeE"/>
+                                                    <include reference="DuI-5n-Pkd"/>
+                                                    <include reference="VTU-Xl-pmH"/>
+                                                    <include reference="g2S-Vd-tEk"/>
+                                                    <include reference="gnQ-tY-vsZ"/>
+                                                    <include reference="j3Z-2w-gQS"/>
+                                                    <include reference="mcN-XX-VeE"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="EDS-9p-DIN" id="XSn-TZ-ORH"/>
                                             <outlet property="profileImage" destination="1Q0-tN-tC8" id="2Ih-rb-JtU"/>
-                                            <outlet property="statusView1" destination="dim-Zn-3wc" id="U9g-ne-yjD"/>
-                                            <outlet property="statusView2" destination="suk-rw-xge" id="Dwe-rk-f8e"/>
-                                            <outlet property="statusView3" destination="8U5-8C-YED" id="IbW-mk-aqg"/>
+                                            <outlet property="progressLabel1" destination="j7Y-7e-ypE" id="a3h-sF-Wob"/>
+                                            <outlet property="progressLabel2" destination="cCt-5C-0pO" id="LbT-4W-mTI"/>
+                                            <outlet property="progressLabel3" destination="dPA-oV-nJL" id="c8V-x5-p6v"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -164,11 +149,13 @@
             </objects>
             <point key="canvasLocation" x="1339.5" y="-230"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Friends-->
         <scene sceneID="HVY-mN-OaY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TJK-Ne-dL9" sceneMemberID="viewController">
+                <navigationController title="Friends" automaticallyAdjustsScrollViewInsets="NO" id="TJK-Ne-dL9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" id="zFJ-Lk-Pve"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ot-cz-OFY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

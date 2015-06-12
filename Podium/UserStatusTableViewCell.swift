@@ -16,9 +16,9 @@ class UserStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     
-    @IBOutlet weak var statusView1: ProgressView!
-    @IBOutlet weak var statusView2: ProgressView!
-    @IBOutlet weak var statusView3: ProgressView!
+    @IBOutlet weak var progressLabel1: UILabel!
+    @IBOutlet weak var progressLabel2: UILabel!
+    @IBOutlet weak var progressLabel3: UILabel!
     
     override func prepareForInterfaceBuilder() {
         // Prepare for Interface Builder IBDesignable
@@ -42,10 +42,10 @@ class UserStatusTableViewCell: UITableViewCell {
         let waterProgress: Float = 0.2
         let stepProgress: Float = 0.4
         let calorieProgress: Float = 0.8
-        
-        self.statusView1.animateProgressViewToProgress(waterProgress)
-        self.statusView2.animateProgressViewToProgress(stepProgress)
-        self.statusView3.animateProgressViewToProgress(calorieProgress)
+
+        progressLabel1.text = "\(waterProgress)"
+        progressLabel2.text = "\(stepProgress)"
+        progressLabel3.text = "\(calorieProgress)"
         
     }
 

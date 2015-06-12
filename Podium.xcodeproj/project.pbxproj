@@ -40,7 +40,7 @@
 		4F96AE411B28D622002DEA71 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE401B28D622002DEA71 /* StackFakeData.swift */; };
 		4F9AF5801B289B6600635770 /* FriendTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9AF57F1B289B6600635770 /* FriendTestCase.swift */; };
 		4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65161B26A96700E572FE /* AppDelegate.swift */; };
-		4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651A1B26A96700E572FE /* Main.storyboard */; };
+		4FEA651C1B26A96700E572FE /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651A1B26A96700E572FE /* Leaderboard.storyboard */; };
 		4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651D1B26A96700E572FE /* Assets.xcassets */; };
 		4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */; };
 		4FEA652C1B26A96700E572FE /* PodiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA652B1B26A96700E572FE /* PodiumTests.swift */; };
@@ -144,7 +144,7 @@
 		4F9AF57F1B289B6600635770 /* FriendTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTestCase.swift; sourceTree = "<group>"; };
 		4FEA65131B26A96700E572FE /* Podium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEA65161B26A96700E572FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4FEA651B1B26A96700E572FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4FEA651B1B26A96700E572FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Leaderboard.storyboard; sourceTree = "<group>"; };
 		4FEA651D1B26A96700E572FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FEA65201B26A96700E572FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FEA65221B26A96700E572FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -335,6 +335,8 @@
 				E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */,
 				E7A6AB851B2913C400676280 /* OnboardingViewController.swift */,
 				4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */,
+				4FEA651A1B26A96700E572FE /* Leaderboard.storyboard */,
+				687E3A1C1B2913CC001E53DF /* LaunchFlow.storyboard */,
 				4FEA651A1B26A96700E572FE /* Main.storyboard */,
 				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
 				4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */,
@@ -558,7 +560,7 @@
 				E7A6AB811B290F7400676280 /* (null) in Resources */,
 				4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */,
 				683931C11B2B56C500A4C6E2 /* BaseApp.storyboard in Resources */,
-				4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */,
+				4FEA651C1B26A96700E572FE /* Leaderboard.storyboard in Resources */,
 				4F3AA2071B2A1A8A004E28D4 /* Loading.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,12 +681,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4FEA651A1B26A96700E572FE /* Main.storyboard */ = {
+		4FEA651A1B26A96700E572FE /* Leaderboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4FEA651B1B26A96700E572FE /* Base */,
 			);
-			name = Main.storyboard;
+			name = Leaderboard.storyboard;
 			sourceTree = "<group>";
 		};
 		4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */ = {

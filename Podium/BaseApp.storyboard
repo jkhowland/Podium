@@ -71,24 +71,14 @@
             <point key="canvasLocation" x="3473" y="408"/>
         </scene>
         <!--Leaderboard-->
-        <scene sceneID="g7M-IO-egr">
+        <scene sceneID="5Ck-ol-RfU">
             <objects>
-                <viewController id="vy7-3h-uGQ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WKg-SV-HNs"/>
-                        <viewControllerLayoutGuide type="bottom" id="Bn9-tR-1ho"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="F8S-I8-yZ5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Leaderboard" id="rrW-ta-Z3J"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cbj-A1-h4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Leaderboard" id="cOa-DV-zDT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="LYU-OW-sX2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUQ-py-002" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3469" y="1165"/>
+            <point key="canvasLocation" x="2676" y="811"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zN1-Og-Yqs">
@@ -104,7 +94,7 @@
                     <connections>
                         <segue destination="blw-SJ-Ddx" kind="relationship" relationship="viewControllers" id="ydq-g5-Whr"/>
                         <segue destination="edh-w3-TPV" kind="relationship" relationship="viewControllers" id="Yym-ah-eEZ"/>
-                        <segue destination="vy7-3h-uGQ" kind="relationship" relationship="viewControllers" id="Klo-bD-xWY"/>
+                        <segue destination="cOa-DV-zDT" kind="relationship" relationship="viewControllers" id="o85-cT-01S"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Im4-m5-jQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
