@@ -74,19 +74,21 @@ public class ProfileController: NSObject {
     
     public func addProfileName(name: String, email: String, phone: String, identifier: Int, userIdentifier: String) -> Profile {
 
+        
         let context = Stack.defaultStack.mainContext
         
         let profile = NSEntityDescription.insertNewObjectForEntityForName(Profile.entityName, inManagedObjectContext: context!) as! Profile
-
+        
         profile.name = name
         profile.email = email
         profile.phone = phone
         profile.identifier = identifier
         profile.userRecordName = userIdentifier
-        
-        Stack.defaultStack.save()
 
+        Stack.defaultStack.save()
+        
         return profile
+
     }
 
     public func findProfileUsingKey(key: String, stringValue: String) -> Profile? {

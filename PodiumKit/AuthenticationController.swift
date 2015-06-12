@@ -36,6 +36,7 @@ public class AuthenticationController: NSObject {
         set {
             _currentProfile = newValue
         } get {
+            
             if let currentProfile = _currentProfile {
                 return currentProfile
             } else  {
@@ -72,16 +73,21 @@ public class AuthenticationController: NSObject {
                 let predicate = NSPredicate(format: "\(userIdentifierKey) = %@", record)
                 NetworkController.sharedController.fetchRecordsWithType(Profile.entityName, predicate: predicate, completionHandler: { (results) -> Void in
                     
-                    if results.count > 0 {
-                        if self.signIn(results[0]) {
-                            completionHandler(storyboardID: storyboardSignInFlow)
+                    dispatch_after(0, dispatch_get_main_queue(), { () -> Void in
+                        
+                        if results.count > 0 {
+                            if self.signIn(results[0]) {
+                                completionHandler(storyboardID: storyboardSignInFlow)
+                            } else {
+                                // Could not sign in with profile from CloudKit
+                                completionHandler(storyboardID: storyboardSignUpFlow)
+                            }
                         } else {
-                            // Could not sign in with profile from CloudKit
                             completionHandler(storyboardID: storyboardSignUpFlow)
                         }
-                    } else {
-                        completionHandler(storyboardID: storyboardSignUpFlow)
-                    }
+
+                    })
+                    
                 })
             } else {
                 // User is not logged in to iCloud
