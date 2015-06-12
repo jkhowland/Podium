@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
 import PodiumKit
+import CoreData
 
 private let nameKey = "name"
 private let emailKey = "email"
@@ -71,7 +71,7 @@ extension Stack {
         
         for userDictionary in arrayProfiles {
             
-            ProfileController.sharedController.addProfileName(userDictionary[nameKey]!, email: userDictionary[emailKey]!, phone: userDictionary[phoneKey]!, identifier: 123, userIdentifier: userDictionary[emailKey]!)
+            ProfileController.sharedController.addProfileName(userDictionary[nameKey]!, email: userDictionary[emailKey]!, phone: userDictionary[phoneKey]!, identifier: self.maxIdentifier().integerValue + 1, userIdentifier: userDictionary[emailKey]!)
         }
         
         // Should create 30 friends
@@ -133,5 +133,27 @@ extension Stack {
         }
         
     }
-    
+ 
+    public func maxIdentifier() -> NSNumber {
+        
+        let fetchRequest = NSFetchRequest(entityName: Profile.entityName)
+        fetchRequest.fetchLimit = 1;
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
+        
+        do {
+            
+            let array = try Stack.defaultStack.mainContext?.executeFetchRequest(fetchRequest)
+            if array?.count > 0 {
+                let profile: Profile = array?.first as! Profile
+                return profile.identifier!
+            } else {
+                return NSNumber(integer: 0)
+            }
+            
+        } catch {
+            return NSNumber(integer: 0)
+        }
+        
+    }
+
 }
