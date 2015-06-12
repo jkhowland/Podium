@@ -16,13 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-//        // For development only
-        
-//        Stack.defaultStack.clearDevelopmentData()
-//        Stack.defaultStack.loadDevelopmentData()
-
         let storyboard = UIStoryboard(name: AuthenticationController.sharedController.welcomeStoryboardIdentifier(), bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
+        
+        if let record = NSUserDefaults.standardUserDefaults().valueForKey(Profile.userRecordKey) as! String? {
+            print(record)
+        } else {
+            print("no record")
+        }
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window!.rootViewController = viewController;

@@ -20,7 +20,7 @@ public class AuthenticationController: NSObject {
 
     public var currentUserID: String? {
         set {
-            NSUserDefaults.standardUserDefaults().setValue(currentUserID, forKey: Profile.userRecordKey)
+            NSUserDefaults.standardUserDefaults().setValue(newValue, forKey: Profile.userRecordKey)
             NSUserDefaults.standardUserDefaults().synchronize()
             
         } get {
@@ -34,7 +34,7 @@ public class AuthenticationController: NSObject {
 
     public var currentProfile: Profile? {
         set {
-            _currentProfile = currentProfile
+            _currentProfile = newValue
         } get {
             if _currentProfile == nil {
                 if let currentUserID = self.currentUserID {
@@ -59,7 +59,7 @@ public class AuthenticationController: NSObject {
         
         NetworkController.sharedController.userRecord { (record) -> Void in
             if let record = record {
-                
+                                
                 if let profile = self.currentProfile {
                     if profile.userRecordName == record {
                         completionHandler(storyboardID: storyboardBaseApp)
