@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        // For development only
         
-        Stack.defaultStack.clearDevelopmentData()
-        Stack.defaultStack.loadDevelopmentData()
+//        Stack.defaultStack.clearDevelopmentData()
+//        Stack.defaultStack.loadDevelopmentData()
 
         let storyboard = UIStoryboard(name: AuthenticationController.sharedController.welcomeStoryboardIdentifier(), bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
