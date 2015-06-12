@@ -10,8 +10,40 @@ import CoreData
 
 public class ProfileController: NSObject {
     public static let sharedController = ProfileController()
+    
+    public func findOrAddProfile(profileDictionary: [String: AnyObject?]) -> Profile? {
         
-    public func addUser(name: String, email: String, phone: String, userIdentifier: String) -> Profile {
+        if let number = profileDictionary[Profile.identifierKey] as! NSNumber? {
+            if let profile = self.findProfileUsingIdentifier(number.integerValue) {
+                return profile
+            } else {
+                if let profile = self.addProfileDictionary(profileDictionary) {
+                    return profile
+                }
+            }
+        }
+
+        return nil
+    }
+    
+    public func addProfileDictionary(profileDictionary: [String: AnyObject?]) -> Profile? {
+    
+
+        if let name = profileDictionary[Profile.nameKey] as! String? {
+            if let email = profileDictionary[Profile.emailKey] as! String? {
+                if let phone = profileDictionary[Profile.phoneKey] as! String? {
+                    if let userRecord = profileDictionary[Profile.userRecordKey] as! String? {
+                        self.addProfileName(name, email: email, phone: phone, userIdentifier: userRecord)
+                    }
+                }
+            }
+        }
+        
+        return nil
+
+    }
+    
+    public func addProfileName(name: String, email: String, phone: String, userIdentifier: String) -> Profile {
 
         let context = Stack.defaultStack.mainContext
         

@@ -37,7 +37,12 @@ public class AuthenticationController: NSObject {
                 NetworkController.sharedController.fetchRecordsWithType(Profile.entityName, predicate: predicate, completionHandler: { (results) -> Void in
                     
                     if results.count > 0 {
-                        completionHandler(storyboardID: storyboardBaseApp)
+                        if self.signIn(results[0]) {
+                            completionHandler(storyboardID: storyboardBaseApp)
+                        } else {
+                            // Could not sign in with profile from CloudKit
+                            completionHandler(storyboardID: storyboardSignUpFlow)
+                        }
                     } else {
                         completionHandler(storyboardID: storyboardSignUpFlow)
                     }
@@ -48,8 +53,13 @@ public class AuthenticationController: NSObject {
         }
     }
     
-    public func signIn(profile: Profile) {
-        self.currentProfile = profile
+    public func signIn(profileDictionary: [String: AnyObject?]) -> Bool {
+        if let profile = ProfileController.sharedController.findOrAddProfile(profileDictionary) {
+            self.currentProfile = profile
+            return true
+        } else {
+            return false
+        }
     }
     
     public func signUp(name: String, email: String, phone: String, completionHandler:(success: Bool, error: NSError?) -> Void) {
@@ -65,7 +75,7 @@ public class AuthenticationController: NSObject {
             
             NetworkController.sharedController.postRecord(Profile.entityName, recordDictionary: recordDictionary) { (success, identifier) -> Void in
                 
-                let profile = ProfileController.sharedController.addUser(name, email: email, phone: phone, userIdentifier: self.currentUserID!)
+                let profile = ProfileController.sharedController.addProfileName(name, email: email, phone: phone, userIdentifier: self.currentUserID!)
                 self.currentProfile = profile
                 
                 InviteController.sharedController.acceptReceivedInvites(email)

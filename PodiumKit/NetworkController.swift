@@ -50,24 +50,27 @@ public class NetworkController: NSObject {
     }
     
     
-    public func fetchRecordsWithType(recordType: String, predicate: NSPredicate, completionHandler:(results: [AnyObject]) -> Void) {
+    public func fetchRecordsWithType(recordType: String, predicate: NSPredicate, completionHandler:(results: [[String: AnyObject?]]) -> Void) {
         
-        let queryOperation = CKQueryOperation(query: CKQuery(recordType: recordType, predicate: NSPredicate(value: true)))
+        let queryOperation = CKQueryOperation(query: CKQuery(recordType: recordType, predicate: predicate))
         
-        var resultObjects: [AnyObject] = []
+        var resultObjects: [[String: AnyObject?]] = []
         
         queryOperation.recordFetchedBlock = { record in
-            resultObjects.append(record)
-        }
-        
-        queryOperation.queryCompletionBlock = { cursor, error in
-            completionHandler(results: resultObjects)
+            
+            var dictionary: [String: AnyObject?] = Dictionary<String, AnyObject?>()
+            
+            for key in record.allKeys() {
+                dictionary[key] = record[key]
+            }
+            
+            resultObjects.append(dictionary)
         }
         
         queryOperation.completionBlock = {
             completionHandler(results: resultObjects)
         }
-                
+        
         self.publicDatabase.addOperation(queryOperation)
     }
     
