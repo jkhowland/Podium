@@ -27,9 +27,22 @@ class PodiumUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTabBar() {
+        sleep(5)
+//        NSRunLoop.mainRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 5.0))
+        let app = XCUIApplication()
+        let myProgressNavigationBar = app.navigationBars["My Progress"]
+        XCTAssert(myProgressNavigationBar.exists)
+
+        myProgressNavigationBar.buttons["Profile"].tap()
+        XCTAssert(app.navigationBars["Profile"].exists)
+        
+        app.navigationBars["Profile"].buttons["My Progress"].tap()
+        
+        let tabBar = app.tabBars
+        tabBar.buttons["Competitions"].tap()
+        tabBar.buttons["Leaderboard"].tap()
+        tabBar.buttons["My Progress"].tap()
     }
     
 }
