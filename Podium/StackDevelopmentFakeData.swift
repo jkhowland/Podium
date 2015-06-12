@@ -71,7 +71,7 @@ extension Stack {
         
         for userDictionary in arrayProfiles {
             
-            ProfileController.sharedController.addProfileName(userDictionary[nameKey]!, email: userDictionary[emailKey]!, phone: userDictionary[phoneKey]!, userIdentifier: userDictionary[emailKey]!)
+            ProfileController.sharedController.addProfileName(userDictionary[nameKey]!, email: userDictionary[emailKey]!, phone: userDictionary[phoneKey]!, identifier: 123, userIdentifier: userDictionary[emailKey]!)
         }
         
         // Should create 30 friends

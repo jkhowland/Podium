@@ -10,12 +10,5 @@ import Foundation
 
 public class SyncController: NSObject {
     public static let sharedController = SyncController()
-    
-    public func setup() {
 
-    }
-    
-    public func test() {
-        
-    }
 }

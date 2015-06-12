@@ -32,7 +32,7 @@ public class NetworkController: NSObject {
         
         }()
     
-    public func postRecord(recordType: String, recordDictionary: [String: AnyObject?], completionHandler: (success: Bool, identifier: String?) -> Void) {
+    public func postRecord(recordType: String, recordDictionary: [String: AnyObject?], completionHandler: (success: Bool, networkIdentifier: String?) -> Void) {
     
         let record: CKRecord = CKRecord(recordType: recordType)
         
@@ -42,9 +42,9 @@ public class NetworkController: NSObject {
         
         self.publicDatabase.saveRecord(record) { (record, error) -> Void in
             if error != nil {
-                completionHandler(success: false, identifier: nil)
+                completionHandler(success: false, networkIdentifier: nil)
             } else {
-                completionHandler(success: true, identifier: record?.recordID.recordName)
+                completionHandler(success: true, networkIdentifier: record?.recordID.recordName)
             }
         }
     }
@@ -74,6 +74,26 @@ public class NetworkController: NSObject {
         self.publicDatabase.addOperation(queryOperation)
     }
     
+    public func maxIdentifier(recordType: String, completionHandler:(identifier: Int) -> Void) {
+    
+        let query = CKQuery(recordType: recordType, predicate: NSPredicate(value: true))
+        query.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
+
+        let queryOperation = CKQueryOperation(query: query)
+        queryOperation.resultsLimit = 1
+        queryOperation.desiredKeys = ["identifier"]
+        
+        queryOperation.recordFetchedBlock = { record in
+            if let number = record["identifier"] as! NSNumber? {
+                completionHandler(identifier: number.integerValue)
+            } else {
+                completionHandler(identifier: 1)
+            }
+        }
+        
+        self.publicDatabase.addOperation(queryOperation)
+    }
+    
     public func userRecord(completionHandler:(record: String?) -> Void) {
         CKContainer.defaultContainer().fetchUserRecordIDWithCompletionHandler { (recordID, error) -> Void in
             if let recordID = recordID {
@@ -85,5 +105,7 @@ public class NetworkController: NSObject {
             }
         }
     }
+    
+    
 
 }

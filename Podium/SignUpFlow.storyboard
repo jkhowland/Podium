@@ -52,8 +52,7 @@
                                 <animations/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="next:" destination="tcC-N3-goG" eventType="touchUpInside" id="SwN-3h-dCV"/>
-                                    <segue destination="NhJ-2l-iqh" kind="show" identifier="next" id="0bj-BA-dny"/>
+                                    <action selector="next:" destination="tcC-N3-goG" eventType="touchUpInside" id="iBg-El-6sh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,6 +91,7 @@
                         <outlet property="nameField" destination="2Ew-pD-PZ4" id="LNg-DF-rQT"/>
                         <outlet property="nextButton" destination="Aug-2a-uFE" id="duf-xq-60F"/>
                         <outlet property="phoneField" destination="RyQ-zB-q00" id="EeX-AY-eaY"/>
+                        <segue destination="NhJ-2l-iqh" kind="show" id="aac-gO-p6Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FT-bm-ApS" userLabel="First Responder" sceneMemberID="firstResponder"/>

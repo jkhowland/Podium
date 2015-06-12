@@ -27,13 +27,14 @@ public class ProfileController: NSObject {
     }
     
     public func addProfileDictionary(profileDictionary: [String: AnyObject?]) -> Profile? {
-    
 
         if let name = profileDictionary[Profile.nameKey] as! String? {
             if let email = profileDictionary[Profile.emailKey] as! String? {
                 if let phone = profileDictionary[Profile.phoneKey] as! String? {
-                    if let userRecord = profileDictionary[Profile.userRecordKey] as! String? {
-                        self.addProfileName(name, email: email, phone: phone, userIdentifier: userRecord)
+                    if let identifier = profileDictionary[Profile.identifierKey] as! NSNumber? {
+                        if let userRecord = profileDictionary[Profile.userRecordKey] as! String? {
+                            return self.addProfileName(name, email: email, phone: phone, identifier: identifier.integerValue, userIdentifier: userRecord)
+                        }
                     }
                 }
             }
@@ -43,7 +44,7 @@ public class ProfileController: NSObject {
 
     }
     
-    public func addProfileName(name: String, email: String, phone: String, userIdentifier: String) -> Profile {
+    public func addProfileName(name: String, email: String, phone: String, identifier: Int, userIdentifier: String) -> Profile {
 
         let context = Stack.defaultStack.mainContext
         
@@ -52,7 +53,8 @@ public class ProfileController: NSObject {
         profile.name = name
         profile.email = email
         profile.phone = phone
-        profile.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
+        profile.identifier = identifier
+        profile.userRecordName = userIdentifier
         
         Stack.defaultStack.save()
 
@@ -127,29 +129,5 @@ public class ProfileController: NSObject {
             return nil
         }
     }
-    
-    // Needs to be refactored into a superclass
-    func maxIdentifier() -> NSNumber {
-        
-        let fetchRequest = NSFetchRequest(entityName: Profile.entityName)
-        fetchRequest.fetchLimit = 1;
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
-        
-        do {
-            
-            let array = try Stack.defaultStack.mainContext?.executeFetchRequest(fetchRequest)
-            if array?.count > 0 {
-                let profile: Profile = array?.first as! Profile
-                return profile.identifier!
-            } else {
-                return NSNumber(integer: 0)
-            }
-            
-        } catch {
-            return NSNumber(integer: 0)
-        }
-        
-    }
-
 }
 

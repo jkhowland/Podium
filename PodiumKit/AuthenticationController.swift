@@ -66,22 +66,33 @@ public class AuthenticationController: NSObject {
         
         if self.currentUserID != nil {
             
-            let recordDictionary: [String: AnyObject?] = [
-                Profile.nameKey: name,
-                Profile.emailKey: email,
-                Profile.phoneKey: phone,
-                Profile.userRecordKey: self.currentUserID
-            ]
+            NetworkController.sharedController.maxIdentifier(Profile.entityName, completionHandler: { (identifier) -> Void in
+
+                let recordDictionary: [String: AnyObject?] = [
+                    Profile.nameKey: name,
+                    Profile.emailKey: email,
+                    Profile.phoneKey: phone,
+                    Profile.userRecordKey: self.currentUserID,
+                    Profile.identifierKey: NSNumber(integer: identifier)
+                ]
+                
+                NetworkController.sharedController.postRecord(Profile.entityName, recordDictionary: recordDictionary) { (success, networkIdentifier) -> Void in
+                    
+                    let profile = ProfileController.sharedController.addProfileName(name, email: email, phone: phone, identifier: identifier, userIdentifier: self.currentUserID!)
+                    self.currentProfile = profile
+                    
+                    InviteController.sharedController.acceptReceivedInvites(email)
+                    
+                    completionHandler(success: true, error: nil)
+                    
+                }
+                
+            })
             
-            NetworkController.sharedController.postRecord(Profile.entityName, recordDictionary: recordDictionary) { (success, identifier) -> Void in
-                
-                let profile = ProfileController.sharedController.addProfileName(name, email: email, phone: phone, userIdentifier: self.currentUserID!)
-                self.currentProfile = profile
-                
-                InviteController.sharedController.acceptReceivedInvites(email)
-                
-            }
+        } else {
             
+            completionHandler(success: false, error: nil)
+        
         }
     }
     

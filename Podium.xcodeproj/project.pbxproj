@@ -52,7 +52,7 @@
 		E75C03C31B28FF1A006ED2A6 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E7A6AB811B290F7400676280 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		E7A6AB861B2913C400676280 /* BaseApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A6AB821B2913C400676280 /* BaseApp.storyboard */; };
-		E7A6AB871B2913C400676280 /* SignUpFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A6AB831B2913C400676280 /* SignUpFlow.storyboard */; };
+		E7A6AB871B2913C400676280 /* SignUpFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A6AB831B2913C400676280 /* SignUpFlow.storyboard */; settings = {ASSET_TAGS = (next, ); }; };
 		E7A6AB881B2913C400676280 /* OnboardingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */; };
 		E7A6AB891B2913C400676280 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6AB851B2913C400676280 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -473,6 +473,9 @@
 		4FEA650B1B26A96700E572FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					next,
+				);
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "[insert name here]";
