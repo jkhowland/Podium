@@ -21,7 +21,7 @@ class LoadingViewController: UIViewController {
         self.activityIndicator.startAnimating()
         
         self.loginLabel.hidden = true
-//        self.getStarted(nil)
+        self.getStarted(nil)
 
     }
 

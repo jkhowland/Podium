@@ -66,8 +66,8 @@ public class NetworkController: NSObject {
             
             resultObjects.append(dictionary)
         }
-        
-        queryOperation.completionBlock = {
+                
+        queryOperation.queryCompletionBlock = { cursor, error in
             completionHandler(results: resultObjects)
         }
         

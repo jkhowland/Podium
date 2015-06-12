@@ -20,7 +20,7 @@
                                 <rect key="frame" x="243" y="285" width="114" height="30"/>
                                 <state key="normal" title="Review my goals"/>
                                 <connections>
-                                    <action selector="getStarted:" destination="BLw-rT-FOb" eventType="touchUpInside" id="onJ-EN-aKK"/>
+                                    <segue destination="sXN-8P-Jts" kind="show" id="6xn-Y6-tMI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -36,6 +36,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QT4-CY-Xrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2935" y="765"/>
+        </scene>
+        <!--BaseApp-->
+        <scene sceneID="HQD-Z7-WyC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BaseApp" id="sXN-8P-Jts" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvX-yC-iNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3447.5" y="765"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ftl-V0-dfd">
