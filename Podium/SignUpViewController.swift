@@ -23,6 +23,8 @@ class SignUpViewController: UIViewController {
     
     @IBAction func next(sender: AnyObject) {
         
+        self.nextButton.enabled = false
+        
         if self.nameField.text?.characters.count > 0 && self.isValidEmail(self.emailField.text!) {
             
             AuthenticationController.sharedController.signUp(self.nameField.text!, email: self.emailField.text!, phone: self.phoneField.text!, completionHandler: { (success, error) -> Void in

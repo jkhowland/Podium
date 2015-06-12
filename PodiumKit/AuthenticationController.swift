@@ -110,7 +110,7 @@ public class AuthenticationController: NSObject {
                     Profile.emailKey: email,
                     Profile.phoneKey: phone,
                     Profile.userRecordKey: self.currentUserID,
-                    Profile.identifierKey: NSNumber(integer: identifier)
+                    Profile.identifierKey: NSNumber(integer: identifier + 1) // Increment the max identifier
                 ]
                 
                 NetworkController.sharedController.postRecord(Profile.entityName, recordDictionary: recordDictionary) { (success, networkIdentifier) -> Void in
