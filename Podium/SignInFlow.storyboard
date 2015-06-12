@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8UV-Y0-BMS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8UV-Y0-BMS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
@@ -18,12 +18,14 @@
                         <subviews>
                             <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyA-f2-qUQ">
                                 <rect key="frame" x="243" y="285" width="114" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Review my goals"/>
                                 <connections>
-                                    <segue destination="sXN-8P-Jts" kind="show" id="6xn-Y6-tMI"/>
+                                    <segue destination="sXN-8P-Jts" kind="presentation" id="6xn-Y6-tMI"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JyA-f2-qUQ" firstAttribute="centerY" secondItem="KxH-BI-eiZ" secondAttribute="centerY" id="A7F-sU-bo2"/>
@@ -53,6 +55,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XSr-dH-ZlI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
