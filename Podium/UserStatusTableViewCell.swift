@@ -39,9 +39,9 @@ class UserStatusTableViewCell: UITableViewCell {
     func updateWithProfile(profile: Friend) {
         self.nameLabel.text = profile.profile!.name
         
-        let waterProgress: Float = Float(arc4random())
-        let stepProgress: Float = Float(arc4random())
-        let calorieProgress: Float = Float(arc4random())
+        let waterProgress: Float = 0.2
+        let stepProgress: Float = 0.4
+        let calorieProgress: Float = 0.8
         
         self.statusView1.animateProgressViewToProgress(waterProgress)
         self.statusView2.animateProgressViewToProgress(stepProgress)

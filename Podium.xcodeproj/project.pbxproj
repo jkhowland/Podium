@@ -46,15 +46,14 @@
 		4FEA652C1B26A96700E572FE /* PodiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA652B1B26A96700E572FE /* PodiumTests.swift */; };
 		4FEA65371B26A96700E572FE /* PodiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65361B26A96700E572FE /* PodiumUITests.swift */; };
 		4FF8C7831B2B481F002AC475 /* SignUpFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF8C7821B2B481F002AC475 /* SignUpFlow.storyboard */; };
+		683931C11B2B56C500A4C6E2 /* BaseApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683931C01B2B56C500A4C6E2 /* BaseApp.storyboard */; };
 		6851835D1B277EA00014E216 /* UserStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */; };
 		6851835F1B277ED40014E216 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851835E1B277ED40014E216 /* LeaderboardViewController.swift */; };
+		687E3A1D1B2913CC001E53DF /* LaunchFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 687E3A1C1B2913CC001E53DF /* LaunchFlow.storyboard */; };
 		68F9A8C71B2788AB00F8C007 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F9A8C61B2788AB00F8C007 /* ProgressView.swift */; };
 		E75C03C11B28FECC006ED2A6 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E75C03C31B28FF1A006ED2A6 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E7A6AB811B290F7400676280 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		E7A6AB861B2913C400676280 /* BaseApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A6AB821B2913C400676280 /* BaseApp.storyboard */; };
-		E7A6AB881B2913C400676280 /* OnboardingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */; };
-		E7A6AB891B2913C400676280 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6AB851B2913C400676280 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,10 +155,11 @@
 		4FEA65361B26A96700E572FE /* PodiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumUITests.swift; sourceTree = "<group>"; };
 		4FEA65381B26A96700E572FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FF8C7821B2B481F002AC475 /* SignUpFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpFlow.storyboard; sourceTree = "<group>"; };
+		683931C01B2B56C500A4C6E2 /* BaseApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BaseApp.storyboard; sourceTree = "<group>"; };
 		6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatusTableViewCell.swift; sourceTree = "<group>"; };
 		6851835E1B277ED40014E216 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		687E3A1C1B2913CC001E53DF /* LaunchFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchFlow.storyboard; sourceTree = "<group>"; };
 		68F9A8C61B2788AB00F8C007 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		E7A6AB821B2913C400676280 /* BaseApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BaseApp.storyboard; sourceTree = "<group>"; };
 		E7A6AB841B2913C400676280 /* OnboardingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingDataSource.swift; sourceTree = "<group>"; };
 		E7A6AB851B2913C400676280 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,7 +328,7 @@
 				6851835E1B277ED40014E216 /* LeaderboardViewController.swift */,
 				6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */,
 				68F9A8C61B2788AB00F8C007 /* ProgressView.swift */,
-				E7A6AB821B2913C400676280 /* BaseApp.storyboard */,
+				683931C01B2B56C500A4C6E2 /* BaseApp.storyboard */,
 				4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */,
 				4FF8C7821B2B481F002AC475 /* SignUpFlow.storyboard */,
 				4F3AA2061B2A1A8A004E28D4 /* Loading.storyboard */,
@@ -336,6 +336,7 @@
 				E7A6AB851B2913C400676280 /* OnboardingViewController.swift */,
 				4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */,
 				4FEA651A1B26A96700E572FE /* Main.storyboard */,
+				687E3A1C1B2913CC001E53DF /* LaunchFlow.storyboard */,
 				4FEA651D1B26A96700E572FE /* Assets.xcassets */,
 				4FEA651F1B26A96700E572FE /* LaunchScreen.storyboard */,
 				4FEA65221B26A96700E572FE /* Info.plist */,
@@ -552,11 +553,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEA65211B26A96700E572FE /* LaunchScreen.storyboard in Resources */,
-				E7A6AB861B2913C400676280 /* BaseApp.storyboard in Resources */,
 				4FF8C7831B2B481F002AC475 /* SignUpFlow.storyboard in Resources */,
 				4F4BBF0E1B29F6C20090842D /* SignInFlow.storyboard in Resources */,
 				E7A6AB811B290F7400676280 /* (null) in Resources */,
 				4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */,
+				687E3A1D1B2913CC001E53DF /* LaunchFlow.storyboard in Resources */,
+				683931C11B2B56C500A4C6E2 /* BaseApp.storyboard in Resources */,
 				4FEA651C1B26A96700E572FE /* Main.storyboard in Resources */,
 				4F3AA2071B2A1A8A004E28D4 /* Loading.storyboard in Resources */,
 			);
@@ -625,8 +627,6 @@
 				4F3AA1FF1B2A0A38004E28D4 /* OverlayMessage.swift in Sources */,
 				4F255F301B2A4D3A00707562 /* SignUpViewController.swift in Sources */,
 				4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */,
-				E7A6AB881B2913C400676280 /* OnboardingDataSource.swift in Sources */,
-				E7A6AB891B2913C400676280 /* OnboardingViewController.swift in Sources */,
 				E75C03C11B28FECC006ED2A6 /* (null) in Sources */,
 				E75C03C31B28FF1A006ED2A6 /* (null) in Sources */,
 			);
@@ -775,7 +775,10 @@
 		4F8E9D6A1B27363000446CC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = PodiumKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

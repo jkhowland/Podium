@@ -52,7 +52,7 @@ class ProgressView: UIView {
         progressLayer.backgroundColor = UIColor.clearColor().CGColor
         progressLayer.fillColor = nil
         progressLayer.strokeColor = circleColor.CGColor
-        progressLayer.lineWidth = 4.0
+        progressLayer.lineWidth = 3.0
         progressLayer.strokeStart = 0.0
         progressLayer.strokeEnd = 0.0
         layer.addSublayer(progressLayer)
@@ -75,6 +75,7 @@ class ProgressView: UIView {
         animation.fillMode = kCAFillModeForwards
         progressLayer.strokeEnd = CGFloat(progress)
         progressLayer.addAnimation(animation, forKey: "animation")
+        
     }
     
     /*
