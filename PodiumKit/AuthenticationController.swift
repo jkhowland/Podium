@@ -59,7 +59,7 @@ public class AuthenticationController: NSObject {
         
         NetworkController.sharedController.userRecord { (record) -> Void in
             if let record = record {
-                                
+                
                 if let profile = self.currentProfile {
                     if profile.userRecordName == record {
                         completionHandler(storyboardID: storyboardBaseApp)
