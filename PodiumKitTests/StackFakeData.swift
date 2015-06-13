@@ -106,8 +106,10 @@ extension Stack {
             
             if let fromProfile = fromProfile, let toProfile = toProfile {
             
-                let friend = FriendController.sharedController.requestFriends((fromProfile.identifier?.integerValue)!, toProfileIdentifier: (toProfile.identifier?.integerValue)!)
-                FriendController.sharedController.acceptFriend(friend)
+                FriendController.sharedController.requestFriends((fromProfile.identifier?.integerValue)!, toProfileIdentifier: (toProfile.identifier?.integerValue)!, completionHandler: { (success, friend, errorMessage) -> Void in
+                    
+                    FriendController.sharedController.acceptFriend(friend)
+                })
             
             } else {
                 print("Didn't create friend")

@@ -83,7 +83,6 @@ public class NetworkController: NSObject {
         }
     }
     
-    
     public func fetchRecordsWithType(recordType: String, predicate: NSPredicate, completionHandler:(results: [[String: AnyObject?]]) -> Void) {
         
         let queryOperation = CKQueryOperation(query: CKQuery(recordType: recordType, predicate: predicate))

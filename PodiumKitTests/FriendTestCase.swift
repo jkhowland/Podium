@@ -52,7 +52,7 @@ class FriendTestCase: XCTestCase {
     
         AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(email)!
         
-        FriendController.sharedController.updateFriends()
+        FriendController.sharedController.resetFriends()
         let friends = FriendController.sharedController.friends
         return(friends.count == count)
     }
@@ -61,7 +61,7 @@ class FriendTestCase: XCTestCase {
      
         AuthenticationController.sharedController.currentProfile = ProfileController.sharedController.findProfileUsingEmail(email)!
         
-        FriendController.sharedController.updateFriends()
+        FriendController.sharedController.resetFriends()
         let friends = FriendController.sharedController.friendProfiles()
         return(friends.count == count)
     }

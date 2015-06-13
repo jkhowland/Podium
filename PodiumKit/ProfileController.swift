@@ -11,6 +11,19 @@ import CoreData
 public class ProfileController: NSObject {
     public static let sharedController = ProfileController()
     
+    // THIS FUNCTION SHOULD NOT BE USED. IT CURRENTLY BRINGS DOWN EVERY USER
+    public func updateProfiles(completionHandler:(success: Bool) -> Void) {
+    
+        NetworkController.sharedController.fetchRecordsWithType(Profile.entityName, predicate: NSPredicate(value: true)) { (results) -> Void in
+            
+            for profileDictionary in results {
+                self.findOrAddProfile(profileDictionary)
+            }
+            
+            completionHandler(success: true)
+        }
+    }
+    
     public func findOrAddProfile(profileDictionary: [String: AnyObject?]) -> Profile? {
         
         if let number = profileDictionary[Profile.identifierKey] as! NSNumber? {

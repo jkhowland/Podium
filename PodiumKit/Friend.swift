@@ -13,14 +13,16 @@ import CoreData
 public class Friend: NSManagedObject {
     public static let entityName = "Friend"
 
-}
-
-
-extension Friend {
-
     @NSManaged public var currentProfile: Profile?
-    @NSManaged public var profile: Profile? // Friend to which current user requested
-    @NSManaged public var accepted: NSNumber? // Contains a boolean
-    @NSManaged public var identifier: NSNumber?
+    public static let currentProfileKey = "currentProfile"
     
+    @NSManaged public var profile: Profile? // Friend to which current user requested
+    public static let profileKey = "profile"
+    
+    @NSManaged public var accepted: NSNumber? // Contains a boolean
+    public static let acceptedKey = "accepted"
+    
+    @NSManaged public var identifier: NSNumber?
+    public static let identifierKey = "identifier"
+
 }

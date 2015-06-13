@@ -38,6 +38,7 @@
 		4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */; };
 		4F96AE411B28D622002DEA71 /* StackFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE401B28D622002DEA71 /* StackFakeData.swift */; };
 		4F9AF5801B289B6600635770 /* FriendTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9AF57F1B289B6600635770 /* FriendTestCase.swift */; };
+		4FA414971B2B89B500D0F1C6 /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA414961B2B89B500D0F1C6 /* InviteFriendsViewController.swift */; };
 		4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA65161B26A96700E572FE /* AppDelegate.swift */; };
 		4FEA651C1B26A96700E572FE /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651A1B26A96700E572FE /* Leaderboard.storyboard */; };
 		4FEA651E1B26A96700E572FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA651D1B26A96700E572FE /* Assets.xcassets */; };
@@ -140,6 +141,7 @@
 		4F8E9D6E1B27365000446CC3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4F96AE401B28D622002DEA71 /* StackFakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackFakeData.swift; sourceTree = "<group>"; };
 		4F9AF57F1B289B6600635770 /* FriendTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTestCase.swift; sourceTree = "<group>"; };
+		4FA414961B2B89B500D0F1C6 /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
 		4FEA65131B26A96700E572FE /* Podium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEA65161B26A96700E572FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FEA651B1B26A96700E572FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Leaderboard.storyboard; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				4FA414941B2B892000D0F1C6 /* Views */,
 				4FEA651A1B26A96700E572FE /* Leaderboard.storyboard */,
 				6851835E1B277ED40014E216 /* LeaderboardViewController.swift */,
+				4FA414961B2B89B500D0F1C6 /* InviteFriendsViewController.swift */,
 			);
 			name = "Friend View Controllers";
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				68F9A8C71B2788AB00F8C007 /* ProgressView.swift in Sources */,
 				4F3AA1FD1B2A0770004E28D4 /* OverlayBlurView.swift in Sources */,
 				4F3AA1FF1B2A0A38004E28D4 /* OverlayMessage.swift in Sources */,
+				4FA414971B2B89B500D0F1C6 /* InviteFriendsViewController.swift in Sources */,
 				4F255F301B2A4D3A00707562 /* SignUpViewController.swift in Sources */,
 				4FEA65171B26A96700E572FE /* AppDelegate.swift in Sources */,
 				E75C03C11B28FECC006ED2A6 /* (null) in Sources */,
