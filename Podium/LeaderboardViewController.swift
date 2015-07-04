@@ -17,6 +17,8 @@ enum SortOption {
 
 class LeaderboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var tableView: UITableView!
+    
     let UserStatusCellIdentifier = "UserStatusCell"
 
     override func viewDidLoad() {
@@ -27,7 +29,10 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        FriendController.sharedController.resetFriends()
+        FriendController.sharedController.updateFriends { (success) -> Void in
+            FriendController.sharedController.resetFriends()
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,18 +40,42 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+
+        return 2
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(UserStatusCellIdentifier) as! UserStatusTableViewCell
-        let friendProfile = FriendController.sharedController.friends[indexPath.row]
+
+        if indexPath.section == 0 {
+            if let friend = FriendController.sharedController.pendingFriends()[indexPath.row] as Friend? {
+                cell.updateWithProfile(friend.currentProfile!)
+            }
+        } else {
+            if let friend = FriendController.sharedController.friends[indexPath.row] as Friend? {
+                cell.updateWithProfile(friend.profile!)
+            }
+        }
         
-        cell.updateWithProfile(friendProfile)
         
         return cell
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Pending requests"
+        }
+        return "Friends"
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return FriendController.sharedController.pendingFriends().count
+        }
         return FriendController.sharedController.friends.count
+
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -54,6 +83,34 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.section == 0 {
+            if let friend = FriendController.sharedController.pendingFriends()[indexPath.row] as Friend? {
+                let alertController = UIAlertController(title: "Accept " + (friend.currentProfile?.name!)! + " as your friend?", message: "", preferredStyle: .Alert)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                }
+                
+                alertController.addAction(cancelAction)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    FriendController.sharedController.acceptFriend(friend, completionHandler: { (success, errorMessage) -> Void in
+                        self.tableView.reloadData()
+                    })
+                }
+                
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+
+                }
+            }
+
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 

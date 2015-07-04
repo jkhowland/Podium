@@ -21,8 +21,8 @@
 		4F4BBF0E1B29F6C20090842D /* SignInFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */; };
 		4F4BBF101B29FE100090842D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */; };
 		4F4E70CC1B27AD62009A1A24 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */; };
+		4F5A5E271B48983400CE536D /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A5E261B48983400CE536D /* Invite.swift */; };
 		4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3B1B2761CB0004013B /* Friend.swift */; };
-		4F63CA441B2761CC0004013B /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA411B2761CC0004013B /* Invite.swift */; };
 		4F63CA4A1B2761DF0004013B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA471B2761DF0004013B /* Profile.swift */; };
 		4F63CA4E1B27644C0004013B /* InviteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA4D1B27644C0004013B /* InviteController.swift */; };
 		4F63CA511B27645E0004013B /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA501B27645E0004013B /* FriendController.swift */; };
@@ -47,6 +47,7 @@
 		4FF8C7831B2B481F002AC475 /* SignUpFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF8C7821B2B481F002AC475 /* SignUpFlow.storyboard */; };
 		4FF8C7951B2B562F002AC475 /* SignInReturnUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C7941B2B562F002AC475 /* SignInReturnUITestCase.swift */; };
 		4FF8C7971B2B5657002AC475 /* SignInFirstTimeUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C7961B2B5657002AC475 /* SignInFirstTimeUITestCase.swift */; };
+		4FF8C79B1B2CC8AB002AC475 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C79A1B2CC8AB002AC475 /* WelcomeViewController.swift */; };
 		683931C11B2B56C500A4C6E2 /* BaseApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683931C01B2B56C500A4C6E2 /* BaseApp.storyboard */; };
 		6851835D1B277EA00014E216 /* UserStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */; };
 		6851835F1B277ED40014E216 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851835E1B277ED40014E216 /* LeaderboardViewController.swift */; };
@@ -122,8 +123,8 @@
 		4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignInFlow.storyboard; sourceTree = "<group>"; };
 		4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4F5A5E261B48983400CE536D /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		4F63CA3B1B2761CB0004013B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
-		4F63CA411B2761CC0004013B /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		4F63CA471B2761DF0004013B /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		4F63CA4D1B27644C0004013B /* InviteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteController.swift; sourceTree = "<group>"; };
 		4F63CA501B27645E0004013B /* FriendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		4FF8C7821B2B481F002AC475 /* SignUpFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpFlow.storyboard; sourceTree = "<group>"; };
 		4FF8C7941B2B562F002AC475 /* SignInReturnUITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInReturnUITestCase.swift; sourceTree = "<group>"; };
 		4FF8C7961B2B5657002AC475 /* SignInFirstTimeUITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInFirstTimeUITestCase.swift; sourceTree = "<group>"; };
+		4FF8C79A1B2CC8AB002AC475 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		683931C01B2B56C500A4C6E2 /* BaseApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BaseApp.storyboard; sourceTree = "<group>"; };
 		6851835C1B277EA00014E216 /* UserStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatusTableViewCell.swift; sourceTree = "<group>"; };
 		6851835E1B277ED40014E216 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +234,7 @@
 			children = (
 				4F3AA2021B2A0B53004E28D4 /* HealthPoint.swift */,
 				4F63CA471B2761DF0004013B /* Profile.swift */,
-				4F63CA411B2761CC0004013B /* Invite.swift */,
+				4F5A5E261B48983400CE536D /* Invite.swift */,
 				4F63CA3B1B2761CB0004013B /* Friend.swift */,
 			);
 			name = "Model Objects";
@@ -302,6 +304,7 @@
 				4FF8C7821B2B481F002AC475 /* SignUpFlow.storyboard */,
 				4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */,
 				4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */,
+				4FF8C79A1B2CC8AB002AC475 /* WelcomeViewController.swift */,
 			);
 			name = "Authentication View Controllers";
 			sourceTree = "<group>";
@@ -624,7 +627,7 @@
 				4F3AA2031B2A0B53004E28D4 /* HealthPoint.swift in Sources */,
 				4F8B4B041B274A550029493F /* SyncController.swift in Sources */,
 				4F8E9D731B27365000446CC3 /* Model.xcdatamodel in Sources */,
-				4F63CA441B2761CC0004013B /* Invite.swift in Sources */,
+				4F5A5E271B48983400CE536D /* Invite.swift in Sources */,
 				4F8E9D711B27365000446CC3 /* Stack.swift in Sources */,
 				4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */,
 				4F8B4B051B274A550029493F /* AuthenticationController.swift in Sources */,
@@ -654,6 +657,7 @@
 				6851835F1B277ED40014E216 /* LeaderboardViewController.swift in Sources */,
 				68F9A8C71B2788AB00F8C007 /* ProgressView.swift in Sources */,
 				4F3AA1FD1B2A0770004E28D4 /* OverlayBlurView.swift in Sources */,
+				4FF8C79B1B2CC8AB002AC475 /* WelcomeViewController.swift in Sources */,
 				4F3AA1FF1B2A0A38004E28D4 /* OverlayMessage.swift in Sources */,
 				4FA414971B2B89B500D0F1C6 /* InviteFriendsViewController.swift in Sources */,
 				4F255F301B2A4D3A00707562 /* SignUpViewController.swift in Sources */,

@@ -65,9 +65,12 @@ public class AuthenticationController: NSObject {
                     if profile.userRecordName == record {
                         completionHandler(storyboardID: storyboardBaseApp)
                         return
+                    } else {
+                        // Different logged in user
+                        Stack.defaultStack.eraseAll()
                     }
                 }
-
+                
                 self.currentUserID = record
                 
                 let predicate = NSPredicate(format: "\(userIdentifierKey) = %@", record)
@@ -99,7 +102,7 @@ public class AuthenticationController: NSObject {
     public func deleteAccount(completionHandler:(success: Bool, error: NSError?) -> Void) {
     
         if let profile = AuthenticationController.sharedController.currentProfile  {
-            NetworkController.sharedController.deleteRecord(Profile.entityName, recordDictionary: ProfileController.sharedController.profileDictionary(profile), completionHandler: { (success) -> Void in
+            NetworkController.sharedController.deleteProfile(ProfileController.sharedController.profileDictionary(profile), completionHandler: { (success) -> Void in
                 completionHandler(success: success, error: nil)
             })
         }

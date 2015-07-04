@@ -25,18 +25,17 @@ class InviteFriendsViewController: UIViewController, UITableViewDelegate, UITabl
         ProfileController.sharedController.updateProfiles({ (success) -> Void in
 
             self.allProfiles = ProfileController.sharedController.allProfiles()
-            dispatch_after(0, dispatch_get_main_queue(), { () -> Void in
-                self.tableView.reloadData()
-            })
+            
+            FriendController.sharedController.updateFriends { (success) -> Void in
+                
+                self.allRequestedFriends = FriendController.sharedController.requestedFriends()
+                dispatch_after(0, dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
+            }
+
         })
         
-        FriendController.sharedController.updateFriends { (success) -> Void in
-            
-            self.allRequestedFriends = FriendController.sharedController.requestedFriends()
-            dispatch_after(0, dispatch_get_main_queue(), { () -> Void in
-                self.tableView.reloadData()
-            })
-        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

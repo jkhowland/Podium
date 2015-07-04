@@ -70,11 +70,30 @@ public class Stack: NSObject {
 
     public func save() {
         do {
-            try Stack.defaultStack.mainContext?.save()
+            try self.mainContext?.save()
         } catch let error as NSError {
             print(error)
         }
     }
+
+    public func eraseAll() {
+        
+        if let friends = FriendController.sharedController.allFriends() {
+            for friend in friends {
+                self.mainContext?.deleteObject(friend)
+            }
+        }
+        
+        if let profiles = ProfileController.sharedController.allProfiles() {
+            for profile in profiles {
+                self.mainContext?.deleteObject(profile)
+            }
+        }
+        
+        self.save()
+        
+    }
+
     
 }
 

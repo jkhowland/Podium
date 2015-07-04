@@ -22,7 +22,7 @@ class LoadingViewController: UIViewController {
         
         self.loginLabel.hidden = true
         self.getStarted(nil)
-
+        
     }
 
     override func didReceiveMemoryWarning() {

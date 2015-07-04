@@ -27,6 +27,36 @@ public class FriendController: NSObject {
         return self.friends
     }
     
+    public func requestedFriends() -> [Friend]? {
+        
+        let request = NSFetchRequest(entityName: Friend.entityName)
+        let predicate = NSPredicate(format: "currentProfile.identifier = %@ && accepted = %@", AuthenticationController.sharedController.currentProfile!.identifier!, NSNumber(bool: false))
+        request.predicate = predicate
+        
+        do {
+            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as? [Friend]
+        } catch let error as NSError {
+            print(error)
+            return nil
+        }
+        
+    }
+
+    public func pendingFriends() -> [Friend] {
+        
+        let request = NSFetchRequest(entityName: Friend.entityName)
+        let predicate = NSPredicate(format: "profile.identifier = %@ && accepted = %@", AuthenticationController.sharedController.currentProfile!.identifier!, NSNumber(bool: false))
+        request.predicate = predicate
+        
+        do {
+            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as! [Friend]
+        } catch let error as NSError {
+            print(error)
+            return []
+        }
+        
+    }
+    
     public func resetFriends() {
     
         let request = NSFetchRequest(entityName: Friend.entityName)
@@ -46,16 +76,30 @@ public class FriendController: NSObject {
     }
     
     public func updateFriends(completionHandler:(success: Bool) -> Void) {
+        let predicate = NSPredicate(format: "profile = %@", AuthenticationController.sharedController.currentProfile!.identifier!)
+
+        self.updateFriendsWithPredicate(predicate) { (success) -> Void in
+            let predicate = NSPredicate(format: "currentProfile = %@", AuthenticationController.sharedController.currentProfile!.identifier!)
+
+            self.updateFriendsWithPredicate(predicate, completionHandler: { (success) -> Void in
+                completionHandler(success: true)
+            })
+        }
+    }
+    
+    func updateFriendsWithPredicate(predicate: NSPredicate, completionHandler:(success: Bool) -> Void) {
     
         if AuthenticationController.sharedController.currentProfile != nil {
             
-            NetworkController.sharedController.fetchRecordsWithType(Friend.entityName, predicate: NSPredicate(value: true)) { (results) -> Void in
+            // First request all that are my pending requests
+
+            NetworkController.sharedController.fetchRecordsWithType(Friend.entityName, predicate:predicate) { (results) -> Void in
                 
                 for friendDictionary in results {
-                    self.findOrAddFriend(friendDictionary)
+                    self.findOrAddFriend(friendDictionary, completionHandler: { (friend) -> Void in
+               
+                    })
                 }
-                
-                completionHandler(success: true)
             }
         }
         
@@ -63,19 +107,27 @@ public class FriendController: NSObject {
         
     }
     
-    public func findOrAddFriend(friendDictionary: [String: AnyObject?]) -> Friend? {
+    
+    
+    public func findOrAddFriend(friendDictionary: [String: AnyObject?], completionHandler:(friend: Friend?) -> Void) {
     
         if let number = friendDictionary[Friend.identifierKey] as! NSNumber? {
             if let friend = self.findFriendUsingIdentifier(number.integerValue) {
-                return friend
+                
+                self.updateFriendWithDictionary(friend, dictionary: friendDictionary, completionHandler: completionHandler)
+                
             } else {
-                if let friend = self.addFriendDictionary(friendDictionary) {
-                    return friend
-                }
+                
+                self.addFriendWithDictionary(friendDictionary, completionHandler: completionHandler)
+                
             }
+            
+        } else {
+            
+            completionHandler(friend: nil)
+            
         }
         
-        return nil
     }
     
     public func friendProfiles() -> [Profile] {
@@ -146,37 +198,61 @@ public class FriendController: NSObject {
         
     }
     
-    public func acceptFriend(friend: Friend) {
+    public func acceptFriend(friend: Friend, completionHandler:(success: Bool, errorMessage: String) -> Void) {
     
         // Marks friend as accepted
         
         friend.accepted = NSNumber(bool: true)
         
-        // Creates new reverse Friend object and marks as accepted
-        
-        let newFriend: Friend = NSEntityDescription.insertNewObjectForEntityForName(FriendEntityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Friend
+        let recordDictionary: [String: AnyObject?] = [
+            Friend.identifierKey: friend.identifier,
+            Friend.currentProfileKey: friend.currentProfile?.identifier,
+            Friend.profileKey: friend.profile?.identifier,
+            Friend.acceptedKey: NSNumber(bool: true)
+        ]
 
-        newFriend.currentProfile = friend.profile
-        newFriend.profile = friend.currentProfile
-        newFriend.accepted = NSNumber(bool: true)
-        newFriend.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
-        
-        Stack.defaultStack.save()
-        
-    }
-    
-    public func requestedFriends() -> [Friend]? {
-    
-        let request = NSFetchRequest(entityName: Friend.entityName)
-        let predicate = NSPredicate(format: "currentProfile.identifier = %@ && accepted = %@", AuthenticationController.sharedController.currentProfile!.identifier!, NSNumber(bool: false))
-        request.predicate = predicate
-        
-        do {
-            return try Stack.defaultStack.mainContext?.executeFetchRequest(request) as? [Friend]
-        } catch let error as NSError {
-            print(error)
-            return nil
-        }
+        NetworkController.sharedController.updateRecord(Friend.entityName, recordDictionary: recordDictionary, completionHandler: { (success, networkIdentifier) -> Void in
+            
+            if success {
+                
+                // Create new reverse Friend object and marks as accepted
+                
+                let newFriend: Friend = NSEntityDescription.insertNewObjectForEntityForName(FriendEntityName, inManagedObjectContext: Stack.defaultStack.mainContext!) as! Friend
+                
+                newFriend.currentProfile = friend.profile
+                newFriend.profile = friend.currentProfile
+                newFriend.accepted = NSNumber(bool: true)
+                newFriend.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
+                
+                let newRecordDictionary: [String: AnyObject?] = [
+                    Friend.identifierKey: newFriend.identifier,
+                    Friend.currentProfileKey: newFriend.currentProfile?.identifier,
+                    Friend.profileKey: newFriend.profile?.identifier,
+                    Friend.acceptedKey: NSNumber(bool: true)
+                ]
+                
+                NetworkController.sharedController.postRecord(Friend.entityName, recordDictionary: newRecordDictionary, completionHandler: { (success, networkIdentifier) -> Void in
+                    
+                    if success {
+                        Stack.defaultStack.save()
+                        completionHandler(success: true, errorMessage: "")
+                    } else {
+                        Stack.defaultStack.mainContext?.delete(newFriend)
+                        completionHandler(success: false, errorMessage: "Failed to accept request")
+                    }
+                    
+                })
+
+            } else {
+            
+                friend.accepted = NSNumber(bool: false)
+                Stack.defaultStack.save()
+                
+                completionHandler(success: false, errorMessage: "Failed to accept request")
+
+            }
+            
+        })
         
     }
     
@@ -204,35 +280,67 @@ public class FriendController: NSObject {
         
     }
     
-    public func addFriendDictionary(dictionary: [String: AnyObject?]) -> Friend? {
+    public func updateFriendWithDictionary(friend: Friend, dictionary: [String: AnyObject?],completionHandler:(friend: Friend?) -> Void) {
+        
+        if let currentProfile = dictionary[Friend.currentProfileKey] as! NSNumber? {
+            if let profile = dictionary[Friend.profileKey]  as! NSNumber? {
+                if let accepted = dictionary[Friend.acceptedKey] as! NSNumber? {
+                    if let identifier = dictionary[Friend.identifierKey] as! NSNumber? {
+                        
+                        self.updateFriend(friend, currentProfileIdentifier: currentProfile.integerValue, profileIdentifier: profile.integerValue, identifier: identifier.integerValue, accepted: accepted, completionHandler: completionHandler)
+                        
+                    } else { completionHandler(friend: friend) } // No identifier
+                } else { completionHandler(friend: friend) } // No accepted
+            } else { completionHandler(friend: friend) } // No profile
+        } else { completionHandler(friend: friend) } // No current profile
+    }
+    
+    public func addFriendWithDictionary(dictionary: [String: AnyObject?], completionHandler:(friend: Friend?) -> Void) {
 
         if let currentProfile = dictionary[Friend.currentProfileKey] as! NSNumber? {
             if let profile = dictionary[Friend.profileKey]  as! NSNumber? {
                 if let accepted = dictionary[Friend.acceptedKey] as! NSNumber? {
                     if let identifier = dictionary[Friend.identifierKey] as! NSNumber? {
-                        return self.addFriend(currentProfile.integerValue, profileIdentifier: profile.integerValue, identifier: identifier.integerValue, accepted: accepted)
-                    }
-                }
-            }
-        }
-        return nil
-        
+                        
+                        let context = Stack.defaultStack.mainContext
+                        let friend = NSEntityDescription.insertNewObjectForEntityForName(Friend.entityName, inManagedObjectContext: context!) as! Friend
+
+                        return self.updateFriend(friend, currentProfileIdentifier: currentProfile.integerValue, profileIdentifier: profile.integerValue, identifier: identifier.integerValue, accepted: accepted, completionHandler: completionHandler)
+
+                    } else { completionHandler(friend: nil) } // No identifier
+                } else { completionHandler(friend: nil) } // No accepted
+            } else { completionHandler(friend: nil) } // No profile
+        } else { completionHandler(friend: nil) } // No current profile
+
     }
     
-    public func addFriend(currentProfileIdentifier: Int, profileIdentifier: Int, identifier: Int, accepted: NSNumber) -> Friend {
-        
-        let context = Stack.defaultStack.mainContext
+    public func updateFriend(friend: Friend, currentProfileIdentifier: Int, profileIdentifier: Int, identifier: Int, accepted: NSNumber, completionHandler:(friend: Friend?) -> Void) {
 
-        let friend = NSEntityDescription.insertNewObjectForEntityForName(Friend.entityName, inManagedObjectContext: context!) as! Friend
+        ProfileController.sharedController.findOrFetchProfileUsingIdentifier(currentProfileIdentifier, completionHandler: { (currentProfile) -> Void in
+
+            if currentProfile != nil {
+                friend.currentProfile = currentProfile
+            } else {
+                print("still no currentProfile for friend")
+            }
+            ProfileController.sharedController.findOrFetchProfileUsingIdentifier(profileIdentifier, completionHandler: { (profile) -> Void in
+            
+                if profile != nil {
+                    friend.profile = profile
+                } else {
+                    print("still no profile for friend")
+                }
         
-        friend.currentProfile = ProfileController.sharedController.findProfileUsingIdentifier(currentProfileIdentifier)
-        friend.profile = ProfileController.sharedController.findProfileUsingIdentifier(profileIdentifier)
-        friend.accepted = accepted
-        friend.identifier = identifier
-        
-        Stack.defaultStack.save()
-        
-        return friend
+                friend.accepted = accepted
+                friend.identifier = identifier
+                
+                Stack.defaultStack.save()
+                
+                completionHandler(friend: friend)
+                
+            })
+            
+        })
         
     }
     
@@ -276,7 +384,7 @@ public class FriendController: NSObject {
     // Needs to be refactored into a superclass
     func maxIdentifier() -> NSNumber {
         
-        let fetchRequest = NSFetchRequest(entityName: Profile.entityName)
+        let fetchRequest = NSFetchRequest(entityName: Friend.entityName)
         
         fetchRequest.fetchLimit = 1;
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
@@ -285,8 +393,8 @@ public class FriendController: NSObject {
             
             let array = try Stack.defaultStack.mainContext?.executeFetchRequest(fetchRequest)
             if array?.count > 0 {
-                let profile: Profile = array?.first as! Profile
-                return profile.identifier!
+                let friend: Friend = array?.first as! Friend
+                return friend.identifier!
             } else {
                 return NSNumber(integer: 0)
             }

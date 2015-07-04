@@ -36,8 +36,8 @@ class UserStatusTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateWithProfile(profile: Friend) {
-        self.nameLabel.text = profile.profile!.name
+    func updateWithProfile(profile: Profile) {
+        self.nameLabel.text = profile.name
         
         let waterProgress: Float = 0.2
         let stepProgress: Float = 0.4

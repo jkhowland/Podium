@@ -77,9 +77,12 @@ public class InviteController: NSObject, MFMailComposeViewControllerDelegate {
         for index in 0 ..< invites.count {
             let invite = invites[index]
             FriendController.sharedController.requestFriend((invite.fromUserId?.integerValue)!, completionHandler: { (success, friend, errorMessage) -> Void in
-                FriendController.sharedController.acceptFriend(friend)
-                
-                Stack.defaultStack.mainContext?.deleteObject(invite)
+                FriendController.sharedController.acceptFriend(friend, completionHandler: { (success, errorMessage) -> Void in
+
+                    if success {
+                        Stack.defaultStack.mainContext?.deleteObject(invite)
+                    }
+                })
             })
             
         }

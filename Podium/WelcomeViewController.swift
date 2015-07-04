@@ -2,12 +2,11 @@
 //  WelcomeViewController.swift
 //  Podium
 //
-//  Created by Joshua Howland on 6/11/15.
+//  Created by Joshua Howland on 6/13/15.
 //  Copyright © 2015 [insert name here]. All rights reserved.
 //
 
 import UIKit
-import PodiumKit
 
 class WelcomeViewController: UIViewController {
 
@@ -21,15 +20,16 @@ class WelcomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func getStarted(sender: AnyObject?) {
-        
-        AuthenticationController.sharedController.getStartedStoryboard { (storyboardID) -> Void in
-            let storyboard = UIStoryboard(name: storyboardID, bundle: nil)
-            let viewController = storyboard.instantiateInitialViewController()
-            
-            self.navigationController?.pushViewController(viewController!, animated: true)
-        }
-    }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

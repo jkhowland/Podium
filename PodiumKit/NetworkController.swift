@@ -32,7 +32,7 @@ public class NetworkController: NSObject {
         
         }()
     
-    public func deleteRecord(recordType: String, recordDictionary: [String: AnyObject?], completionHandler: (success: Bool) -> Void) {
+    public func deleteProfile(recordDictionary: [String: AnyObject?], completionHandler: (success: Bool) -> Void) {
         
         var predicateKey = Profile.userRecordKey
         var predicateIdentifier = ""
@@ -44,7 +44,7 @@ public class NetworkController: NSObject {
             predicateIdentifier = recordDictionary[predicateKey] as! String
         }
         
-        let queryOperation = CKQueryOperation(query: CKQuery(recordType: recordType, predicate: NSPredicate(format: "\(predicateKey) = %@", predicateIdentifier)))
+        let queryOperation = CKQueryOperation(query: CKQuery(recordType: Profile.entityName, predicate: NSPredicate(format: "\(predicateKey) = %@", predicateIdentifier)))
         queryOperation.resultsLimit = 1
         
         var resultObjects: [CKRecord] = []
@@ -81,6 +81,42 @@ public class NetworkController: NSObject {
                 completionHandler(success: true, networkIdentifier: record?.recordID.recordName)
             }
         }
+    }
+    
+    public func updateRecord(recordType: String, recordDictionary: [String: AnyObject?], completionHandler: (success: Bool, networkIdentifier: String?) -> Void) {
+    
+        let predicateKey = "identifier"
+        let predicateIdentifier = recordDictionary[predicateKey] as! NSNumber
+
+        let queryOperation = CKQueryOperation(query: CKQuery(recordType: recordType, predicate: NSPredicate(format: "\(predicateKey) = %@", predicateIdentifier)))
+
+        var resultObjects: [CKRecord] = []
+        
+        queryOperation.recordFetchedBlock = { record in
+            resultObjects.append(record)
+        }
+        
+        queryOperation.queryCompletionBlock = { cursor, error in
+            
+            if let record = resultObjects.first as CKRecord? {
+                
+                for key in recordDictionary.keys.array {
+                    record[key] = recordDictionary[key] as? CKRecordValue
+                }
+                
+                self.publicDatabase.saveRecord(record) { (record, error) -> Void in
+                    if error != nil {
+                        completionHandler(success: false, networkIdentifier: nil)
+                    } else {
+                        completionHandler(success: true, networkIdentifier: record?.recordID.recordName)
+                    }
+                }
+                
+            }
+        }
+        
+        self.publicDatabase.addOperation(queryOperation)
+
     }
     
     public func fetchRecordsWithType(recordType: String, predicate: NSPredicate, completionHandler:(results: [[String: AnyObject?]]) -> Void) {

@@ -30,30 +30,22 @@ public class ProfileController: NSObject {
             if let profile = self.findProfileUsingIdentifier(number.integerValue) {
                 return profile
             } else {
-                if let profile = self.addProfileDictionary(profileDictionary) {
-                    return profile
-                }
-            }
-        }
-
-        return nil
-    }
-    
-    public func addProfileDictionary(profileDictionary: [String: AnyObject?]) -> Profile? {
-
-        if let name = profileDictionary[Profile.nameKey] as! String? {
-            if let email = profileDictionary[Profile.emailKey] as! String? {
-                if let phone = profileDictionary[Profile.phoneKey] as! String? {
-                    if let identifier = profileDictionary[Profile.identifierKey] as! NSNumber? {
-                        if let userRecord = profileDictionary[Profile.userRecordKey] as! String? {
-                            return self.addProfileName(name, email: email, phone: phone, identifier: identifier.integerValue, userIdentifier: userRecord)
-                        }
-                    }
-                }
+                return self.addProfileDictionary(profileDictionary)
             }
         }
         
         return nil
+    }
+    
+    public func addProfileDictionary(profileDictionary: [String: AnyObject?]) -> Profile {
+
+        let name = profileDictionary[Profile.nameKey] as! String?
+        let email = profileDictionary[Profile.emailKey] as! String?
+        let phone = profileDictionary[Profile.phoneKey] as! String?
+        let identifier = profileDictionary[Profile.identifierKey] as! NSNumber?
+        let userRecord = profileDictionary[Profile.userRecordKey] as! String?
+        
+        return self.addProfileName(name, email: email, phone: phone, identifier: identifier, userIdentifier: userRecord)
 
     }
     
@@ -85,9 +77,8 @@ public class ProfileController: NSObject {
         
     }
     
-    public func addProfileName(name: String, email: String, phone: String, identifier: Int, userIdentifier: String) -> Profile {
+    public func addProfileName(name: String?, email: String?, phone: String?, identifier: NSNumber?, userIdentifier: String?) -> Profile {
 
-        
         let context = Stack.defaultStack.mainContext
         
         let profile = NSEntityDescription.insertNewObjectForEntityForName(Profile.entityName, inManagedObjectContext: context!) as! Profile
@@ -137,6 +128,23 @@ public class ProfileController: NSObject {
     public func findProfileUsingIdentifier(identifier: Int) -> Profile? {
         
         return self.findProfileUsingKey("identifier", stringValue: "\(identifier)")
+    }
+    
+    public func findOrFetchProfileUsingIdentifier(identifier: Int, completionHandler:(profile: Profile?) -> Void) {
+        
+        if let profile = self.findProfileUsingKey("identifier", stringValue: "\(identifier)") {
+            completionHandler(profile: profile)
+        } else {
+            NetworkController.sharedController.fetchRecordsWithType(Profile.entityName, predicate: NSPredicate(format: "identifier = %d", identifier)) { (results) -> Void in
+             
+                if (results.count > 0) {
+                    let profile = self.findOrAddProfile(results[0])
+                    completionHandler(profile: profile)
+                } else {
+                    completionHandler(profile: nil)
+                }
+            }
+        }
     }
     
     public func findProfileUsingEmail(email: String) -> Profile? {

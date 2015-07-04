@@ -29,28 +29,7 @@ public let eddyEmail = "eddy@apple.com"
 extension Stack {
 
     public func clearAllData() {
-
-        if let invites = InviteController.sharedController.allInvites() {
-            for invite in invites {
-                Stack.defaultStack.mainContext?.deleteObject(invite)
-            }
-            Stack.defaultStack.save()
-        }
-        
-        if let friends = FriendController.sharedController.allFriends() {
-            for friend in friends {
-                Stack.defaultStack.mainContext?.deleteObject(friend)
-            }
-            Stack.defaultStack.save()
-        }
-
-        if let profiles = ProfileController.sharedController.allProfiles() {
-            for profile in profiles {
-                Stack.defaultStack.mainContext?.deleteObject(profile)
-            }
-            Stack.defaultStack.save()
-        }
-
+        Stack.defaultStack.eraseAll()
     }
     
     public func loadFakeData() { // For testing
@@ -108,7 +87,9 @@ extension Stack {
             
                 FriendController.sharedController.requestFriends((fromProfile.identifier?.integerValue)!, toProfileIdentifier: (toProfile.identifier?.integerValue)!, completionHandler: { (success, friend, errorMessage) -> Void in
                     
-                    FriendController.sharedController.acceptFriend(friend)
+                    FriendController.sharedController.acceptFriend(friend, completionHandler: { (success, errorMessage) -> Void in
+                        
+                    })
                 })
             
             } else {

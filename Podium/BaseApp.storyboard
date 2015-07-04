@@ -50,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="5032" y="-364"/>
         </scene>
-        <!--Competitions-->
+        <!--View Controller-->
         <scene sceneID="Xug-iT-ASr">
             <objects>
                 <viewController id="edh-w3-TPV" sceneMemberID="viewController">
@@ -64,11 +64,11 @@
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Competitions" id="Opu-NI-Njs"/>
+                    <navigationItem key="navigationItem" id="jH6-KU-VIB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbA-uA-fJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3473" y="408"/>
+            <point key="canvasLocation" x="4285" y="408"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="5Ck-ol-RfU">
@@ -78,7 +78,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUQ-py-002" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2676" y="811"/>
+            <point key="canvasLocation" x="3473.5" y="1023"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zN1-Og-Yqs">
@@ -93,7 +93,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="blw-SJ-Ddx" kind="relationship" relationship="viewControllers" id="ydq-g5-Whr"/>
-                        <segue destination="edh-w3-TPV" kind="relationship" relationship="viewControllers" id="Yym-ah-eEZ"/>
+                        <segue destination="hbh-Vq-jbX" kind="relationship" relationship="viewControllers" id="Yym-ah-eEZ"/>
                         <segue destination="cOa-DV-zDT" kind="relationship" relationship="viewControllers" id="o85-cT-01S"/>
                     </connections>
                 </tabBarController>
@@ -120,6 +120,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MR9-QT-aQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3473" y="-364"/>
+        </scene>
+        <!--Competitions-->
+        <scene sceneID="4HY-0i-gSH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hbh-Vq-jbX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Competitions" id="Opu-NI-Njs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XMT-Mm-nyp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="edh-w3-TPV" kind="relationship" relationship="rootViewController" id="BFi-RI-dbU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MV7-Ty-xsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3473" y="408"/>
         </scene>
     </scenes>
 </document>
