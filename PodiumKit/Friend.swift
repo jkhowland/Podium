@@ -25,4 +25,7 @@ public class Friend: NSManagedObject {
     @NSManaged public var identifier: NSNumber?
     public static let identifierKey = "identifier"
 
+    @NSManaged public var test: NSNumber? // Contains a boolean
+    public static let testKey = "test"
+
 }

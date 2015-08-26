@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14E46" minimumToolsVersion="Xcode 4.3">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8166.2" systemVersion="14E46" minimumToolsVersion="Xcode 4.3">
     <entity name="Friend" representedClassName="Friend" syncable="YES">
         <attribute name="accepted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="test" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="currentProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="friends" inverseEntity="Profile" syncable="YES"/>
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="relationship" inverseEntity="Profile" syncable="YES"/>
     </entity>
@@ -28,9 +29,9 @@
         <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="profile" inverseEntity="Friend" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Friend" positionX="-54" positionY="27" width="128" height="105"/>
+        <element name="Friend" positionX="-54" positionY="27" width="128" height="120"/>
         <element name="HealthPoint" positionX="-54" positionY="36" width="128" height="105"/>
-        <element name="Profile" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="Invite" positionX="-54" positionY="54" width="128" height="90"/>
+        <element name="Profile" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
