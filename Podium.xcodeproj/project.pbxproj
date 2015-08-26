@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4F0A6FF61B29DC9C005882DB /* InviteTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A6FF51B29DC9C005882DB /* InviteTestCase.swift */; };
-		4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
-		4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2099E51B276AD9008FBF4C /* CloudKit.framework */; };
 		4F255F2E1B2A357400707562 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F255F2D1B2A357400707562 /* NetworkController.swift */; };
 		4F255F301B2A4D3A00707562 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */; };
 		4F3AA1FD1B2A0770004E28D4 /* OverlayBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AA1FC1B2A0770004E28D4 /* OverlayBlurView.swift */; };
@@ -21,6 +19,12 @@
 		4F4BBF0E1B29F6C20090842D /* SignInFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */; };
 		4F4BBF101B29FE100090842D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */; };
 		4F4E70CC1B27AD62009A1A24 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */; };
+		4F512D6D1B8E75C70013A409 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F512D6C1B8E75C70013A409 /* Firebase.framework */; };
+		4F512D721B8E80610013A409 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F512D6A1B8E751E0013A409 /* SystemConfiguration.framework */; };
+		4F512D731B8E80690013A409 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F512D681B8E75020013A409 /* Security.framework */; };
+		4F512D741B8E806C0013A409 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F512D661B8E74FB0013A409 /* CFNetwork.framework */; };
+		4F512D751B8E806F0013A409 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F512D641B8E74F50013A409 /* libc++.tbd */; };
+		4F512D761B8E80720013A409 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F512D621B8E74ED0013A409 /* libicucore.tbd */; };
 		4F5A5E271B48983400CE536D /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A5E261B48983400CE536D /* Invite.swift */; };
 		4F63CA3E1B2761CB0004013B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA3B1B2761CB0004013B /* Friend.swift */; };
 		4F63CA4A1B2761DF0004013B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63CA471B2761DF0004013B /* Profile.swift */; };
@@ -111,7 +115,6 @@
 
 /* Begin PBXFileReference section */
 		4F0A6FF51B29DC9C005882DB /* InviteTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTestCase.swift; sourceTree = "<group>"; };
-		4F2099E51B276AD9008FBF4C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		4F255F2D1B2A357400707562 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		4F255F2F1B2A4D3A00707562 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4F3AA1FC1B2A0770004E28D4 /* OverlayBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayBlurView.swift; sourceTree = "<group>"; };
@@ -123,6 +126,12 @@
 		4F4BBF0D1B29F6C20090842D /* SignInFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignInFlow.storyboard; sourceTree = "<group>"; };
 		4F4BBF0F1B29FE100090842D /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4F512D621B8E74ED0013A409 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		4F512D641B8E74F50013A409 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4F512D661B8E74FB0013A409 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4F512D681B8E75020013A409 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4F512D6A1B8E751E0013A409 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4F512D6C1B8E75C70013A409 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		4F5A5E261B48983400CE536D /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		4F63CA3B1B2761CB0004013B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		4F63CA471B2761DF0004013B /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -171,8 +180,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F512D741B8E806C0013A409 /* CFNetwork.framework in Frameworks */,
+				4F512D751B8E806F0013A409 /* libc++.tbd in Frameworks */,
 				4F4E70CC1B27AD62009A1A24 /* MessageUI.framework in Frameworks */,
-				4F2099E61B276AD9008FBF4C /* CloudKit.framework in Frameworks */,
+				4F512D731B8E80690013A409 /* Security.framework in Frameworks */,
+				4F512D6D1B8E75C70013A409 /* Firebase.framework in Frameworks */,
+				4F512D721B8E80610013A409 /* SystemConfiguration.framework in Frameworks */,
+				4F512D761B8E80720013A409 /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F8E9D621B27362F00446CC3 /* PodiumKit.framework in Frameworks */,
-				4F2099E71B276BE3008FBF4C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,8 +236,13 @@
 		4F4E70CD1B27AF57009A1A24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F512D6C1B8E75C70013A409 /* Firebase.framework */,
+				4F512D6A1B8E751E0013A409 /* SystemConfiguration.framework */,
+				4F512D681B8E75020013A409 /* Security.framework */,
+				4F512D661B8E74FB0013A409 /* CFNetwork.framework */,
+				4F512D641B8E74F50013A409 /* libc++.tbd */,
+				4F512D621B8E74ED0013A409 /* libicucore.tbd */,
 				4F4E70CB1B27AD62009A1A24 /* MessageUI.framework */,
-				4F2099E51B276AD9008FBF4C /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -532,7 +550,7 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -746,6 +764,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -776,6 +798,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				INFOPLIST_FILE = PodiumKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -793,7 +819,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -814,6 +843,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
 				);
 				INFOPLIST_FILE = PodiumKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -914,6 +944,10 @@
 				CODE_SIGN_ENTITLEMENTS = Podium/Podium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				INFOPLIST_FILE = Podium/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -930,6 +964,10 @@
 				CODE_SIGN_ENTITLEMENTS = Podium/Podium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				INFOPLIST_FILE = Podium/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -943,6 +981,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				INFOPLIST_FILE = PodiumTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -956,6 +998,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				INFOPLIST_FILE = PodiumTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -968,6 +1014,10 @@
 		4FEA65421B26A96800E572FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				INFOPLIST_FILE = PodiumUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.wearewired.PodiumUITests;
@@ -980,6 +1030,10 @@
 		4FEA65431B26A96800E572FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PodiumKit",
+				);
 				INFOPLIST_FILE = PodiumUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.wearewired.PodiumUITests;
