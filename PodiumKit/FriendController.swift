@@ -177,23 +177,25 @@ public class FriendController: NSObject {
         friend.accepted = NSNumber(bool: false)
         friend.identifier = NSNumber(integer: (self.maxIdentifier().integerValue) + 1);
         
+        Stack.defaultStack.save()
+
         // Send email/request to user
         
         NetworkController.sharedController.postRecord(Friend.entityName, recordDictionary: self.friendDictionary(friend)) { (success, networkIdentifier) -> Void in
 
             if success {
-                Stack.defaultStack.save()
                 completionHandler(success: true, friend: friend, errorMessage: "")
             } else {
-                Stack.defaultStack.mainContext?.delete(friend)
+                Stack.defaultStack.mainContext?.deleteObject(friend)
+                Stack.defaultStack.save()
                 completionHandler(success: false, friend: friend, errorMessage: "Failed to send request")
             }
+            
         }
         
     }
     
     public func requestFriend(userID: Int, completionHandler:(success: Bool, friend: Friend, errorMessage: String) -> Void) {
-
         self.requestFriends((AuthenticationController.sharedController.currentProfile!.identifier?.integerValue)!, toProfileIdentifier: userID, completionHandler: completionHandler)
         
     }
@@ -235,9 +237,14 @@ public class FriendController: NSObject {
                     
                     if success {
                         Stack.defaultStack.save()
+                        
                         completionHandler(success: true, errorMessage: "")
+                        
                     } else {
                         Stack.defaultStack.mainContext?.delete(newFriend)
+                        friend.accepted = NSNumber(bool: false)
+                        Stack.defaultStack.save()
+                        
                         completionHandler(success: false, errorMessage: "Failed to accept request")
                     }
                     
@@ -383,11 +390,19 @@ public class FriendController: NSObject {
 
     // Needs to be refactored into a superclass
     func maxIdentifier() -> NSNumber {
+        return identifier(max: true)
+    }
+    
+    func minIdentifier() -> NSNumber {
+        return identifier(max:false)
+    }
+    
+    func identifier(max max: Bool) -> NSNumber {
         
         let fetchRequest = NSFetchRequest(entityName: Friend.entityName)
         
         fetchRequest.fetchLimit = 1;
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: !max)]
         
         do {
             
@@ -402,7 +417,7 @@ public class FriendController: NSObject {
         } catch {
             return NSNumber(integer: 0)
         }
-        
+
     }
     
 }

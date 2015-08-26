@@ -83,21 +83,25 @@ extension Stack {
             let fromProfile: Profile? = ProfileController.sharedController.findProfileUsingEmail(fromFriend)
             let toProfile: Profile? = ProfileController.sharedController.findProfileUsingEmail(toFriend)
             
-            if let fromProfile = fromProfile, let toProfile = toProfile {
+            if let currentProfile = fromProfile, let profile = toProfile {
             
-                FriendController.sharedController.requestFriends((fromProfile.identifier?.integerValue)!, toProfileIdentifier: (toProfile.identifier?.integerValue)!, completionHandler: { (success, friend, errorMessage) -> Void in
+                FriendController.sharedController.requestFriends((currentProfile.identifier?.integerValue)!, toProfileIdentifier: (profile.identifier?.integerValue)!, completionHandler: { (success, friend, errorMessage) -> Void in
                     
                     FriendController.sharedController.acceptFriend(friend, completionHandler: { (success, errorMessage) -> Void in
                         
+                        
                     })
+
                 })
             
             } else {
                 print("Didn't create friend")
             }
             
-            
         }
+        
+        
+        
         
         // Should create 2 invite
         // Siging up with that one invite should auto add them as a friend

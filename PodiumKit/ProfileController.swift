@@ -95,10 +95,9 @@ public class ProfileController: NSObject {
 
     }
 
-    public func findProfileUsingKey(key: String, stringValue: String) -> Profile? {
+    public func findProfileUsingPredicate(predicate: NSPredicate) -> Profile? {
         
         let request = NSFetchRequest(entityName: Profile.entityName)
-        let predicate = NSPredicate(format: "\(key) = %@", stringValue)
         
         request.predicate = predicate
         
@@ -122,17 +121,19 @@ public class ProfileController: NSObject {
 
     public func findProfileUsingUserIdentifier(userIdentifier: String) -> Profile? {
     
-        return self.findProfileUsingKey(Profile.userRecordKey, stringValue: "\(userIdentifier)")
+        return self.findProfileUsingPredicate(NSPredicate(format: "\(Profile.userRecordKey) = %@", userIdentifier))
     }
     
     public func findProfileUsingIdentifier(identifier: Int) -> Profile? {
         
-        return self.findProfileUsingKey("identifier", stringValue: "\(identifier)")
+        let _ = NSNumber(long: identifier)
+        return self.findProfileUsingPredicate(NSPredicate(format: "identifier = %d", identifier))
+
     }
     
     public func findOrFetchProfileUsingIdentifier(identifier: Int, completionHandler:(profile: Profile?) -> Void) {
         
-        if let profile = self.findProfileUsingKey("identifier", stringValue: "\(identifier)") {
+        if let profile = self.findProfileUsingPredicate(NSPredicate(format: "identifier = %d", identifier)) {
             completionHandler(profile: profile)
         } else {
             NetworkController.sharedController.fetchRecordsWithType(Profile.entityName, predicate: NSPredicate(format: "identifier = %d", identifier)) { (results) -> Void in
@@ -148,8 +149,7 @@ public class ProfileController: NSObject {
     }
     
     public func findProfileUsingEmail(email: String) -> Profile? {
-        
-        return self.findProfileUsingKey("email", stringValue: email)
+        return self.findProfileUsingPredicate(NSPredicate(format: "email = %@", email))
     }
     
     public func deleteUser(user: Profile) {
